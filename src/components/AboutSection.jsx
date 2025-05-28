@@ -22,11 +22,11 @@ const AboutSection = () => (
             </div>
         </div>
         {/* Right: Text content */}
-        <div className="flex-1 flex flex-col justify-center items-start max-w-xl mt-24 md:mt-0 md:pl-16 z-10">
-            <h5 className="text-[#00e187] text-lg font-semibold tracking-widest mb-2 uppercase">Who We Are</h5>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a0a2d] mb-6 leading-tight">Experience<br />Excellence With Us!</h2>
-            <p className="text-lg text-gray-500 mb-4">When We Promise, We Always Follow Through. We Use Technology and Trust to Drive Our Company.</p>
-            <p className="text-base text-gray-600 mb-8">We select only the finest tech experts for our team. They speed up development and save our clients more than a million dollars annually.</p>
+        <div className="flex-1 flex flex-col justify-center items-start max-w-xl mt-24 md:mt-0 md:pl-16 z-10 text-left">
+            <h5 className="text-[#00e187] text-lg font-semibold tracking-widest mb-2 uppercase text-left">Who We Are</h5>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a0a2d] mb-6 leading-tight text-left">Experience<br />Excellence With Us!</h2>
+            <p className="text-lg text-gray-500 mb-4 text-left">When We Promise, We Always Follow Through. We Use Technology and Trust to Drive Our Company.</p>
+            <p className="text-base text-gray-600 mb-8 text-left">We select only the finest tech experts for our team. They speed up development and save our clients more than a million dollars annually.</p>
             <button className="bg-[#00e187] hover:bg-[#00c76a] text-white font-semibold px-8 py-3 rounded-full text-lg shadow-lg transition-all">Contact Us</button>
         </div>
     </section>

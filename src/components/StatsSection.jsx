@@ -7,12 +7,12 @@ const stats = [
 ];
 
 const StatsSection = () => (
-    <section className="w-full bg-white flex flex-col items-center justify-center py-0">
+    <section className="w-full bg-white flex flex-col items-center justify-center py-0 px-4">
         <div className="w-full max-w-6xl mx-auto rounded-2xl bg-[#00e187] flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 md:py-20 gap-12 md:gap-0">
             {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col items-center justify-center text-center flex-1">
-                    <span className="text-5xl md:text-6xl font-extrabold text-[#1a0a2d]">{stat.value}</span>
-                    <span className="block text-xl md:text-2xl font-medium text-[#1a0a2d] mt-2">{stat.label}</span>
+                <div key={i} className="flex flex-col items-start justify-center text-left flex-1">
+                    <span className="text-5xl md:text-6xl font-extrabold text-[#1a0a2d] text-left">{stat.value}</span>
+                    <span className="block text-xl md:text-2xl font-medium text-[#1a0a2d] mt-2 text-left">{stat.label}</span>
                 </div>
             ))}
         </div>

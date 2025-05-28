@@ -4,6 +4,9 @@ import AboutSection from './components/AboutSection';
 import StatsSection from './components/StatsSection';
 import ServiceIntroSection from './components/ServiceIntroSection';
 import ServicesSection from './components/ServicesSection';
+import PortfolioIntroSection from './components/PortfolioIntroSection';
+import GrowthSection from './components/GrowthSection';
+import PortfolioGallerySection from './components/PortfolioGallerySection';
 import './App.css';
 
 function App() {
@@ -15,6 +18,9 @@ function App() {
       <StatsSection />
       <ServiceIntroSection />
       <ServicesSection />
+      <PortfolioIntroSection />
+      <GrowthSection />
+      <PortfolioGallerySection />
     </>
   );
 }
