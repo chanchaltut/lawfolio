@@ -1,5 +1,4 @@
 import React from "react";
-import serviceSide from "../assets/images/service/service-side.png";
 
 const stats = [
     { value: "10+", label: "Active Clients" },
@@ -17,7 +16,6 @@ const StatsSection = () => (
                 </div>
             ))}
         </div>
-        <img src={serviceSide} alt="decor" ... />
     </section>
 );
 
