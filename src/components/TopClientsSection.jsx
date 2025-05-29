@@ -1,0 +1,60 @@
+import React, { useRef, useEffect, useState } from "react";
+import candidClean from "../assets/images/brand/candid-clean.svg";
+import chargerQuest from "../assets/images/brand/charger-quest.png";
+import greenDot from "../assets/images/brand/logo.svg";
+import swiftRacks from "../assets/images/brand/swiftracks.svg";
+import versatileDispatch from "../assets/images/brand/versatile-dispatch.svg";
+
+const clients = [
+    { src: candidClean, alt: "Candid Clean" },
+    { src: chargerQuest, alt: "Charger Quest" },
+    { src: greenDot, alt: "Green Dot" },
+    { src: swiftRacks, alt: "Swift Racks" },
+    { src: versatileDispatch, alt: "Versatile Dispatch" },
+];
+
+const VISIBLE_COUNT = 4; // Number of logos visible at once (adjust for responsiveness if needed)
+const SLIDE_INTERVAL = 2000; // 2 seconds
+
+const TopClientsSection = () => {
+    const [startIdx, setStartIdx] = useState(0);
+    const total = clients.length;
+    const intervalRef = useRef();
+
+    useEffect(() => {
+        intervalRef.current = setInterval(() => {
+            setStartIdx((prev) => (prev + 1) % total);
+        }, SLIDE_INTERVAL);
+        return () => clearInterval(intervalRef.current);
+    }, [total]);
+
+    // Create a sliding window of clients
+    const visibleClients = [];
+    for (let i = 0; i < VISIBLE_COUNT; i++) {
+        visibleClients.push(clients[(startIdx + i) % total]);
+    }
+
+    return (
+        <section className="w-full flex items-center justify-center py-24 px-4 bg-white">
+            <div className="w-full max-w-6xl mx-auto flex flex-col items-center justify-center">
+                <h5 className="text-[#00e187] text-lg font-semibold tracking-[0.3em] mb-2 uppercase text-center">Top Clients</h5>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-[#2d104f] mb-16 text-center">We've built solutions for</h2>
+                <div className="w-full flex items-center justify-center overflow-hidden">
+                    <div className="flex transition-all duration-700 gap-12 md:gap-20" style={{ minWidth: 0 }}>
+                        {visibleClients.map((client, idx) => (
+                            <img
+                                key={idx}
+                                src={client.src}
+                                alt={client.alt}
+                                className="h-24 w-auto object-contain max-w-[180px] flex-shrink-0"
+                                style={{ filter: "grayscale(0%)" }}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default TopClientsSection; 

@@ -3,7 +3,7 @@ import icon1 from "../assets/images/icons/icon-1.png";
 import icon2 from "../assets/images/icons/icon-2.png";
 import icon3 from "../assets/images/icons/icon-3.png";
 import icon4 from "../assets/images/icons/icon-4.png";
-import serviceSide from "../assets/images/service/service-side.png";
+import serviceSide from "../assets/images/service/shape-one.png";
 
 const services = [
     {
