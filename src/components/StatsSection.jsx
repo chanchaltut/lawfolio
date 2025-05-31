@@ -1,22 +1,62 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
 const stats = [
-    { value: "10+", label: "Active Clients" },
-    { value: "96%", label: "Client Retention" },
-    { value: "50+", label: "Projects Delivered" },
+    { value: 10, suffix: "+", label: "Active Clients" },
+    { value: 96, suffix: "%", label: "Client Retention" },
+    { value: 50, suffix: "+", label: "Projects Delivered" },
 ];
 
-const StatsSection = () => (
-    <section className="w-full bg-white flex flex-col items-center justify-center py-0 px-4">
-        <div className="w-full max-w-6xl mx-auto rounded-2xl bg-[#00e187] flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 md:py-20 gap-12 md:gap-0">
-            {stats.map((stat, i) => (
-                <div key={i} className="flex flex-col items-start justify-center text-left flex-1">
-                    <span className="text-5xl md:text-6xl font-extrabold text-[#1a0a2d] text-left">{stat.value}</span>
-                    <span className="block text-xl md:text-2xl font-medium text-[#1a0a2d] mt-2 text-left">{stat.label}</span>
-                </div>
-            ))}
-        </div>
-    </section>
-);
+const StatsSection = () => {
+    const [visible, setVisible] = useState(false);
+    const [counts, setCounts] = useState(stats.map(() => 0));
+    const ref = useRef();
+    const inView = useInView(ref, { once: true, margin: "-100px" });
+
+    useEffect(() => {
+        if (!inView) return;
+        setVisible(true);
+    }, [inView]);
+
+    useEffect(() => {
+        if (!visible) return;
+        const duration = 1200;
+        const steps = 30;
+        let frame = 0;
+        const interval = setInterval(() => {
+            frame++;
+            setCounts(stats.map((stat, i) => {
+                const target = stat.value;
+                return Math.round((target * frame) / steps);
+            }));
+            if (frame >= steps) clearInterval(interval);
+        }, duration / steps);
+        return () => clearInterval(interval);
+    }, [visible]);
+
+    return (
+        <motion.section
+            ref={ref}
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } } : {}}
+            className="w-full bg-white flex flex-col items-center justify-center py-8 px-4"
+        >
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={inView ? { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.2, ease: "easeOut" } } : {}}
+                className="w-full max-w-6xl mx-auto rounded-2xl bg-[#00e187] flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 md:py-20 gap-12 md:gap-0"
+            >
+                {stats.map((stat, i) => (
+                    <div key={i} className="flex flex-col items-start justify-center text-left flex-1">
+                        <span className="text-5xl md:text-6xl font-extrabold text-[#1a0a2d] text-left">
+                            {counts[i]}{stat.suffix}
+                        </span>
+                        <span className="block text-xl md:text-2xl font-medium text-[#1a0a2d] mt-2 text-left">{stat.label}</span>
+                    </div>
+                ))}
+            </motion.div>
+        </motion.section>
+    );
+};
 
 export default StatsSection; 

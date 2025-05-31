@@ -9,6 +9,18 @@ const navLinks = [
     { label: "Contact", href: "#contact" },
 ];
 
+const scrollToSection = (href) => {
+    if (href === "#") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+    }
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+    }
+};
+
 const Navbar = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -21,6 +33,11 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleNavClick = (href) => {
+        setSidebarOpen(false);
+        scrollToSection(href);
+    };
+
     return (
         <nav
             className={`fixed top-0 left-0 w-full flex items-center justify-between transition-all duration-300 z-50
@@ -28,14 +45,21 @@ const Navbar = () => {
                 px-4 md:px-8`}
         >
             {/* Logo */}
-            <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-[#1a0a2d]">Code<span className="text-[#00e187]">Your</span>Idea</span>
-            </div>
+        <div className="flex items-center gap-2">
+            <span className="text-2xl font-bold text-[#1a0a2d]">Code<span className="text-[#00e187]">Your</span>Idea</span>
+        </div>
             {/* Desktop Nav */}
             <ul className="hidden md:flex gap-8 text-lg font-medium text-[#1a0a2d]">
                 {navLinks.map((link) => (
                     <li key={link.label}>
-                        <a href={link.href} className="hover:text-[#00e187] transition-colors duration-200">
+                        <a
+                            href={link.href}
+                            className="hover:text-[#00e187] transition-colors duration-200"
+                            onClick={e => {
+                                e.preventDefault();
+                                handleNavClick(link.href);
+                            }}
+                        >
                             {link.label}
                         </a>
                     </li>
@@ -74,16 +98,19 @@ const Navbar = () => {
                             <a
                                 href={link.href}
                                 className="hover:text-[#00e187] transition-colors duration-200"
-                                onClick={() => setSidebarOpen(false)}
+                                onClick={e => {
+                                    e.preventDefault();
+                                    handleNavClick(link.href);
+                                }}
                             >
                                 {link.label}
                             </a>
                         </li>
                     ))}
-                </ul>
+        </ul>
             </aside>
-        </nav>
-    );
+    </nav>
+);
 };
 
 export default Navbar; 

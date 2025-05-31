@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import airwayHealth from "../assets/images/portfolio/websites/Airway Health/Thumb/AirwayHealth-Cover.jpg";
 import chargerQuest from "../assets/images/portfolio/websites/Charger Quest/Thumb/Charger-Quest-cover.jpg";
 import techdense from "../assets/images/portfolio/websites/Techdense/Thumb/thumb-img.jpg";
@@ -31,12 +32,30 @@ const projects = [
 
 const categories = ["All", "Websites", "SASS Applications"];
 
+const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
 const PortfolioGallerySection = () => {
-    const [active, setActive] = useState("All");
+    const [active, setActive] = React.useState("All");
     const filtered = active === "All" ? projects : projects.filter(p => p.category === active);
+    const sectionRef = useRef(null);
+    const sectionInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
     return (
-        <section className="w-full bg-white py-20 px-4">
+        <motion.section
+            ref={sectionRef}
+            variants={sectionVariants}
+            initial="hidden"
+            animate={sectionInView ? "visible" : "hidden"}
+            className="w-full bg-[#f4f7fb] flex flex-col items-center justify-center py-8 px-4"
+        >
             <div className="max-w-7xl mx-auto px-4">
                 <h5 className="text-[#00e187] text-lg font-semibold tracking-widest mb-2 uppercase text-left">Portfolio</h5>
                 <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a0a2d] mb-4 text-left">Our Amazing Work</h2>
@@ -56,17 +75,24 @@ const PortfolioGallerySection = () => {
                 {/* Gallery Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                     {filtered.map((project, i) => (
-                        <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden group transition-transform hover:-translate-y-2 cursor-pointer">
+                        <motion.div
+                            key={i}
+                            className="bg-white rounded-2xl shadow-lg overflow-hidden group transition-transform hover:-translate-y-2 cursor-pointer"
+                            variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                        >
                             <img src={project.img} alt={project.title} className="w-full h-56 object-cover" />
                             <div className="p-4 flex flex-col items-start">
                                 <span className="text-[#00e187] text-xs font-semibold uppercase mb-1 text-left">{project.category}</span>
                                 <h3 className="text-xl font-bold text-[#1a0a2d] group-hover:text-[#00e187] transition-colors text-left">{project.title}</h3>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

@@ -11,6 +11,7 @@ import PortfolioGallerySection from './components/PortfolioGallerySection';
 import TestimonialSection from './components/TestimonialSection';
 import TopClientsSection from './components/TopClientsSection';
 import ContactFooterSection from './components/ContactFooterSection';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 function App() {
@@ -18,17 +19,17 @@ function App() {
     <>
       <Navbar />
       <HeroSection />
-      <AboutSection />
+      <AboutSection id="about" />
       <StatsSection />
-      <ServiceIntroSection />
+      <ServiceIntroSection id="services" />
       <ServicesSection />
-      <PortfolioIntroSection />
       <GrowthSection />
       <PortfolioGallerySection />
       <LetsBuildSuccessSection />
       <TestimonialSection />
       <TopClientsSection />
-      <ContactFooterSection />
+      <ContactFooterSection id="contact" />
+      <ScrollToTop />
     </>
   );
 }
