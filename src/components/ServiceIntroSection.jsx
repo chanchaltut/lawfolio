@@ -17,9 +17,9 @@ const ServiceIntroSection = ({ id }) => {
                 animate={inView ? { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.2, ease: "easeOut" } } : {}}
                 className="flex flex-col items-center"
             >
-                <h5 className="text-[#00e187] text-lg font-semibold tracking-widest mb-2 uppercase">Service</h5>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a0a2d] mb-4 text-center">What We Do</h2>
-                <p className="text-lg text-gray-400 text-center max-w-2xl">Challenges We're Here to Assist You In Overcoming.</p>
+                <h5 className="text-[#00e187] text-lg font-semibold tracking-widest mb-2 uppercase">Our Services</h5>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a0a2d] mb-4 text-center">Two Things We Do Exceptionally Well</h2>
+                <p className="text-lg text-gray-400 text-center max-w-2xl">We've chosen to focus on just two services so we can deliver exceptional results every time.</p>
             </motion.div>
         </motion.section>
     );

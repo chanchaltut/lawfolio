@@ -51,6 +51,7 @@ const PortfolioGallerySection = () => {
     return (
         <motion.section
             ref={sectionRef}
+            id="portfolio"
             variants={sectionVariants}
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}

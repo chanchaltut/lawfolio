@@ -1,52 +1,87 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import aboutImg from "../assets/images/about/about.png";
-import shapeOne from "../assets/images/about/shape-one.png";
-import shapeTwo from "../assets/images/about/shape-two.png";
 
-const AboutSection = ({ id }) => {
+const AboutSection = () => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: "-100px" });
+
     const leftVariants = {
-        hidden: { opacity: 0, x: -40 },
-        visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+        hidden: { opacity: 0, x: -60 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
     };
+
     const rightVariants = {
-        hidden: { opacity: 0, x: 40 },
-        visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut", delay: 0.2 } },
+        hidden: { opacity: 0, x: 60 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
     };
+
     return (
         <motion.section
-            id={id}
             ref={ref}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
-            className="w-full min-h-screen flex flex-col md:flex-row items-center justify-center bg-white relative overflow-hidden px-4 md:px-0 py-8"
+            id="about"
+            className="w-full bg-white py-16 md:py-24 pt-24 md:pt-32"
         >
-            {/* Left: Image and shapes */}
-            <motion.div className="flex-1 flex flex-col items-center justify-center relative h-full min-w-[350px] max-w-[600px]" variants={leftVariants}>
-                {/* Main Image */}
-                <div className="relative w-full max-w-[420px] rounded-3xl overflow-hidden shadow-xl">
-                    <img src={aboutImg} alt="About" className="w-full h-full object-cover rounded-3xl" />
-                    {/* Top icon */}
-                    <img src={shapeTwo} alt="Code Icon" className="absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 bg-white rounded-2xl shadow-lg p-3" />
-                    {/* Left icon */}
-                    <img src={shapeOne} alt="Magic Icon" className="absolute top-1/3 -left-12 w-20 h-20 bg-white rounded-2xl shadow-lg p-3" />
-                    {/* Green badge */}
-                    <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-gradient-to-br from-[#00e187] to-[#00c76a] w-40 h-40 rounded-full flex flex-col items-center justify-center shadow-2xl border-8 border-white">
-                        <span className="text-white text-4xl font-extrabold leading-none">4+</span>
-                        <span className="text-white text-lg font-medium mt-2 text-center">Years in the<br />Success</span>
-                    </div>
+            <div className="max-w-7xl mx-auto px-4 md:px-12">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
+                    {/* Left - Image */}
+                    <motion.div className="flex-1" variants={leftVariants}>
+                        <div className="relative">
+                            <img
+                                src={aboutImg}
+                                alt="About Code Your Idea"
+                                className="w-full max-w-md mx-auto rounded-3xl shadow-2xl object-cover"
+                            />
+                            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#00e187] rounded-full opacity-20 blur-xl"></div>
+                            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#a5f3fc] rounded-full opacity-30 blur-2xl"></div>
+                        </div>
+                    </motion.div>
+
+                    {/* Right - Content */}
+                    <motion.div className="flex-1 text-center md:text-left" variants={rightVariants}>
+                        <h4 className="text-[#00e187] text-lg font-semibold tracking-widest mb-4 uppercase">About Us</h4>
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a0a2d] leading-tight mb-6">
+                            We're Code Your Idea
+                        </h2>
+                        <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                            We're a small, focused team that builds real, functional products for real people. Founded in 2023, based in India, we specialize in turning your ideas into digital reality through clean websites and powerful mobile apps.
+                        </p>
+                        <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+                            Our mission is simple: help startups and small businesses launch faster with technology that works. No fluff, no unnecessary complexity – just solid development that gets results.
+                        </p>
+
+                        {/* Values Section */}
+                        <div className="space-y-4">
+                            <h3 className="text-xl font-bold text-[#1a0a2d] mb-4">Our Values</h3>
+                            <div className="space-y-3">
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-[#00e187] rounded-full mt-2"></div>
+                                    <div>
+                                        <h4 className="font-semibold text-[#1a0a2d]">Speed</h4>
+                                        <p className="text-gray-600">Fast development, quick launches, no endless delays</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-[#00e187] rounded-full mt-2"></div>
+                                    <div>
+                                        <h4 className="font-semibold text-[#1a0a2d]">Communication</h4>
+                                        <p className="text-gray-600">Clear updates, honest timelines, always available</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-[#00e187] rounded-full mt-2"></div>
+                                    <div>
+                                        <h4 className="font-semibold text-[#1a0a2d]">Clarity</h4>
+                                        <p className="text-gray-600">Simple solutions, clean code, no confusion</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
-            </motion.div>
-            {/* Right: Text content */}
-            <motion.div className="flex-1 flex flex-col justify-center items-start max-w-xl mt-24 md:mt-0 md:pl-16 z-10 text-left" variants={rightVariants}>
-                <h5 className="text-[#00e187] text-lg font-semibold tracking-widest mb-2 uppercase text-left">Who We Are</h5>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a0a2d] mb-6 leading-tight text-left">Experience<br />Excellence With Us!</h2>
-                <p className="text-lg text-gray-500 mb-4 text-left">When We Promise, We Always Follow Through. We Use Technology and Trust to Drive Our Company.</p>
-                <p className="text-base text-gray-600 mb-8 text-left">We select only the finest tech experts for our team. They speed up development and save our clients more than a million dollars annually.</p>
-                <button className="bg-[#00e187] hover:bg-[#00c76a] text-white font-semibold px-8 py-3 rounded-full text-lg shadow-lg transition-all">Contact Us</button>
-            </motion.div>
+            </div>
         </motion.section>
     );
 };

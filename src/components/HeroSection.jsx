@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import heroImg1 from "../assets/images/slider/img-one.png";
 import heroImg2 from "../assets/images/slider/img-two.png";
+import { showLetsTalkModal, showQuoteModal } from "../utils/modalUtils";
 
 const textVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -25,16 +26,30 @@ const HeroSection = () => {
             <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-4 md:px-12 py-10 md:py-0 gap-8 md:gap-0">
                 {/* Left Content */}
                 <motion.div className="flex-1 max-w-xl z-10 w-full text-center md:text-left" variants={textVariants}>
-                    <h4 className="text-[#00e187] text-base md:text-lg font-semibold tracking-widest mb-3 md:mb-4 uppercase">Web and App Development</h4>
-                    <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#1a0a2d] leading-tight mb-4 md:mb-6">
-                        Exceptional web & <br className="hidden xs:inline" /> app empowerment
+                    <h4 className="text-[#00e187] text-base md:text-lg font-semibold tracking-widest mb-3 md:mb-4 uppercase">Development Agency</h4>
+                    <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-extrabold text-[#1a0a2d] leading-tight mb-3 md:mb-4">
+                        Your Idea, Our Code.
                     </h1>
-                    <p className="text-base xs:text-lg text-gray-600 mb-6 md:mb-8">
-                        Elevate your business with our cutting-edge web and app development services, tailored to your needs.
+                    <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-[#00e187] mb-6 md:mb-8 italic">
+                        Make it happen.
+                    </h2>
+                    <p className="text-base xs:text-lg text-gray-600 mb-6 md:mb-8 max-w-lg">
+                        We are a development agency focused on helping startups and small businesses launch fast, responsive websites and mobile apps.
                     </p>
-                    <button className="bg-[#00e187] hover:bg-[#00c76a] text-white font-semibold px-6 py-3 md:px-8 md:py-3 rounded-full text-base md:text-lg shadow-lg transition-all">
-                        Get Your Custom App Now
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start">
+                        <button
+                            onClick={showLetsTalkModal}
+                            className="bg-[#00e187] hover:bg-[#00c76a] text-white font-semibold px-8 py-4 rounded-full text-base md:text-lg shadow-lg transition-all hover:scale-105"
+                        >
+                            Let's Talk
+                        </button>
+                        <button
+                            onClick={showQuoteModal}
+                            className="border-2 border-[#00e187] text-[#00e187] hover:bg-[#00e187] hover:text-white font-semibold px-8 py-4 rounded-full text-base md:text-lg transition-all hover:scale-105"
+                        >
+                            Get a Quote
+                        </button>
+                    </div>
                 </motion.div>
                 {/* Right Images */}
                 <motion.div className="flex-1 flex items-center justify-center relative z-10 min-w-0 min-h-[260px] md:min-w-0 md:min-h-[420px] w-full" variants={imageVariants}>

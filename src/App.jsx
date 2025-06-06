@@ -3,10 +3,7 @@ import LetsBuildSuccessSection from './components/LetsBuildSuccessSection';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import StatsSection from './components/StatsSection';
-import ServiceIntroSection from './components/ServiceIntroSection';
 import ServicesSection from './components/ServicesSection';
-import PortfolioIntroSection from './components/PortfolioIntroSection';
-import GrowthSection from './components/GrowthSection';
 import PortfolioGallerySection from './components/PortfolioGallerySection';
 import TestimonialSection from './components/TestimonialSection';
 import TopClientsSection from './components/TopClientsSection';
@@ -21,9 +18,7 @@ function App() {
       <HeroSection />
       <AboutSection id="about" />
       <StatsSection />
-      <ServiceIntroSection id="services" />
-      <ServicesSection />
-      <GrowthSection />
+      <ServicesSection id="services" />
       <PortfolioGallerySection />
       <LetsBuildSuccessSection />
       <TestimonialSection />
