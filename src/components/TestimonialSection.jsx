@@ -17,7 +17,7 @@ const TestimonialSection = () => {
             project: "E-commerce Website"
         },
         {
-            quote: "We needed a mobile app for our food delivery startup. The team built us a beautiful Flutter app that works perfectly on both Android and iOS. Launch was smooth and customers love the interface.",
+            quote: "We needed a mobile app for our food delivery startup. The team built us a beautiful React Native app that works perfectly on both Android and iOS. Launch was smooth and customers love the interface.",
             name: "Rahul Patel",
             role: "CEO, QuickBites",
             rating: 5,

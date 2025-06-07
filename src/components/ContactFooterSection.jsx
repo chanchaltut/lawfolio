@@ -209,7 +209,7 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Your Name *"
                                                 value={formData.name}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-[#f9f9f9] ${errors.name ? "border-red-400" : "border-transparent"} focus:border-[#00e187] focus:outline-none focus:bg-white transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.name ? "border-red-400" : "border-gray-200"} focus:border-[#00e187] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
                                             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                                         </div>
@@ -220,7 +220,7 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Your Email *"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-[#f9f9f9] ${errors.email ? "border-red-400" : "border-transparent"} focus:border-[#00e187] focus:outline-none focus:bg-white transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.email ? "border-red-400" : "border-gray-200"} focus:border-[#00e187] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
                                             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                                         </div>
@@ -234,7 +234,7 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Phone Number"
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-[#f9f9f9] ${errors.phone ? "border-red-400" : "border-transparent"} focus:border-[#00e187] focus:outline-none focus:bg-white transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.phone ? "border-red-400" : "border-gray-200"} focus:border-[#00e187] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
                                             {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                                         </div>
@@ -243,7 +243,7 @@ const ContactFooterSection = ({ id }) => {
                                                 name="project"
                                                 value={formData.project}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 pr-10 rounded-xl border-2 bg-white border-gray-300 text-gray-700 focus:border-[#00e187] focus:outline-none transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer appearance-none"
+                                                className="w-full px-4 py-3 pr-10 rounded-xl border-2 bg-white border-gray-200 text-gray-700 focus:border-[#00e187] focus:outline-none transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer appearance-none"
                                             >
                                                 <option value="" disabled hidden className="text-gray-500">Select Project Type</option>
                                                 <option value="website" className="text-gray-700 py-2">Website Development</option>
@@ -268,7 +268,7 @@ const ContactFooterSection = ({ id }) => {
                                             rows="5"
                                             value={formData.message}
                                             onChange={handleChange}
-                                            className={`w-full px-4 py-3 rounded-xl border-2 bg-[#f9f9f9] ${errors.message ? "border-red-400" : "border-transparent"} focus:border-[#00e187] focus:outline-none focus:bg-white transition-all duration-300 shadow-sm hover:shadow-md resize-none`}
+                                            className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.message ? "border-red-400" : "border-gray-200"} focus:border-[#00e187] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md resize-none`}
                                         ></textarea>
                                         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                                     </div>

@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+import { sendContactEmail, sendQuoteEmail, sendEmailViaMailto } from './emailService';
 
 // Custom green theme styles
 const customStyles = {
@@ -146,13 +147,38 @@ export const showQuoteModal = () => {
       
       return { projectType, budget, timeline, description, email };
     }
-  }).then((result) => {
+  }).then(async (result) => {
     if (result.isConfirmed) {
-      // Simulate quote processing
-      showSuccessModal(
-        'Quote Request Sent! 🎉',
-        'We\'ll prepare your custom quote and send it to your email within 24 hours. Our team will also call you to discuss details!'
-      );
+      // Show loading modal
+      Swal.fire({
+        title: 'Sending Quote Request...',
+        html: 'Please wait while we process your request.',
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
+
+      // Actually send the email
+      const emailResult = await sendQuoteEmail(result.value);
+      
+      if (emailResult.success) {
+        showSuccessModal(
+          'Quote Request Sent! 🎉',
+          'We\'ll prepare your custom quote and send it to your email within 24 hours. Our team will also call you to discuss details!'
+        );
+      } else {
+        showErrorModal(
+          'Quote Request Failed',
+          emailResult.message + ' You can also contact us directly via WhatsApp or email.'
+        );
+        
+        // Fallback to mailto as backup
+        const fallbackBody = `Project Type: ${result.value.projectType}\nBudget: ${result.value.budget}\nTimeline: ${result.value.timeline}\nDescription: ${result.value.description}`;
+        setTimeout(() => {
+          sendEmailViaMailto('Quote Request', fallbackBody);
+        }, 2000);
+      }
     }
   });
 };
@@ -227,26 +253,44 @@ export const autoFillContactForm = (projectType) => {
 };
 
 // Contact form submission
-export const handleContactSubmission = (formData) => {
-  // Simulate form submission
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Simulate random success/failure for demo
-      const isSuccess = Math.random() > 0.1; // 90% success rate
+export const handleContactSubmission = async (formData) => {
+  try {
+    // Actually send the email using EmailJS
+    const emailResult = await sendContactEmail(formData);
+    
+    if (emailResult.success) {
+      showSuccessModal(
+        'Message Sent Successfully! 🎉',
+        'Thank you for reaching out! We\'ll get back to you within 24 hours with a detailed response.'
+      );
+      return true;
+    } else {
+      showErrorModal(
+        'Message Failed to Send 😞',
+        emailResult.message
+      );
       
-      if (isSuccess) {
-        showSuccessModal(
-          'Message Sent Successfully! 🎉',
-          'Thank you for reaching out! We\'ll get back to you within 24 hours with a detailed response.'
-        );
-        resolve(true);
-      } else {
-        showErrorModal(
-          'Message Failed to Send 😞',
-          'There was a temporary issue sending your message. Please try again or contact us directly via WhatsApp.'
-        );
-        resolve(false);
-      }
-    }, 1500);
-  });
+      // Fallback to mailto as backup
+      const fallbackBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\nProject: ${formData.project || 'Not specified'}\nMessage: ${formData.message}`;
+      setTimeout(() => {
+        sendEmailViaMailto(`Contact from ${formData.name}`, fallbackBody);
+      }, 2000);
+      
+      return false;
+    }
+  } catch (error) {
+    console.error('Contact submission error:', error);
+    showErrorModal(
+      'Message Failed to Send 😞',
+      'There was a technical issue. Please try contacting us directly via WhatsApp or phone.'
+    );
+    
+    // Fallback to mailto
+    const fallbackBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\nProject: ${formData.project || 'Not specified'}\nMessage: ${formData.message}`;
+    setTimeout(() => {
+      sendEmailViaMailto(`Contact from ${formData.name}`, fallbackBody);
+    }, 2000);
+    
+    return false;
+  }
 }; 

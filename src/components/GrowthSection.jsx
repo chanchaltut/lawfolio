@@ -3,8 +3,8 @@ import React from "react";
 const progressData = [
     { label: "Website Development", value: 95 },
     { label: "Mobile App Development", value: 90 },
-    { label: "React & Next.js", value: 92 },
-    { label: "Flutter & React Native", value: 88 },
+    { label: "React", value: 92 },
+    { label: "React Native", value: 88 },
 ];
 
 const GrowthSection = () => (
