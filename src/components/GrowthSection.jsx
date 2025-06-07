@@ -8,7 +8,7 @@ const progressData = [
 ];
 
 const GrowthSection = () => (
-    <section className="w-full bg-[#f4f7fb] flex flex-col md:flex-row items-center justify-center min-h-[475px] py-8 px-4">
+    <section className="w-full bg-[#f4f7fb] flex flex-col md:flex-row items-center justify-center min-h-[300px] sm:min-h-[400px] md:min-h-[475px] py-8 px-4">
         {/* Left Side */}
         <div className="flex-1 max-w-xl md:pl-24 mb-12 md:mb-0 text-left">
             <h5 className="text-[#00e187] text-lg font-semibold tracking-widest mb-2 uppercase text-left">Our Expertise</h5>

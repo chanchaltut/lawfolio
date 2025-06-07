@@ -15,6 +15,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Custom viewport height for mobile devices */
+  --vh: 1vh;
 }
 
 a {
@@ -32,6 +35,64 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+/* Fix for mobile viewport height issues */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Global mobile viewport height fix */
+html {
+  height: -webkit-fill-available;
+}
+
+/* Override body styling for mobile */
+@media (max-width: 768px) {
+  body {
+    min-height: auto;
+    height: auto;
+  }
+}
+
+/* Additional mobile fixes for better rendering */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll on mobile */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Prevent zoom on form inputs */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Fix iOS viewport units */
+  .min-h-screen, [class*="min-h-screen"] {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Android Chrome specific fixes */
+@media screen and (max-width: 767px) {
+  /* Ensure proper rendering on Android */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Fix for small screens */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 h1 {

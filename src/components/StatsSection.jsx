@@ -44,14 +44,14 @@ const StatsSection = () => {
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.2, ease: "easeOut" } } : {}}
-                className="w-full max-w-6xl mx-auto rounded-2xl bg-[#00e187] flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 md:py-20 gap-12 md:gap-0"
+                className="w-full max-w-6xl mx-auto rounded-2xl bg-[#00e187] flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 md:py-20 gap-8 md:gap-0"
             >
                 {stats.map((stat, i) => (
-                    <div key={i} className="flex flex-col items-start justify-center text-left flex-1">
-                        <span className="text-5xl md:text-6xl font-extrabold text-[#1a0a2d] text-left">
+                    <div key={i} className="flex flex-col items-center md:items-start justify-center text-center md:text-left flex-1 w-full">
+                        <span className="text-5xl md:text-6xl font-extrabold text-[#1a0a2d] text-center md:text-left">
                             {counts[i]}{stat.suffix}
                         </span>
-                        <span className="block text-xl md:text-2xl font-medium text-[#1a0a2d] mt-2 text-left">{stat.label}</span>
+                        <span className="block text-xl md:text-2xl font-medium text-[#1a0a2d] mt-2 text-center md:text-left">{stat.label}</span>
                     </div>
                 ))}
             </motion.div>
