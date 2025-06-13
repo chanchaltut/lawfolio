@@ -88,6 +88,12 @@ export const sendQuoteEmail = async (quoteData) => {
   }
 };
 
+// Send email via mailto link (fallback method)
+export const sendEmailViaMailto = (subject, body) => {
+  const mailtoLink = `mailto:${EMAIL_CONFIG.TO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoLink;
+};
+
 // Configuration instructions for setup
 export const EMAIL_SETUP_INSTRUCTIONS = `
 EmailJS Setup Instructions:
@@ -129,5 +135,6 @@ Cost: Free for up to 200 emails/month
 export default {
   sendContactEmail,
   sendQuoteEmail,
+  sendEmailViaMailto,
   EMAIL_SETUP_INSTRUCTIONS
 }; 
