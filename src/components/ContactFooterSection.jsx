@@ -129,10 +129,23 @@ const ContactFooterSection = ({ id }) => {
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-semibold text-[#1a0a2d] text-lg mb-1">Email Us</h4>
-                                    <a href="mailto:contact@codeyouridea.com" className="text-[#00e187] hover:underline text-lg">
+                                    <a href="mailto:contact@codeyouridea.com" className="text-[#00e187] hover:text-[#00c76a] text-lg transition-colors duration-200">
                                         contact@codeyouridea.com
                                     </a>
                                     <p className="text-gray-500 text-sm">We'll respond within 24 hours</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 bg-[#00e187] rounded-full flex items-center justify-center flex-shrink-0">
+                                    <FaPhone className="text-white text-lg" />
+                                </div>
+                                <div className="text-left">
+                                    <h4 className="font-semibold text-[#1a0a2d] text-lg mb-1">Call Us</h4>
+                                    <a href="tel:+919938965598" className="text-[#00e187] hover:text-[#00c76a] text-lg transition-colors duration-200">
+                                        +91 9938965598
+                                    </a>
+                                    <p className="text-gray-500 text-sm">Monday - Friday: 9:00 AM - 7:00 PM IST</p>
                                 </div>
                             </div>
 
@@ -142,21 +155,10 @@ const ContactFooterSection = ({ id }) => {
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-semibold text-[#1a0a2d] text-lg mb-1">WhatsApp</h4>
-                                    <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="text-[#00e187] hover:underline text-lg">
-                                        +91 98765 43210
+                                    <a href="https://wa.me/919938965598" target="_blank" rel="noopener noreferrer" className="text-[#00e187] hover:text-[#00c76a] text-lg transition-colors duration-200">
+                                        +91 9938965598
                                     </a>
                                     <p className="text-gray-500 text-sm">Quick chat about your project</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#00e187] rounded-full flex items-center justify-center flex-shrink-0">
-                                    <FaClock className="text-white text-lg" />
-                                </div>
-                                <div className="text-left">
-                                    <h4 className="font-semibold text-[#1a0a2d] text-lg mb-1">Working Hours</h4>
-                                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 7:00 PM IST</p>
-                                    <p className="text-gray-500 text-sm">Weekend support for urgent projects</p>
                                 </div>
                             </div>
                         </div>

@@ -45,22 +45,23 @@ const Navbar = () => {
                 px-4 md:px-8`}
         >
             {/* Logo */}
-        <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-[#1a0a2d]">Code<span className="text-[#00e187]">Your</span>Idea</span>
-        </div>
+            <div className="flex items-center gap-2">
+                <span className="text-2xl font-bold text-[#1a0a2d]">Code<span className="text-[#00e187]">Your</span>Idea</span>
+            </div>
             {/* Desktop Nav */}
             <ul className="hidden md:flex gap-8 text-lg font-medium text-[#1a0a2d]">
                 {navLinks.map((link) => (
                     <li key={link.label}>
                         <a
                             href={link.href}
-                            className="hover:text-[#00e187] transition-colors duration-200"
+                            className="relative hover:text-[#00e187] transition-colors duration-200 group"
                             onClick={e => {
                                 e.preventDefault();
                                 handleNavClick(link.href);
                             }}
                         >
                             {link.label}
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00e187] transition-all duration-300 group-hover:w-full"></span>
                         </a>
                     </li>
                 ))}
@@ -97,20 +98,21 @@ const Navbar = () => {
                         <li key={link.label}>
                             <a
                                 href={link.href}
-                                className="hover:text-[#00e187] transition-colors duration-200"
+                                className="relative hover:text-[#00e187] transition-colors duration-200 group inline-block"
                                 onClick={e => {
                                     e.preventDefault();
                                     handleNavClick(link.href);
                                 }}
                             >
                                 {link.label}
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00e187] transition-all duration-300 group-hover:w-full"></span>
                             </a>
                         </li>
                     ))}
-        </ul>
+                </ul>
             </aside>
-    </nav>
-);
+        </nav>
+    );
 };
 
 export default Navbar; 
