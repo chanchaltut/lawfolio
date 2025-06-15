@@ -54,7 +54,7 @@ const TopClientsSection = () => {
             className="w-full bg-[#f4f7fb] flex flex-col items-center justify-center py-8 px-4"
         >
             <div className="w-full max-w-6xl mx-auto flex flex-col items-center justify-center">
-                <h5 className="text-[#00e187] text-lg font-semibold tracking-[0.3em] mb-2 uppercase text-center">Top Clients</h5>
+                <h5 className="text-[#3F51B5] text-lg font-semibold tracking-[0.3em] mb-2 uppercase text-center">Top Clients</h5>
                 <h2 className="text-4xl md:text-5xl font-extrabold text-[#2d104f] mb-16 text-center">We've built solutions for</h2>
                 <div className="w-full flex items-center justify-center overflow-hidden">
                     <div className="flex transition-all duration-700 gap-12 md:gap-20" style={{ minWidth: 0 }}>

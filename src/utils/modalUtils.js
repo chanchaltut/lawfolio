@@ -3,7 +3,7 @@ import { sendContactEmail, sendQuoteEmail, sendEmailViaMailto } from './emailSer
 
 // Custom green theme styles
 const customStyles = {
-  confirmButton: '#00e187',
+  confirmButton: '#3F51B5',
   cancelButton: '#6b7280',
   popup: '#ffffff',
   title: '#1a0a2d',
@@ -69,7 +69,7 @@ export const showWarningModal = (title = "Please Complete!", message = "Please f
 // Quote Request Modal
 export const showQuoteModal = () => {
   return Swal.fire({
-    title: '💰 Get Your Project Quote',
+    title: ' Get Your Project Quote',
     html: `
       <div style="text-align: left; margin: 20px 0;">
         <div style="margin-bottom: 15px;">
@@ -123,7 +123,7 @@ export const showQuoteModal = () => {
     showCloseButton: true,
     confirmButtonColor: customStyles.confirmButton,
     cancelButtonColor: customStyles.cancelButton,
-    confirmButtonText: 'Get My Quote 💰',
+    confirmButtonText: 'Get My Quote ',
     cancelButtonText: 'Maybe Later',
     background: customStyles.popup,
     color: customStyles.title,
@@ -164,7 +164,7 @@ export const showQuoteModal = () => {
       
       if (emailResult.success) {
         showSuccessModal(
-          'Quote Request Sent! 🎉',
+          'Quote Request Sent!',
           'We\'ll prepare your custom quote and send it to your email within 24 hours. Our team will also call you to discuss details!'
         );
       } else {
@@ -195,17 +195,17 @@ export const showLetsTalkModal = () => {
           <a href="https://wa.me/919938965598?text=Hi! I'm interested in discussing a project with Code Your Idea." 
              target="_blank" 
              style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 20px; background: #25D366; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s;">
-            📱 WhatsApp Chat
+             WhatsApp Chat
           </a>
           
           <a href="mailto:contact@codeyouridea.com?subject=Project Discussion&body=Hi! I'd like to discuss a project with Code Your Idea." 
-             style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 20px; background: #00e187; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s;">
-            📧 Send Email
+             style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 20px; background: #3F51B5; color: white; text-decoration: none; border-radius: 10px; font-weight: 600; transition: all 0.3s;">
+             Send Email
           </a>
           
           <button onclick="window.location.href='tel:+919938965598'" 
                   style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 20px; background: #1a0a2d; color: white; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
-            📞 Call Us Now
+             Call Us Now
           </button>
         </div>
         
@@ -226,7 +226,7 @@ export const showLetsTalkModal = () => {
     if (result.isConfirmed) {
       scrollToSection('contact');
       showSuccessModal(
-        'Great Choice! 📞',
+        'Great Choice! ',
         'Scroll down to our contact form and mention your preferred call time. We\'ll reach out to you!'
       );
     }
@@ -246,7 +246,7 @@ export const autoFillContactForm = (projectType) => {
     }
     
     showSuccessModal(
-      'Ready to Start! 🚀',
+      'Ready to Start!',
       'We\'ve selected your project type. Just fill in your details and we\'ll get started!'
     );
   }, 1000);
@@ -260,7 +260,7 @@ export const handleContactSubmission = async (formData) => {
     
     if (emailResult.success) {
       showSuccessModal(
-        'Message Sent Successfully! 🎉',
+        'Message Sent Successfully!',
         'Thank you for reaching out! We\'ll get back to you within 24 hours with a detailed response.'
       );
       return true;

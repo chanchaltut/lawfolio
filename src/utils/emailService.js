@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 // Email Configuration
 const EMAIL_CONFIG = {
   // Web3Forms Configuration
-  WEB3FORMS_ACCESS_KEY: 'YOUR_WEB3FORMS_ACCESS_KEY', // Get from https://web3forms.com/
+  WEB3FORMS_ACCESS_KEY: 'a1f2b2e1-ce12-438f-b7b5-3cf1d3d71ae6', // Get from https://web3forms.com/
   TO_EMAIL: 'contact@codeyouridea.com',
   USE_WEB3FORMS: true
 };

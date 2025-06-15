@@ -63,7 +63,7 @@ const TestimonialSection = () => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={staggerVariants}
-            className="w-full bg-[#00e187] py-16 md:py-24 relative overflow-hidden"
+            className="w-full py-16 md:py-24 relative overflow-hidden bg-[linear-gradient(120deg,_#3F51B5_0%,_#000_100%)]"
         >
             <div className="max-w-4xl mx-auto px-4 md:px-12 text-center">
                 {/* Header */}
@@ -86,13 +86,13 @@ const TestimonialSection = () => {
                 >
                     {/* Quote Icon */}
                     <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                        <div className="w-12 h-12 bg-[#00e187] rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center">
                             <FaQuoteLeft className="text-white text-xl" />
                         </div>
                     </div>
 
                     {/* Project Type Badge */}
-                    <div className="inline-block bg-[#00e187]/10 text-[#00e187] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <div className="inline-block bg-[#3F51B5]/10 text-[#3F51B5] px-4 py-2 rounded-full text-sm font-semibold mb-6">
                         {currentTestimonial.project}
                     </div>
 
@@ -155,7 +155,7 @@ const TestimonialSection = () => {
                     </p>
                     <button
                         onClick={() => autoFillContactForm('undecided')}
-                        className="bg-white text-[#00e187] hover:bg-gray-100 font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all hover:scale-105"
+                        className="bg-white text-[#3F51B5] hover:bg-gray-100 font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all hover:scale-105"
                     >
                         Start Your Project Today
                     </button>

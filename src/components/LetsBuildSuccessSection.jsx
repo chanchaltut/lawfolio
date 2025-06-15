@@ -3,7 +3,7 @@ import { showQuoteModal, showLetsTalkModal } from "../utils/modalUtils";
 
 const LetsBuildSuccessSection = () => (
     <section className="w-full flex items-center justify-center py-8 px-4">
-        <div className="w-full max-w-6xl mx-auto rounded-2xl bg-[#00e187] flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-16 gap-8">
+        <div className="w-full max-w-6xl mx-auto rounded-2xl bg-[linear-gradient(120deg,_#3F51B5_0%,_#000_100%)] flex flex-col md:flex-row items-center justify-between px-8 md:px-20 py-16 gap-8">
             {/* Left: Text Content */}
             <div className="flex-1 flex flex-col items-start justify-center text-left">
                 <h5 className="text-white text-lg font-semibold tracking-widest mb-2 uppercase">Ready to Launch Your Idea?</h5>

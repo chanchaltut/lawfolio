@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FaCode, FaMobile, FaReact, FaNodeJs } from "react-icons/fa";
+import { FaCode, FaMobile, FaReact, FaNodeJs, FaShoppingCart, FaSearch, FaServer, FaCloud } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
 import { autoFillContactForm, scrollToSection } from "../utils/modalUtils";
 
@@ -25,7 +25,7 @@ const ServicesSection = ({ id }) => {
 
     const services = [
         {
-            icon: <FaCode className="text-5xl text-[#00e187] mb-6" />,
+            icon: <FaCode className="text-5xl text-[#3F51B5] mb-6" />,
             title: "Website Development",
             subtitle: "Fast, responsive, tailored",
             description: "Beautiful websites that convert visitors into customers. Every site is built for speed, optimized for search engines, and designed to grow with your business.",
@@ -43,7 +43,7 @@ const ServicesSection = ({ id }) => {
             ]
         },
         {
-            icon: <FaMobile className="text-5xl text-[#00e187] mb-6" />,
+            icon: <FaMobile className="text-5xl text-[#3F51B5] mb-6" />,
             title: "App Development",
             subtitle: "Cross-platform, scalable",
             description: "Native-feeling mobile apps that work perfectly on both Android and iOS. Built for performance, designed for growth, ready to scale with your success.",
@@ -72,9 +72,9 @@ const ServicesSection = ({ id }) => {
             <div className="max-w-7xl mx-auto px-4 md:px-12">
                 {/* Header */}
                 <motion.div className="text-center mb-16" variants={fadeInUp}>
-                    <h4 className="text-[#00e187] text-lg font-semibold tracking-widest mb-4 uppercase">Our Services</h4>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a0a2d] leading-tight mb-6">
-                        Two Things We Do Exceptionally Well
+                    <h4 className="text-[#3F51B5] text-lg font-semibold tracking-widest mb-4 uppercase">Our Services</h4>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#333F48] leading-tight mb-6">
+                        What We Can Do For You
                     </h2>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                         We've chosen to focus on just two services so we can deliver exceptional results every time.
@@ -93,11 +93,11 @@ const ServicesSection = ({ id }) => {
                             className="bg-white rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
                         >
                             <div className="flex flex-col items-center">
-                                {service.icon}
-                                <h3 className="text-2xl md:text-3xl font-bold text-[#1a0a2d] mb-2 group-hover:text-[#00e187] transition-colors">
-                                    {service.title}
-                                </h3>
-                                <p className="text-[#00e187] font-semibold text-lg mb-4 italic">
+                                <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mb-6">
+                                    <FaCode className="text-white text-2xl" />
+                                </div>
+                                <h3 className="text-xl font-bold text-[#333F48] mb-4">Web Development</h3>
+                                <p className="text-[#3F51B5] font-semibold text-lg mb-4 italic">
                                     {service.subtitle}
                                 </p>
                                 <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-md">
@@ -110,7 +110,7 @@ const ServicesSection = ({ id }) => {
                                     <ul className="space-y-3">
                                         {service.features.map((feature, idx) => (
                                             <li key={idx} className="flex items-center justify-center gap-3">
-                                                <div className="w-2 h-2 bg-[#00e187] rounded-full flex-shrink-0"></div>
+                                                <div className="w-2 h-2 bg-[#3F51B5] rounded-full flex-shrink-0"></div>
                                                 <span className="text-gray-600">{feature}</span>
                                             </li>
                                         ))}
@@ -123,7 +123,7 @@ const ServicesSection = ({ id }) => {
                                     <div className="flex flex-wrap justify-center gap-3">
                                         {service.tech.map((tech, idx) => (
                                             <div key={idx} className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full">
-                                                <span className="text-[#00e187]">{tech.icon}</span>
+                                                <span className="text-[#3F51B5]">{tech.icon}</span>
                                                 <span className="text-sm font-medium text-gray-700">{tech.name}</span>
                                             </div>
                                         ))}
@@ -148,13 +148,13 @@ const ServicesSection = ({ id }) => {
                     <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                         <button
                             onClick={() => autoFillContactForm('undecided')}
-                            className="bg-[#00e187] hover:bg-[#00c76a] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all hover:scale-105"
+                            className="bg-[#3F51B5] hover:bg-[#5C6BC0] text-white hover:text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all hover:scale-105"
                         >
                             Start Your Project
                         </button>
                         <button
                             onClick={() => scrollToSection('portfolio')}
-                            className="border-2 border-[#00e187] text-[#00e187] hover:bg-[#00e187] hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:scale-105"
+                            className="border-2 border-[#3F51B5] text-[#3F51B5] hover:bg-[#3F51B5] hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:scale-105"
                         >
                             View Our Work
                         </button>

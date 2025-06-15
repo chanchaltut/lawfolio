@@ -1,4 +1,4 @@
-# 🚀 **Web3Forms Setup - Direct Email Sending (2 Minutes)**
+# **Web3Forms Setup - Direct Email Sending (2 Minutes)**
 
 ## **Quick Setup to Enable Direct Email Sending**
 
@@ -80,4 +80,4 @@ Perfect for most small businesses!
 ✅ **Let's Talk Modal**: WhatsApp, Phone, Email options  
 ✅ **All Call-to-Actions**: Working perfectly  
 
-**Result**: Professional contact form that sends emails directly without any user email client interaction! 🎉 
+**Result**: Professional contact form that sends emails directly without any user email client interaction! 

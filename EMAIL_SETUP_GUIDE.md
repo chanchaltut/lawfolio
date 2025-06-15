@@ -1,6 +1,6 @@
 # EmailJS Setup Guide for Code Your Idea
 
-## 🚀 **Quick Setup to Enable Real Email Sending**
+## **Quick Setup to Enable Real Email Sending**
 
 Currently, the website has **real email functionality** implemented but needs EmailJS configuration to work. Follow these steps to enable email sending to `contact@codeyouridea.com`.
 
@@ -120,7 +120,7 @@ For higher volumes, EmailJS offers paid plans starting at $15/month for 1000 ema
 
 ---
 
-## **🎯 What This Enables**
+## **What This Enables**
 
 ✅ **Contact Form**: Real emails to contact@codeyouridea.com  
 ✅ **Quote Requests**: Detailed project info via email  
@@ -159,4 +159,4 @@ If you prefer not to use EmailJS, you can:
 
 ---
 
-**💡 Current Status**: Email service is fully implemented but needs EmailJS credentials to send real emails. The fallback system ensures users can always contact you via mailto, WhatsApp, or phone. 
+**Current Status**: Email service is fully implemented but needs EmailJS credentials to send real emails. The fallback system ensures users can always contact you via mailto, WhatsApp, or phone. 

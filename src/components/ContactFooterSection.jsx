@@ -90,8 +90,8 @@ const ContactFooterSection = ({ id }) => {
             <div className="max-w-7xl mx-auto px-4 md:px-12">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h4 className="text-[#00e187] text-lg font-semibold tracking-widest mb-4 uppercase">Get In Touch</h4>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a0a2d] leading-tight mb-6">
+                    <h4 className="text-[#3F51B5] text-lg font-semibold tracking-widest mb-4 uppercase">Get In Touch</h4>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#333F48] leading-tight mb-6">
                         Let's Build Something Amazing Together
                     </h2>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -103,7 +103,7 @@ const ContactFooterSection = ({ id }) => {
                     {/* Left - Contact Info */}
                     <motion.div className="space-y-8" variants={leftVariants}>
                         <div>
-                            <h3 className="text-2xl font-bold text-[#1a0a2d] mb-6 text-left">Let's Start the Conversation</h3>
+                            <h3 className="text-2xl font-bold text-[#333F48] mb-6 text-left">Let's Start the Conversation</h3>
                             <p className="text-gray-600 text-lg mb-8 text-left">
                                 Whether you need a new website, mobile app, or want to discuss your next big idea,
                                 we're here to help. Get in touch and let's make it happen.
@@ -113,23 +113,23 @@ const ContactFooterSection = ({ id }) => {
                         {/* Contact Items */}
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#00e187] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center flex-shrink-0">
                                     <FaMapMarkerAlt className="text-white text-lg" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-[#1a0a2d] text-lg mb-1">Our Location</h4>
+                                    <h4 className="font-semibold text-[#333F48] text-lg mb-1">Our Location</h4>
                                     <p className="text-gray-600">Balangir, Odisha, India</p>
                                     <p className="text-gray-500 text-sm">Serving clients worldwide</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#00e187] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center flex-shrink-0">
                                     <FaEnvelope className="text-white text-lg" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-[#1a0a2d] text-lg mb-1">Email Us</h4>
-                                    <a href="mailto:contact@codeyouridea.com" className="text-[#00e187] hover:text-[#00c76a] text-lg transition-colors duration-200">
+                                    <h4 className="font-semibold text-[#333F48] text-lg mb-1">Email Us</h4>
+                                    <a href="mailto:contact@codeyouridea.com" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200">
                                         contact@codeyouridea.com
                                     </a>
                                     <p className="text-gray-500 text-sm">We'll respond within 24 hours</p>
@@ -137,12 +137,12 @@ const ContactFooterSection = ({ id }) => {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#00e187] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center flex-shrink-0">
                                     <FaPhone className="text-white text-lg" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-[#1a0a2d] text-lg mb-1">Call Us</h4>
-                                    <a href="tel:+919938965598" className="text-[#00e187] hover:text-[#00c76a] text-lg transition-colors duration-200">
+                                    <h4 className="font-semibold text-[#333F48] text-lg mb-1">Call Us</h4>
+                                    <a href="tel:+919938965598" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200">
                                         +91 9938965598
                                     </a>
                                     <p className="text-gray-500 text-sm">Monday - Friday: 9:00 AM - 7:00 PM IST</p>
@@ -150,12 +150,12 @@ const ContactFooterSection = ({ id }) => {
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#00e187] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center flex-shrink-0">
                                     <FaWhatsapp className="text-white text-lg" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-[#1a0a2d] text-lg mb-1">WhatsApp</h4>
-                                    <a href="https://wa.me/919938965598" target="_blank" rel="noopener noreferrer" className="text-[#00e187] hover:text-[#00c76a] text-lg transition-colors duration-200">
+                                    <h4 className="font-semibold text-[#333F48] text-lg mb-1">WhatsApp</h4>
+                                    <a href="https://wa.me/919938965598" target="_blank" rel="noopener noreferrer" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200">
                                         +91 9938965598
                                     </a>
                                     <p className="text-gray-500 text-sm">Quick chat about your project</p>
@@ -165,7 +165,7 @@ const ContactFooterSection = ({ id }) => {
 
                         {/* Social Links */}
                         <div>
-                            <h4 className="font-semibold text-[#1a0a2d] text-lg mb-4 text-left">Follow Our Work</h4>
+                            <h4 className="font-semibold text-[#333F48] text-lg mb-4 text-left">Follow Our Work</h4>
                             <div className="flex gap-4">
                                 <a href="#" className="w-12 h-12 bg-gray-200 hover:bg-[#0077B5] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                                     <FaLinkedin className="text-xl" />
@@ -189,16 +189,16 @@ const ContactFooterSection = ({ id }) => {
                     {/* Right - Contact Form */}
                     <motion.div variants={rightVariants}>
                         <div className="bg-white rounded-2xl p-8 shadow-lg">
-                            <h3 className="text-2xl font-bold text-[#1a0a2d] mb-6">Send Us a Message</h3>
+                            <h3 className="text-2xl font-bold text-[#333F48] mb-6">Send Us a Message</h3>
 
                             {isSubmitted ? (
                                 <div className="text-center py-8">
-                                    <div className="w-16 h-16 bg-[#00e187] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mx-auto mb-4">
                                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <h4 className="text-xl font-semibold text-[#1a0a2d] mb-2">Message Sent!</h4>
+                                    <h4 className="text-xl font-semibold text-[#333F48] mb-2">Message Sent!</h4>
                                     <p className="text-gray-600">We'll get back to you within 24 hours.</p>
                                 </div>
                             ) : (
@@ -211,7 +211,7 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Your Name *"
                                                 value={formData.name}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.name ? "border-red-400" : "border-gray-200"} focus:border-[#00e187] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.name ? "border-red-400" : "border-gray-200"} focus:border-[#3F51B5] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
                                             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                                         </div>
@@ -222,7 +222,7 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Your Email *"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.email ? "border-red-400" : "border-gray-200"} focus:border-[#00e187] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.email ? "border-red-400" : "border-gray-200"} focus:border-[#3F51B5] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
                                             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                                         </div>
@@ -236,7 +236,7 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Phone Number"
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.phone ? "border-red-400" : "border-gray-200"} focus:border-[#00e187] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.phone ? "border-red-400" : "border-gray-200"} focus:border-[#3F51B5] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
                                             {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                                         </div>
@@ -245,7 +245,7 @@ const ContactFooterSection = ({ id }) => {
                                                 name="project"
                                                 value={formData.project}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 pr-10 rounded-xl border-2 bg-white border-gray-200 text-gray-700 focus:border-[#00e187] focus:outline-none transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer appearance-none"
+                                                className="w-full px-4 py-3 pr-10 rounded-xl border-2 bg-white border-gray-200 text-gray-700 focus:border-[#3F51B5] focus:outline-none transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer appearance-none"
                                             >
                                                 <option value="" disabled hidden className="text-gray-500">Select Project Type</option>
                                                 <option value="website" className="text-gray-700 py-2">Website Development</option>
@@ -270,14 +270,14 @@ const ContactFooterSection = ({ id }) => {
                                             rows="5"
                                             value={formData.message}
                                             onChange={handleChange}
-                                            className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.message ? "border-red-400" : "border-gray-200"} focus:border-[#00e187] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md resize-none`}
+                                            className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.message ? "border-red-400" : "border-gray-200"} focus:border-[#3F51B5] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md resize-none`}
                                         ></textarea>
                                         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                                     </div>
 
                                     <button
                                         type="submit"
-                                        className="w-full bg-[#00e187] hover:bg-[#00c76a] text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                        className="w-full bg-[#3F51B5] hover:bg-[#5C6BC0] text-white hover:text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                                     >
                                         Send Message
                                     </button>
@@ -292,15 +292,15 @@ const ContactFooterSection = ({ id }) => {
             <div className="max-w-7xl mx-auto px-4 md:px-12 mt-12 pt-6 border-t border-gray-300">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-3">
                     <div className="text-center md:text-left">
-                        <h4 className="text-2xl font-bold text-[#1a0a2d] mb-1">
-                            Code<span className="text-[#00e187]">Your</span>Idea
+                        <h4 className="text-2xl font-bold text-[#333F48] mb-1">
+                            Code<span className="text-[#3F51B5]">Your</span>Idea
                         </h4>
-                        <p className="text-gray-600 font-medium">Turning Ideas into Digital Reality ✨</p>
+                        <p className="text-gray-600 font-medium">Turning Ideas into Digital Reality</p>
                     </div>
                     <div className="text-center md:text-right">
                         <p className="text-gray-600 font-medium">© 2024 Code Your Idea. All rights reserved.</p>
-                        <p className="text-[#00e187] font-semibold text-sm flex items-center justify-center md:justify-end gap-1">
-                            Made with <span className="text-red-500 text-base">❤️</span> in India
+                        <p className="text-[#3F51B5] font-semibold text-sm flex items-center justify-center md:justify-end gap-1">
+                            Made with passion in India
                         </p>
                     </div>
                 </div>
