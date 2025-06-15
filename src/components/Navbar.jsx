@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/images/logo-img.svg";
+import logo from "/logo.png";
 
 const navLinks = [
     { label: "Home", href: "#" },
@@ -46,7 +46,7 @@ const Navbar = () => {
         >
             {/* Logo */}
             <div className="flex items-center gap-2">
-                <span className="text-2xl font-bold text-[#1a0a2d]">Code<span className="text-[#3F51B5]">Your</span>Idea</span>
+                <img src={logo} alt="CodeYourIdea Logo" className="h-10 w-auto" />
             </div>
             {/* Desktop Nav */}
             <ul className="hidden md:flex gap-8 text-lg font-medium text-[#1a0a2d]">
