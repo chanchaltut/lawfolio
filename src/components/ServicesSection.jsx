@@ -25,7 +25,7 @@ const ServicesSection = ({ id }) => {
 
     const services = [
         {
-            icon: <FaCode className="text-5xl text-[#3F51B5] mb-6" />,
+            icon: <FaCode className="text-white text-2xl" />,
             title: "Website Development",
             subtitle: "Fast, responsive, tailored",
             description: "Beautiful websites that convert visitors into customers. Every site is built for speed, optimized for search engines, and designed to grow with your business.",
@@ -43,7 +43,7 @@ const ServicesSection = ({ id }) => {
             ]
         },
         {
-            icon: <FaMobile className="text-5xl text-[#3F51B5] mb-6" />,
+            icon: <FaMobile className="text-white text-2xl" />,
             title: "App Development",
             subtitle: "Cross-platform, scalable",
             description: "Native-feeling mobile apps that work perfectly on both Android and iOS. Built for performance, designed for growth, ready to scale with your success.",
@@ -94,9 +94,9 @@ const ServicesSection = ({ id }) => {
                         >
                             <div className="flex flex-col items-center">
                                 <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mb-6">
-                                    <FaCode className="text-white text-2xl" />
+                                    {service.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-[#333F48] mb-4">Web Development</h3>
+                                <h3 className="text-xl font-bold text-[#333F48] mb-4">{service.title}</h3>
                                 <p className="text-[#3F51B5] font-semibold text-lg mb-4 italic">
                                     {service.subtitle}
                                 </p>
