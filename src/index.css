@@ -1,130 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #f6f7fc;
+  /* Futuristic color scheme */
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #1a1a2e;
+  --color-bg-tertiary: #16213e;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e2e8f0;
+  --color-accent-blue: #0073e6;
+  --color-accent-cyan: #00e6e6;
+  --color-accent-purple: #7d00e6;
+
+  color-scheme: dark;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   /* Custom viewport height for mobile devices */
   --vh: 1vh;
+
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
 }
 
-a {
-  font-weight: 500;
-  color: #3F51B5;
-  text-decoration: inherit;
+/* Base styles */
+* {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  height: -webkit-fill-available;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
+  color: var(--color-text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* Fix for mobile viewport height issues */
-@supports (-webkit-touch-callout: none) {
-  body {
-    min-height: -webkit-fill-available;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-accent-blue), var(--color-accent-cyan));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-accent-cyan), var(--color-accent-purple));
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent-blue) var(--color-bg-primary);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* Links */
+a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+a:hover {
+  color: var(--color-accent-cyan);
+  text-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
+}
+
+/* Buttons */
+button {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+button:focus {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* Futuristic button styles */
+.btn-futuristic {
+  background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-cyan));
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 115, 230, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-futuristic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 115, 230, 0.4);
+}
+
+.btn-futuristic:active {
+  transform: translateY(0);
+}
+
+/* Glassmorphism effects */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 115, 230, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 230, 230, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(125, 0, 230, 0.3);
+}
+
+/* Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
   }
 }
 
-/* Global mobile viewport height fix */
-html {
-  height: -webkit-fill-available;
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--color-accent-blue), 0 0 10px var(--color-accent-blue), 0 0 15px var(--color-accent-blue);
+  }
+
+  50% {
+    box-shadow: 0 0 10px var(--color-accent-blue), 0 0 20px var(--color-accent-blue), 0 0 30px var(--color-accent-blue);
+  }
 }
 
-/* Override body styling for mobile */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Utility classes */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-futuristic {
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
+}
+
+.bg-gradient-glow {
+  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 30%, var(--color-bg-tertiary) 70%, var(--color-bg-primary) 100%);
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
   body {
     min-height: auto;
     height: auto;
   }
-}
 
-/* Additional mobile fixes for better rendering */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-/* Prevent horizontal scroll on mobile */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-/* iOS Safari specific fixes */
-@supports (-webkit-touch-callout: none) {
-  /* Prevent zoom on form inputs */
-  input, select, textarea {
-    font-size: 16px;
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
-  
-  /* Fix iOS viewport units */
-  .min-h-screen, [class*="min-h-screen"] {
-    min-height: -webkit-fill-available;
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
   }
 }
 
-/* Android Chrome specific fixes */
-@media screen and (max-width: 767px) {
-  /* Ensure proper rendering on Android */
-  html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: var(--color-accent-blue);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--color-accent-blue);
+  color: white;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Custom cursor styles */
+body {
+  cursor: none !important;
+}
+
+/* Show default cursor on interactive elements when custom cursor is disabled */
+a,
+button,
+.interactive,
+[role="button"],
+input,
+textarea,
+select {
+  cursor: none !important;
+}
+
+/* Hide cursor on mobile devices */
+@media (max-width: 768px) {
+
+  body,
+  a,
+  button,
+  .interactive,
+  [role="button"] {
+    cursor: auto;
   }
-  
-  /* Fix for small screens */
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
+/* Remove light theme overrides */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-primary);
   }
 }

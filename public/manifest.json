@@ -1,7 +1,7 @@
 {
     "name": "Code Your Idea - Web & App Development Agency",
     "short_name": "Code Your Idea",
-    "description": "Leading web and mobile app development agency in Balangir, Odisha. We build modern websites and apps for startups and businesses.",
+    "description": "Leading web and mobile app development agency in Kolkata, India. We build modern websites and apps for startups and businesses.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
@@ -18,27 +18,27 @@
         {
             "src": "/logo.png",
             "sizes": "192x192",
-            "type": "image/webp",
+            "type": "image/png",
             "purpose": "any maskable"
         },
         {
             "src": "/logo.png",
             "sizes": "512x512",
-            "type": "image/webp",
+            "type": "image/png",
             "purpose": "any maskable"
         }
     ],
     "screenshots": [
         {
-            "src": "/screenshot-desktop.webp",
+            "src": "/screenshot-desktop.png",
             "sizes": "1280x720",
-            "type": "image/webp",
+            "type": "image/png",
             "form_factor": "wide"
         },
         {
-            "src": "/screenshot-mobile.webp",
+            "src": "/screenshot-mobile.png",
             "sizes": "390x844",
-            "type": "image/webp",
+            "type": "image/png",
             "form_factor": "narrow"
         }
     ]

@@ -53,11 +53,11 @@ const TopClientsSection = () => {
             ref={ref}
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } } : {}}
-            className="w-full bg-[#f4f7fb] flex flex-col items-center justify-center py-8 px-4"
+            className="w-full bg-transparent flex flex-col items-center justify-center py-8 px-4"
         >
             <div className="w-full max-w-6xl mx-auto flex flex-col items-center justify-center">
-                <h5 className="text-[#3F51B5] text-lg font-semibold tracking-[0.3em] mb-2 uppercase text-center">Top Clients</h5>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-[#2d104f] mb-16 text-center">We've built solutions for</h2>
+                <h5 className="text-futuristic-cyan-300 text-lg font-semibold tracking-[0.3em] mb-2 uppercase text-center">Top Clients</h5>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-16 text-center">We've built solutions for</h2>
                 <div className="w-full flex items-center justify-center overflow-hidden">
                     <div className="flex transition-all duration-700 gap-12 md:gap-20" style={{ minWidth: 0 }}>
                         {visibleClients.map((client, idx) => (
@@ -65,8 +65,8 @@ const TopClientsSection = () => {
                                 key={idx}
                                 src={client.src}
                                 alt={client.alt}
-                                className="h-24 w-auto object-contain max-w-[180px] flex-shrink-0"
-                                style={{ filter: "grayscale(0%)" }}
+                                className="h-24 w-auto object-contain max-w-[180px] flex-shrink-0 opacity-90 hover:opacity-100 transition-opacity"
+                                style={{ filter: "drop-shadow(0 0 12px rgba(0,115,230,0.25))" }}
                                 custom={idx}
                                 variants={logoVariants}
                                 initial="hidden"

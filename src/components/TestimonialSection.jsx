@@ -66,12 +66,12 @@ const TestimonialSection = () => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={staggerVariants}
-            className="w-full py-16 md:py-24 relative overflow-hidden bg-[linear-gradient(120deg,_#3F51B5_0%,_#000_100%)]"
+            className="w-full py-16 md:py-24 relative overflow-hidden backdrop-blur-sm bg-gradient-to-r from-futuristic-blue-600/30 via-black/40 to-futuristic-purple-600/30"
         >
             <div className="max-w-4xl mx-auto px-4 md:px-12 text-center">
                 {/* Header */}
                 <motion.div variants={itemVariants} className="mb-12">
-                    <h4 className="text-white/80 text-lg font-semibold tracking-widest mb-4 uppercase">Client Success Stories</h4>
+                    <h4 className="text-futuristic-cyan-200 text-lg font-semibold tracking-widest mb-4 uppercase">Client Success Stories</h4>
                     <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
                         What Our Clients Say
                     </h2>
@@ -85,17 +85,17 @@ const TestimonialSection = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -50 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl relative"
+                    className="rounded-3xl p-8 md:p-12 shadow-futuristic relative backdrop-blur-md bg-white/5 border border-white/10"
                 >
                     {/* Quote Icon */}
                     <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                        <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500 shadow-glow-blue">
                             <FaQuoteLeft className="text-white text-xl" />
                         </div>
                     </div>
 
                     {/* Project Type Badge */}
-                    <div className="inline-block bg-[#3F51B5]/10 text-[#3F51B5] px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <div className="inline-block bg-futuristic-blue-500/10 text-futuristic-cyan-200 px-4 py-2 rounded-full text-sm font-semibold mb-6">
                         {currentTestimonial.project}
                     </div>
 
@@ -107,16 +107,16 @@ const TestimonialSection = () => {
                     </div>
 
                     {/* Quote */}
-                    <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-8 italic">
+                    <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8 italic">
                         "{currentTestimonial.quote}"
                     </p>
 
                     {/* Author Info */}
                     <div>
-                        <h4 className="text-[#1a0a2d] text-xl font-bold mb-1">
+                        <h4 className="text-white text-xl font-bold mb-1">
                             {currentTestimonial.name}
                         </h4>
-                        <p className="text-gray-600 text-lg">
+                        <p className="text-white/70 text-lg">
                             {currentTestimonial.role}
                         </p>
                     </div>
@@ -126,7 +126,7 @@ const TestimonialSection = () => {
                 <motion.div variants={itemVariants} className="flex items-center justify-center gap-4 mt-8">
                     <button
                         onClick={prevTestimonial}
-                        className="w-12 h-12 bg-white/20 hover:bg-white/30 text-white rounded-full flex items-center justify-center transition-all"
+                        className="w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all"
                     >
                         <FaChevronLeft />
                     </button>
@@ -137,7 +137,7 @@ const TestimonialSection = () => {
                             <button
                                 key={index}
                                 onClick={() => setCurrentIndex(index)}
-                                className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? "bg-white" : "bg-white/40"
+                                className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? "bg-futuristic-cyan-300" : "bg-white/40"
                                     }`}
                             />
                         ))}
@@ -145,7 +145,7 @@ const TestimonialSection = () => {
 
                     <button
                         onClick={nextTestimonial}
-                        className="w-12 h-12 bg-white/20 hover:bg-white/30 text-white rounded-full flex items-center justify-center transition-all"
+                        className="w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-all"
                     >
                         <FaChevronRight />
                     </button>
@@ -158,7 +158,7 @@ const TestimonialSection = () => {
                     </p>
                     <button
                         onClick={() => autoFillContactForm('undecided')}
-                        className="bg-white text-[#3F51B5] hover:bg-gray-100 font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all hover:scale-105"
+                        className="btn-futuristic text-lg px-8 py-4 rounded-full"
                     >
                         Start Your Project Today
                     </button>
@@ -166,8 +166,8 @@ const TestimonialSection = () => {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
-            <div className="absolute bottom-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
+            <div className="absolute top-10 left-10 w-20 h-20 bg-futuristic-blue-500/20 rounded-full blur-2xl"></div>
+            <div className="absolute bottom-10 right-10 w-32 h-32 bg-futuristic-purple-500/10 rounded-full blur-3xl"></div>
         </motion.section>
     );
 };

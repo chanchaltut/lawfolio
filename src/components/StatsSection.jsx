@@ -39,12 +39,12 @@ const StatsSection = () => {
             ref={ref}
             initial={{ opacity: 0, y: 40 }}
             animate={inView ? { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } } : {}}
-            className="w-full py-16 md:py-24 bg-white"
+            className="w-full py-16 md:py-24 bg-transparent"
         >
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.2, ease: "easeOut" } } : {}}
-                className="w-full max-w-6xl mx-auto rounded-2xl bg-[linear-gradient(120deg,_#3F51B5_0%,_#000_100%)] flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 md:py-20 gap-8 md:gap-0"
+                className="w-full max-w-6xl mx-auto rounded-2xl backdrop-blur-sm bg-gradient-to-r from-futuristic-blue-600/30 via-black/40 to-futuristic-purple-600/30 border border-white/10 flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 md:py-20 gap-8 md:gap-0 shadow-futuristic"
             >
                 {stats.map((stat, i) => (
                     <div key={i} className="flex flex-col items-center md:items-start justify-center text-center md:text-left flex-1 w-full">

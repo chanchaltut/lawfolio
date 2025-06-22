@@ -90,16 +90,16 @@ const ContactFooterSection = ({ id }) => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             id={id}
-            className="w-full bg-gray-50 pt-16 md:pt-24 md:pt-32 pb-4"
+            className="w-full bg-transparent pt-16 md:pt-24 md:pt-32 pb-4"
         >
             <div className="max-w-7xl mx-auto px-4 md:px-12">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h4 className="text-[#3F51B5] text-lg font-semibold tracking-widest mb-4 uppercase">Get In Touch</h4>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#333F48] leading-tight mb-6">
+                    <h4 className="text-futuristic-cyan-300 text-lg font-semibold tracking-widest mb-4 uppercase">Get In Touch</h4>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
                         Let's Build Something Amazing Together
                     </h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-white/70 text-lg max-w-2xl mx-auto">
                         Ready to bring your idea to life? We'd love to hear about your project and show you how we can help.
                     </p>
                 </div>
@@ -108,8 +108,8 @@ const ContactFooterSection = ({ id }) => {
                     {/* Left - Contact Info */}
                     <motion.div className="space-y-8" variants={leftVariants}>
                         <div>
-                            <h3 className="text-2xl font-bold text-[#333F48] mb-6 text-left">Let's Start the Conversation</h3>
-                            <p className="text-gray-600 text-lg mb-8 text-left">
+                            <h3 className="text-2xl font-bold text-white mb-6 text-left">Let's Start the Conversation</h3>
+                            <p className="text-white/70 text-lg mb-8 text-left">
                                 Whether you need a new website, mobile app, or want to discuss your next big idea,
                                 we're here to help. Get in touch and let's make it happen.
                             </p>
@@ -118,52 +118,52 @@ const ContactFooterSection = ({ id }) => {
                         {/* Contact Items */}
                         <div className="space-y-6">
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500 shadow-glow-blue">
                                     <FaMapMarkerAlt className="text-white text-lg" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-[#333F48] text-lg mb-1">Our Location</h4>
-                                    <p className="text-gray-600">Balangir, Odisha, India</p>
-                                    <p className="text-gray-500 text-sm">Serving clients worldwide</p>
+                                    <h4 className="font-semibold text-white text-lg mb-1">Our Location</h4>
+                                    <p className="text-white/80">Kolkata, India</p>
+                                    <p className="text-white/60 text-sm">Serving clients worldwide</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500 shadow-glow-blue">
                                     <FaEnvelope className="text-white text-lg" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-[#333F48] text-lg mb-1">Email Us</h4>
-                                    <a href="mailto:contact@codeyouridea.com" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('email')}>
+                                    <h4 className="font-semibold text-white text-lg mb-1">Email Us</h4>
+                                    <a href="mailto:contact@codeyouridea.com" className="text-futuristic-cyan-300 hover:text-futuristic-cyan-200 text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('email')}>
                                         contact@codeyouridea.com
                                     </a>
-                                    <p className="text-gray-500 text-sm">We'll respond within 24 hours</p>
+                                    <p className="text-white/60 text-sm">We'll respond within 24 hours</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500 shadow-glow-blue">
                                     <FaPhone className="text-white text-lg" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-[#333F48] text-lg mb-1">Call Us</h4>
-                                    <a href="tel:+919938965598" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('phone')}>
+                                    <h4 className="font-semibold text-white text-lg mb-1">Call Us</h4>
+                                    <a href="tel:+919938965598" className="text-futuristic-cyan-300 hover:text-futuristic-cyan-200 text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('phone')}>
                                         +91 9938965598
                                     </a>
-                                    <p className="text-gray-500 text-sm">Monday - Friday: 9:00 AM - 7:00 PM IST</p>
+                                    <p className="text-white/60 text-sm">Monday - Friday: 9:00 AM - 7:00 PM IST</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 bg-[#3F51B5] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500 shadow-glow-blue">
                                     <FaWhatsapp className="text-white text-lg" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-[#333F48] text-lg mb-1">WhatsApp</h4>
-                                    <a href="https://wa.me/919938965598" target="_blank" rel="noopener noreferrer" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('whatsapp')}>
+                                    <h4 className="font-semibold text-white text-lg mb-1">WhatsApp</h4>
+                                    <a href="https://wa.me/919938965598" target="_blank" rel="noopener noreferrer" className="text-futuristic-cyan-300 hover:text-futuristic-cyan-200 text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('whatsapp')}>
                                         +91 9938965598
                                     </a>
-                                    <p className="text-gray-500 text-sm">Quick chat about your project</p>
+                                    <p className="text-white/60 text-sm">Quick chat about your project</p>
                                 </div>
                             </div>
                         </div>
@@ -193,18 +193,18 @@ const ContactFooterSection = ({ id }) => {
 
                     {/* Right - Contact Form */}
                     <motion.div variants={rightVariants}>
-                        <div className="bg-white rounded-2xl p-8 shadow-lg">
-                            <h3 className="text-2xl font-bold text-[#333F48] mb-6">Send Us a Message</h3>
+                        <div className="rounded-2xl p-8 backdrop-blur-md bg-white/5 border border-white/10 shadow-futuristic">
+                            <h3 className="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
 
                             {isSubmitted ? (
                                 <div className="text-center py-8">
-                                    <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500 shadow-glow-blue">
                                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <h4 className="text-xl font-semibold text-[#333F48] mb-2">Message Sent!</h4>
-                                    <p className="text-gray-600">We'll get back to you within 24 hours.</p>
+                                    <h4 className="text-xl font-semibold text-white mb-2">Message Sent!</h4>
+                                    <p className="text-white/70">We'll get back to you within 24 hours.</p>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -216,9 +216,9 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Your Name *"
                                                 value={formData.name}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.name ? "border-red-400" : "border-gray-200"} focus:border-[#3F51B5] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border bg-white/5 ${errors.name ? "border-red-400" : "border-white/10"} focus:border-futuristic-cyan-400 focus:outline-none text-white placeholder-white/50 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
-                                            {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                                            {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
                                         </div>
                                         <div>
                                             <input
@@ -227,9 +227,9 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Your Email *"
                                                 value={formData.email}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.email ? "border-red-400" : "border-gray-200"} focus:border-[#3F51B5] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border bg-white/5 ${errors.email ? "border-red-400" : "border-white/10"} focus:border-futuristic-cyan-400 focus:outline-none text-white placeholder-white/50 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
-                                            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                                            {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
                                         </div>
                                     </div>
 
@@ -241,27 +241,27 @@ const ContactFooterSection = ({ id }) => {
                                                 placeholder="Phone Number"
                                                 value={formData.phone}
                                                 onChange={handleChange}
-                                                className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.phone ? "border-red-400" : "border-gray-200"} focus:border-[#3F51B5] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md`}
+                                                className={`w-full px-4 py-3 rounded-xl border bg-white/5 ${errors.phone ? "border-red-400" : "border-white/10"} focus:border-futuristic-cyan-400 focus:outline-none text-white placeholder-white/50 transition-all duration-300 shadow-sm hover:shadow-md`}
                                             />
-                                            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                                            {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
                                         </div>
                                         <div className="relative">
                                             <select
                                                 name="project"
                                                 value={formData.project}
                                                 onChange={handleChange}
-                                                className="w-full px-4 py-3 pr-10 rounded-xl border-2 bg-white border-gray-200 text-gray-700 focus:border-[#3F51B5] focus:outline-none transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer appearance-none"
+                                                className="w-full px-4 py-3 pr-10 rounded-xl border bg-white/5 border-white/10 text-white focus:border-futuristic-cyan-400 focus:outline-none transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer appearance-none"
                                             >
-                                                <option value="" disabled hidden className="text-gray-500">Select Project Type</option>
-                                                <option value="website" className="text-gray-700 py-2">Website Development</option>
-                                                <option value="app" className="text-gray-700 py-2">Mobile App Development</option>
-                                                <option value="both" className="text-gray-700 py-2">Website + App</option>
-                                                <option value="consultation" className="text-gray-700 py-2">Just a Consultation</option>
-                                                <option value="undecided" className="text-gray-700 py-2">Not specific or decided yet</option>
+                                                <option value="" disabled hidden className="text-white/70 bg-black">Select Project Type</option>
+                                                <option value="website" className="text-black py-2">Website Development</option>
+                                                <option value="app" className="text-black py-2">Mobile App Development</option>
+                                                <option value="both" className="text-black py-2">Website + App</option>
+                                                <option value="consultation" className="text-black py-2">Just a Consultation</option>
+                                                <option value="undecided" className="text-black py-2">Not specific or decided yet</option>
                                             </select>
                                             {/* Custom dropdown arrow */}
                                             <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                                                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                                 </svg>
                                             </div>
@@ -275,14 +275,14 @@ const ContactFooterSection = ({ id }) => {
                                             rows="5"
                                             value={formData.message}
                                             onChange={handleChange}
-                                            className={`w-full px-4 py-3 rounded-xl border-2 bg-white ${errors.message ? "border-red-400" : "border-gray-200"} focus:border-[#3F51B5] focus:outline-none text-gray-700 placeholder-gray-400 transition-all duration-300 shadow-sm hover:shadow-md resize-none`}
+                                            className={`w-full px-4 py-3 rounded-xl border bg-white/5 ${errors.message ? "border-red-400" : "border-white/10"} focus:border-futuristic-cyan-400 focus:outline-none text-white placeholder-white/50 transition-all duration-300 shadow-sm hover:shadow-md resize-none`}
                                         ></textarea>
-                                        {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+                                        {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
                                     </div>
 
                                     <button
                                         type="submit"
-                                        className="w-full bg-[#3F51B5] hover:bg-[#5C6BC0] text-white hover:text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                        className="w-full btn-futuristic font-semibold py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1"
                                     >
                                         Send Message
                                     </button>
@@ -294,17 +294,17 @@ const ContactFooterSection = ({ id }) => {
             </div>
 
             {/* Slim & Attractive Footer */}
-            <div className="max-w-7xl mx-auto px-4 md:px-12 mt-12 pt-6 border-t border-gray-300">
+            <div className="max-w-7xl mx-auto px-4 md:px-12 mt-12 pt-6 border-t border-white/10">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-3">
                     <div className="text-center md:text-left">
                         <div className="flex items-center gap-2 mb-1">
                             <img src="/logo.png" alt="CodeYourIdea Logo" className="h-8 w-auto" />
                         </div>
-                        <p className="text-gray-600 font-medium">Turning Ideas into Digital Reality</p>
+                        <p className="text-white/70 font-medium">Turning Ideas into Digital Reality</p>
                     </div>
                     <div className="text-center md:text-right">
-                        <p className="text-gray-600 font-medium">© 2025 Code Your Idea. All Rights Reserved.</p>
-                        <p className="text-[#3F51B5] font-semibold text-sm flex items-center justify-center md:justify-end gap-1">
+                        <p className="text-white/70 font-medium">© 2025 Code Your Idea. All Rights Reserved.</p>
+                        <p className="text-futuristic-cyan-300 font-semibold text-sm flex items-center justify-center md:justify-end gap-1">
                             Made with passion in India
                         </p>
                     </div>

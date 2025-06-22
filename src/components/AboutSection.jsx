@@ -24,7 +24,7 @@ const AboutSection = () => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             id="about"
-            className="w-full bg-white py-16 md:py-24 pt-24 md:pt-32"
+            className="w-full bg-transparent py-16 md:py-24 pt-24 md:pt-32"
         >
             <div className="max-w-7xl mx-auto px-4 md:px-12">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
@@ -34,64 +34,64 @@ const AboutSection = () => {
                             <img
                                 src={aboutImg}
                                 alt="About Us"
-                                className="w-full h-auto rounded-2xl shadow-lg"
+                                className="w-full h-auto rounded-2xl shadow-glow-blue"
                             />
-                            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#3F51B5] rounded-full opacity-20 blur-xl"></div>
-                            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#a5f3fc] rounded-full opacity-30 blur-2xl"></div>
+                            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-futuristic-blue-500/30 rounded-full blur-2xl"></div>
+                            <div className="absolute -top-6 -left-6 w-32 h-32 bg-futuristic-cyan-500/30 rounded-full blur-3xl"></div>
                         </div>
                     </motion.div>
 
                     {/* Right - Content */}
                     <motion.div className="flex-1 text-left" variants={rightVariants}>
-                        <h4 className="text-[#3F51B5] text-lg font-semibold tracking-widest mb-4 uppercase">About Us</h4>
-                        <h2 className="text-3xl md:text-5xl font-extrabold text-[#333F48] leading-tight mb-6">
+                        <h4 className="text-futuristic-cyan-300 text-lg font-semibold tracking-widest mb-4 uppercase">About Us</h4>
+                        <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
                             Your Trusted Development Partner
                         </h2>
-                        <p className="text-gray-600 text-lg mb-6 leading-relaxed text-left">
+                        <p className="text-white/70 text-lg mb-6 leading-relaxed text-left">
                             We're a small, focused team that builds real, functional products for real people. Founded in 2023, based in India, we specialize in turning your ideas into digital reality through clean websites and powerful mobile apps.
                         </p>
-                        <p className="text-gray-600 text-lg mb-8 leading-relaxed text-left">
+                        <p className="text-white/70 text-lg mb-8 leading-relaxed text-left">
                             Our mission is simple: help startups and small businesses launch faster with technology that works. No fluff, no unnecessary complexity – just solid development that gets results.
                         </p>
 
                         {/* Values Section */}
                         <div className="space-y-4">
-                            <h3 className="text-xl font-bold text-[#333F48] mb-4">Our Values</h3>
+                            <h3 className="text-xl font-bold text-white mb-4">Our Values</h3>
                             <div className="space-y-3">
                                 <div className="flex items-start gap-3 text-left">
-                                    <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mb-6">
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500 shadow-glow-blue">
                                         <FaUsers className="text-white text-2xl" />
                                     </div>
                                     <div className="text-left">
-                                        <h4 className="font-semibold text-[#333F48] text-left">Expert Team</h4>
-                                        <p className="text-gray-600 text-left">Fast development, quick launches, no endless delays</p>
+                                        <h4 className="font-semibold text-white text-left">Expert Team</h4>
+                                        <p className="text-white/70 text-left">Fast development, quick launches, no endless delays</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3 text-left">
-                                    <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mb-6">
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-futuristic-purple-500 to-futuristic-blue-500 shadow-glow-purple">
                                         <FaRocket className="text-white text-2xl" />
                                     </div>
                                     <div className="text-left">
-                                        <h4 className="font-semibold text-[#333F48] text-left">Fast Delivery</h4>
-                                        <p className="text-gray-600 text-left">Clear updates, honest timelines, always available</p>
+                                        <h4 className="font-semibold text-white text-left">Fast Delivery</h4>
+                                        <p className="text-white/70 text-left">Clear updates, honest timelines, always available</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3 text-left">
-                                    <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mb-6">
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-futuristic-cyan-500 to-futuristic-purple-500 shadow-glow-cyan">
                                         <FaHandshake className="text-white text-2xl" />
                                     </div>
                                     <div className="text-left">
-                                        <h4 className="font-semibold text-[#333F48] text-left">Client Focus</h4>
-                                        <p className="text-gray-600 text-left">Simple solutions, clean code, no confusion</p>
+                                        <h4 className="font-semibold text-white text-left">Client Focus</h4>
+                                        <p className="text-white/70 text-left">Simple solutions, clean code, no confusion</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-3 text-left">
-                                    <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mb-6">
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500 shadow-glow-blue">
                                         <FaChartLine className="text-white text-2xl" />
                                     </div>
                                     <div className="text-left">
-                                        <h4 className="font-semibold text-[#333F48] text-left">Growth Focus</h4>
-                                        <p className="text-gray-600 text-left">Simple solutions, clean code, no confusion</p>
+                                        <h4 className="font-semibold text-white text-left">Growth Focus</h4>
+                                        <p className="text-white/70 text-left">Simple solutions, clean code, no confusion</p>
                                     </div>
                                 </div>
                             </div>

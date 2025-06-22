@@ -56,19 +56,19 @@ const PortfolioGallerySection = () => {
             variants={sectionVariants}
             initial="hidden"
             animate={sectionInView ? "visible" : "hidden"}
-            className="w-full bg-[#f4f7fb] flex flex-col items-center justify-center py-8 px-4"
+            className="w-full bg-transparent flex flex-col items-center justify-center py-8 px-4"
         >
             <div className="max-w-7xl mx-auto px-4">
-                <h5 className="text-[#3F51B5] text-lg font-semibold tracking-widest mb-2 uppercase text-left">Portfolio</h5>
-                <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a0a2d] mb-4 text-left">Our Amazing Work</h2>
-                <p className="text-lg text-gray-500 mb-8 max-w-2xl text-left">Here are some recent successful projects where Code Your Idea received positive customer feedback for our services.</p>
+                <h5 className="text-futuristic-cyan-300 text-lg font-semibold tracking-widest mb-2 uppercase text-left">Portfolio</h5>
+                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 text-left">Our Amazing Work</h2>
+                <p className="text-lg text-white/70 mb-8 max-w-2xl text-left">Here are some recent successful projects where Code Your Idea received positive customer feedback for our services.</p>
                 {/* Filter Tabs */}
                 <div className="flex gap-8 mb-12">
                     {categories.map(cat => (
                         <button
                             key={cat}
                             onClick={() => setActive(cat)}
-                            className={`text-lg font-medium transition-colors bg-transparent shadow-none border-none px-[0.5rem] ${active === cat ? "text-[#3F51B5]" : "text-[#1a0a2d] hover:text-[#3F51B5]"}`}
+                            className={`text-lg font-medium transition-colors bg-transparent shadow-none border-none px-[0.5rem] ${active === cat ? "text-futuristic-cyan-300" : "text-white/80 hover:text-futuristic-cyan-300"}`}
                         >
                             {cat}
                         </button>
@@ -79,7 +79,7 @@ const PortfolioGallerySection = () => {
                     {filtered.map((project, i) => (
                         <motion.div
                             key={i}
-                            className="bg-white rounded-2xl shadow-lg overflow-hidden group transition-transform hover:-translate-y-2 cursor-pointer"
+                            className="rounded-2xl overflow-hidden group transition-transform hover:-translate-y-2 cursor-pointer backdrop-blur-sm bg-white/5 border border-white/10 shadow-glow-blue hover:shadow-futuristic"
                             variants={cardVariants}
                             initial="hidden"
                             whileInView="visible"
@@ -88,8 +88,8 @@ const PortfolioGallerySection = () => {
                         >
                             <img src={project.img} alt={project.title} className="w-full h-56 object-cover" />
                             <div className="p-4 flex flex-col items-start">
-                                <span className="text-[#3F51B5] text-xs font-semibold uppercase mb-1 text-left">{project.category}</span>
-                                <h3 className="text-xl font-bold text-[#1a0a2d] group-hover:text-[#3F51B5] transition-colors text-left">{project.title}</h3>
+                                <span className="text-futuristic-cyan-300 text-xs font-semibold uppercase mb-1 text-left">{project.category}</span>
+                                <h3 className="text-xl font-bold text-white group-hover:text-futuristic-cyan-300 transition-colors text-left">{project.title}</h3>
                             </div>
                         </motion.div>
                     ))}

@@ -67,16 +67,16 @@ const ServicesSection = ({ id }) => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             id={id}
-            className="w-full bg-gray-50 py-16 md:py-24 pt-24 md:pt-32"
+            className="w-full bg-transparent py-16 md:py-24 pt-24 md:pt-32"
         >
             <div className="max-w-7xl mx-auto px-4 md:px-12">
                 {/* Header */}
                 <motion.div className="text-center mb-16" variants={fadeInUp}>
-                    <h4 className="text-[#3F51B5] text-lg font-semibold tracking-widest mb-4 uppercase">Our Services</h4>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#333F48] leading-tight mb-6">
+                    <h4 className="text-futuristic-cyan-300 text-lg font-semibold tracking-widest mb-4 uppercase">Our Services</h4>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
                         What We Can Do For You
                     </h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    <p className="text-white/70 text-lg max-w-2xl mx-auto">
                         We've chosen to focus on just two services so we can deliver exceptional results every time.
                     </p>
                 </motion.div>
@@ -90,28 +90,28 @@ const ServicesSection = ({ id }) => {
                         <motion.div
                             key={index}
                             variants={fadeInUp}
-                            className="bg-white rounded-3xl p-8 md:p-10 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                            className="rounded-3xl p-8 md:p-10 transition-all duration-300 group text-center backdrop-blur-sm bg-white/5 border border-white/10 shadow-glow-blue hover:shadow-futuristic"
                         >
                             <div className="flex flex-col items-center">
-                                <div className="w-16 h-16 bg-[#3F51B5] rounded-full flex items-center justify-center mb-6">
+                                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-futuristic-blue-500 to-futuristic-cyan-500">
                                     {service.icon}
                                 </div>
-                                <h3 className="text-xl font-bold text-[#333F48] mb-4">{service.title}</h3>
-                                <p className="text-[#3F51B5] font-semibold text-lg mb-4 italic">
+                                <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
+                                <p className="text-futuristic-cyan-300 font-semibold text-lg mb-4 italic">
                                     {service.subtitle}
                                 </p>
-                                <p className="text-gray-600 text-lg mb-8 leading-relaxed max-w-md">
+                                <p className="text-white/70 text-lg mb-8 leading-relaxed max-w-md">
                                     {service.description}
                                 </p>
 
                                 {/* Features List */}
                                 <div className="mb-8 w-full">
-                                    <h4 className="font-semibold text-[#1a0a2d] mb-4 text-center">What We Deliver:</h4>
+                                    <h4 className="font-semibold text-white mb-4 text-center">What We Deliver:</h4>
                                     <ul className="space-y-3">
                                         {service.features.map((feature, idx) => (
                                             <li key={idx} className="flex items-center justify-center gap-3">
-                                                <div className="w-2 h-2 bg-[#3F51B5] rounded-full flex-shrink-0"></div>
-                                                <span className="text-gray-600">{feature}</span>
+                                                <div className="w-2 h-2 bg-futuristic-cyan-400 rounded-full flex-shrink-0"></div>
+                                                <span className="text-white/70">{feature}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -119,12 +119,12 @@ const ServicesSection = ({ id }) => {
 
                                 {/* Tech Stack */}
                                 <div className="w-full">
-                                    <h4 className="font-semibold text-[#1a0a2d] mb-4 text-center">Technologies:</h4>
+                                    <h4 className="font-semibold text-white mb-4 text-center">Technologies:</h4>
                                     <div className="flex flex-wrap justify-center gap-3">
                                         {service.tech.map((tech, idx) => (
-                                            <div key={idx} className="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full">
-                                                <span className="text-[#3F51B5]">{tech.icon}</span>
-                                                <span className="text-sm font-medium text-gray-700">{tech.name}</span>
+                                            <div key={idx} className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full">
+                                                <span className="text-futuristic-cyan-300">{tech.icon}</span>
+                                                <span className="text-sm font-medium text-white/80">{tech.name}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -139,22 +139,22 @@ const ServicesSection = ({ id }) => {
                     variants={fadeInUp}
                     className="text-center mt-16"
                 >
-                    <h3 className="text-2xl font-bold text-[#1a0a2d] mb-4">
+                    <h3 className="text-2xl font-bold text-white mb-4">
                         Ready to Build Your Next Project?
                     </h3>
-                    <p className="text-gray-600 mb-8 max-w-xl mx-auto">
+                    <p className="text-white/70 mb-8 max-w-xl mx-auto">
                         Let's discuss your idea and see how we can bring it to life with clean code and smart design.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
                         <button
                             onClick={() => autoFillContactForm('undecided')}
-                            className="bg-[#3F51B5] hover:bg-[#5C6BC0] text-white hover:text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all hover:scale-105"
+                            className="btn-futuristic font-semibold px-8 py-4 rounded-full text-lg"
                         >
                             Start Your Project
                         </button>
                         <button
                             onClick={() => scrollToSection('portfolio')}
-                            className="border-2 border-[#3F51B5] text-[#3F51B5] hover:bg-[#3F51B5] hover:text-white font-semibold px-8 py-4 rounded-full text-lg transition-all hover:scale-105"
+                            className="border-2 border-futuristic-blue-400 text-white hover:bg-futuristic-blue-500/20 font-semibold px-8 py-4 rounded-full text-lg transition-all hover:scale-105"
                         >
                             View Our Work
                         </button>
