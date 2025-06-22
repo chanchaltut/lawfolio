@@ -1,5 +1,6 @@
 import React from "react";
 import { showQuoteModal, showLetsTalkModal } from "../utils/modalUtils";
+import analytics from "../utils/analytics";
 
 const LetsBuildSuccessSection = () => (
     <section className="w-full flex items-center justify-center py-8 px-4">
@@ -16,13 +17,19 @@ const LetsBuildSuccessSection = () => (
             <div className="flex-1 flex items-center justify-center md:justify-end w-full">
                 <div className="flex flex-col sm:flex-row gap-4">
                     <button
-                        onClick={showQuoteModal}
+                        onClick={() => {
+                            analytics.trackButtonClick('get_quote', 'success_section');
+                            showQuoteModal();
+                        }}
                         className="bg-white hover:bg-gray-100 text-[#1a0a2d] font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all hover:scale-105"
                     >
                         Get a Quote
                     </button>
                     <button
-                        onClick={showLetsTalkModal}
+                        onClick={() => {
+                            analytics.trackButtonClick('lets_talk', 'success_section');
+                            showLetsTalkModal();
+                        }}
                         className="border-2 border-white text-white hover:bg-white hover:text-[#1a0a2d] font-semibold px-8 py-4 rounded-full text-lg transition-all hover:scale-105"
                     >
                         Let's Talk

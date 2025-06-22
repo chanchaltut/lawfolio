@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import OptimizedImage from "./OptimizedImage";
 import logo from "/logo.png";
 
 const navLinks = [
@@ -46,7 +47,7 @@ const Navbar = () => {
         >
             {/* Logo */}
             <div className="flex items-center gap-2">
-                <img src={logo} alt="CodeYourIdea Logo" className="h-10 w-auto" />
+                <OptimizedImage src={logo} alt="CodeYourIdea Logo" className="h-10 w-auto" width={40} height={40} />
             </div>
             {/* Desktop Nav */}
             <ul className="hidden md:flex gap-8 text-lg font-medium text-[#1a0a2d]">

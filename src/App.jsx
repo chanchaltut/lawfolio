@@ -17,11 +17,11 @@ function App() {
       <Navbar />
       <HeroSection />
       <AboutSection id="about" />
-      <StatsSection />
+      <StatsSection id="stats" />
       <ServicesSection id="services" />
-      <PortfolioGallerySection />
+      <PortfolioGallerySection id="portfolio" />
       <LetsBuildSuccessSection />
-      <TestimonialSection />
+      <TestimonialSection id="testimonials" />
       <TopClientsSection />
       <ContactFooterSection id="contact" />
       <ScrollToTop />

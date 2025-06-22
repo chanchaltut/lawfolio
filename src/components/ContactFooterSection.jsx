@@ -1,7 +1,10 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaLinkedin, FaFacebook, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaLinkedin, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import { SiX } from "react-icons/si";
 import { handleContactSubmission, showWarningModal } from "../utils/modalUtils";
+import OptimizedImage from "./OptimizedImage";
+import analytics from "../utils/analytics";
 
 const ContactFooterSection = ({ id }) => {
     const [formData, setFormData] = useState({
@@ -56,6 +59,7 @@ const ContactFooterSection = ({ id }) => {
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
             showWarningModal("Please Complete All Required Fields!", "Fill in your name, email, and message to send us your details.");
+            analytics.trackFormSubmission('contact_form', false);
             return;
         }
 
@@ -66,6 +70,7 @@ const ContactFooterSection = ({ id }) => {
         const success = await handleContactSubmission(formData);
 
         if (success) {
+            analytics.trackFormSubmission('contact_form', true);
             // Reset form on success
             setFormData({ name: "", email: "", phone: "", project: "", message: "" });
             setErrors({});
@@ -74,6 +79,7 @@ const ContactFooterSection = ({ id }) => {
                 setIsSubmitted(false);
             }, 2000);
         } else {
+            analytics.trackFormSubmission('contact_form', false);
             // Reset submission state on error
             setIsSubmitted(false);
         }
@@ -129,7 +135,7 @@ const ContactFooterSection = ({ id }) => {
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-semibold text-[#333F48] text-lg mb-1">Email Us</h4>
-                                    <a href="mailto:contact@codeyouridea.com" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200">
+                                    <a href="mailto:contact@codeyouridea.com" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('email')}>
                                         contact@codeyouridea.com
                                     </a>
                                     <p className="text-gray-500 text-sm">We'll respond within 24 hours</p>
@@ -142,7 +148,7 @@ const ContactFooterSection = ({ id }) => {
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-semibold text-[#333F48] text-lg mb-1">Call Us</h4>
-                                    <a href="tel:+919938965598" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200">
+                                    <a href="tel:+919938965598" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('phone')}>
                                         +91 9938965598
                                     </a>
                                     <p className="text-gray-500 text-sm">Monday - Friday: 9:00 AM - 7:00 PM IST</p>
@@ -155,7 +161,7 @@ const ContactFooterSection = ({ id }) => {
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-semibold text-[#333F48] text-lg mb-1">WhatsApp</h4>
-                                    <a href="https://wa.me/919938965598" target="_blank" rel="noopener noreferrer" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200">
+                                    <a href="https://wa.me/919938965598" target="_blank" rel="noopener noreferrer" className="text-[#3F51B5] hover:text-[#5C6BC0] text-lg transition-colors duration-200" onClick={() => analytics.trackContactClick('whatsapp')}>
                                         +91 9938965598
                                     </a>
                                     <p className="text-gray-500 text-sm">Quick chat about your project</p>
@@ -167,20 +173,20 @@ const ContactFooterSection = ({ id }) => {
                         <div>
                             <h4 className="font-semibold text-[#333F48] text-lg mb-4 text-left">Follow Our Work</h4>
                             <div className="flex gap-4">
-                                <a href="#" className="w-12 h-12 bg-gray-200 hover:bg-[#0077B5] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <a href="https://www.linkedin.com/company/codeyouridea" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-200 hover:bg-[#0077B5] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" onClick={() => analytics.trackSocialClick('linkedin')}>
                                     <FaLinkedin className="text-xl" />
                                 </a>
-                                <a href="#" className="w-12 h-12 bg-gray-200 hover:bg-[#1877F2] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <a href="https://www.facebook.com/codeyourideapage/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-200 hover:bg-[#1877F2] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" onClick={() => analytics.trackSocialClick('facebook')}>
                                     <FaFacebook className="text-xl" />
                                 </a>
-                                <a href="#" className="w-12 h-12 bg-gray-200 hover:bg-gradient-to-r hover:from-[#E4405F] hover:to-[#C13584] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <a href="https://www.instagram.com/codeyouridea_" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-200 hover:bg-gradient-to-r hover:from-[#E4405F] hover:to-[#C13584] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" onClick={() => analytics.trackSocialClick('instagram')}>
                                     <FaInstagram className="text-xl" />
                                 </a>
-                                <a href="#" className="w-12 h-12 bg-gray-200 hover:bg-[#FF0000] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <a href="https://www.youtube.com/@CodeYourIdeaVideos" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-200 hover:bg-[#FF0000] text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" onClick={() => analytics.trackSocialClick('youtube')}>
                                     <FaYoutube className="text-xl" />
                                 </a>
-                                <a href="#" className="w-12 h-12 bg-gray-200 hover:bg-black text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
-                                    <FaTwitter className="text-xl" />
+                                <a href="https://www.x.com/codeyouridea_" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-200 hover:bg-black text-gray-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" onClick={() => analytics.trackSocialClick('x')}>
+                                    <SiX className="text-xl" />
                                 </a>
                             </div>
                         </div>
@@ -292,13 +298,13 @@ const ContactFooterSection = ({ id }) => {
             <div className="max-w-7xl mx-auto px-4 md:px-12 mt-12 pt-6 border-t border-gray-300">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-3">
                     <div className="text-center md:text-left">
-                        <h4 className="text-2xl font-bold text-[#333F48] mb-1">
-                            Code<span className="text-[#3F51B5]">Your</span>Idea
-                        </h4>
+                        <div className="flex items-center gap-2 mb-1">
+                            <OptimizedImage src="/logo.png" alt="CodeYourIdea Logo" className="h-8 w-auto" width={32} height={32} />
+                        </div>
                         <p className="text-gray-600 font-medium">Turning Ideas into Digital Reality</p>
                     </div>
                     <div className="text-center md:text-right">
-                        <p className="text-gray-600 font-medium">© 2024 Code Your Idea. All rights reserved.</p>
+                        <p className="text-gray-600 font-medium">© 2025 Code Your Idea. All Rights Reserved.</p>
                         <p className="text-[#3F51B5] font-semibold text-sm flex items-center justify-center md:justify-end gap-1">
                             Made with passion in India
                         </p>

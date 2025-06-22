@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import analytics from "../utils/analytics";
 
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -34,6 +35,7 @@ const ScrollToTop = () => {
     }, []);
 
     const scrollToTop = () => {
+        analytics.trackButtonClick('scroll_to_top', 'global');
         window.scrollTo({
             top: 0,
             behavior: 'smooth'

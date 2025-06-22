@@ -3,17 +3,27 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="renderer" content="webkit" />
 
+  <!-- Performance optimizations -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://api.web3forms.com">
+  <link rel="dns-prefetch" href="https://static.klaviyo.com">
+
   <!-- Primary Meta Tags -->
   <title>Best Website & App Development Company in Balangir, Odisha | Code Your Idea</title>
   <meta name="description"
-    content="Code Your Idea is a top-rated web and mobile app development agency in Balangir, Odisha. We build modern websites and apps for startups and businesses across India.">
+    content="Code Your Idea is a top-rated web and mobile app development agency in Balangir, Odisha. We build modern websites and apps for startups and businesses across India. Get custom web development, mobile app development, and digital solutions.">
   <meta name="keywords"
-    content="Web Development Balangir, App Development Odisha, Best Website Company Balangir, Mobile App Development India, Code Your Idea, Website Design Odisha, Web App Agency Balangir, Custom Software Odisha">
+    content="Web Development Balangir, App Development Odisha, Best Website Company Balangir, Mobile App Development India, Code Your Idea, Website Design Odisha, Web App Agency Balangir, Custom Software Odisha, React Development, Node.js Development">
+  <meta name="author" content="Code Your Idea">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -21,21 +31,136 @@
   <meta property="og:url" content="https://www.codeyouridea.com">
   <meta property="og:title" content="Top Website & App Development Agency in Balangir, Odisha | Code Your Idea">
   <meta property="og:description"
-    content="We are Code Your Idea, a leading web and app development agency based in Balangir, Odisha. Get modern, responsive, and scalable digital solutions.">
-  <!-- <meta property="og:image" content="https://www.codeyouridea.com/assets/og-image.jpg"> -->
+    content="We are Code Your Idea, a leading web and app development agency based in Balangir, Odisha. Get modern, responsive, and scalable digital solutions for your business.">
+  <meta property="og:image" content="https://www.codeyouridea.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@codeyouridea_">
+  <meta name="twitter:creator" content="@codeyouridea_">
   <meta name="twitter:title" content="Top Web & App Developers in Balangir | Code Your Idea">
   <meta name="twitter:description"
-    content="Custom website and app development services in Balangir, Odisha. Trusted by startups and enterprises across India.">
-  <!-- <meta name="twitter:image" content="https://www.codeyouridea.com/assets/twitter-card.jpg"> -->
+    content="Custom website and app development services in Balangir, Odisha. Trusted by startups and enterprises across India. Modern React, Node.js, and mobile app development.">
+  <meta name="twitter:image" content="https://www.codeyouridea.com/twitter-card.jpg">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#3F51B5">
+  <meta name="msapplication-TileColor" content="#3F51B5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Code Your Idea">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="application-name" content="Code Your Idea">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.codeyouridea.com">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Code Your Idea",
+    "url": "https://www.codeyouridea.com",
+    "logo": "https://www.codeyouridea.com/logo.png",
+    "description": "Leading web and mobile app development agency in Balangir, Odisha, India",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Balangir",
+      "addressRegion": "Odisha",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9938965598",
+      "contactType": "customer service",
+      "email": "contact@codeyouridea.com"
+    },
+    "sameAs": [
+      "https://www.facebook.com/codeyourideapage/",
+      "https://www.instagram.com/codeyouridea_",
+      "https://www.linkedin.com/company/codeyouridea",
+      "https://www.youtube.com/@CodeYourIdeaVideos",
+      "https://www.x.com/codeyouridea_"
+    ],
+    "serviceArea": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Development Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Website Development",
+            "description": "Custom website development with React, Node.js, and modern technologies"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mobile App Development",
+            "description": "Cross-platform mobile app development for iOS and Android"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/src/index.css" as="style">
+  <link rel="preload" href="/src/main.jsx" as="script">
+
+  <!-- Preload hero images -->
+  <link rel="preload" href="/src/assets/images/slider/img-one.png" as="image">
+  <link rel="preload" href="/src/assets/images/slider/img-two.png" as="image">
+
+  <!-- Preload logo -->
+  <link rel="preload" href="/logo.png" as="image">
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!-- Third-party scripts with async loading -->
   <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=V9Kshp'></script>
+
+  <!-- Google Analytics (replace with your GA4 ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH6LQ9ML39"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PH6LQ9ML39', {
+      page_title: 'Code Your Idea - Web & App Development',
+      page_location: window.location.href,
+      send_page_view: true
+    });
+  </script>
+
+  <!-- Main application script -->
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js');
+      });
+    }
+  </script>
 </body>
 
 </html>
