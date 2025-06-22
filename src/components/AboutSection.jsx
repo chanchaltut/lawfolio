@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import analytics from "../utils/analytics";
-import aboutImg from "../assets/images/about/about.png";
+import aboutImg from "../assets/images/about/about.webp";
 import { FaUsers, FaRocket, FaHandshake, FaChartLine } from "react-icons/fa";
 
 const AboutSection = () => {

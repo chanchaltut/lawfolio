@@ -3,7 +3,7 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/logo.png',
-  '/favicon.png',
+  '/favicon.webp',
   // Add more assets as needed
 ];
 

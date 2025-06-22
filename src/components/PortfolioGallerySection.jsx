@@ -1,19 +1,19 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import analytics from "../utils/analytics";
-import airwayHealth from "../assets/images/portfolio/websites/Airway Health/Thumb/AirwayHealth-Cover.jpg";
-import chargerQuest from "../assets/images/portfolio/websites/Charger Quest/Thumb/Charger-Quest-cover.jpg";
-import techdense from "../assets/images/portfolio/websites/Techdense/Thumb/thumb-img.jpg";
-import swiftracks from "../assets/images/portfolio/websites/Swiftracks/Thumb/sr-cover.jpg";
-import pourwater from "../assets/images/portfolio/websites/Pourwater/Thumb/Pourwater-Cover-1.jpg";
-import versatileDispatch from "../assets/images/portfolio/websites/Versatile Dispatch/Thumb/thumb-img.jpg";
-import theLabToronto from "../assets/images/portfolio/websites/The Lab Toronto/Thumb/Cover-7.jpg";
-import candidClean from "../assets/images/portfolio/websites/Candid Clean/Thumb/Cover-5.jpg";
-import greenDot from "../assets/images/portfolio/websites/Green Dot/Thumb/green-dot-cover.jpg";
-import picdin from "../assets/images/portfolio/websites/Picdin/Thumb/picdin-cover.jpg";
+import airwayHealth from "../assets/images/portfolio/websites/Airway Health/Thumb/AirwayHealth-Cover.webp";
+import chargerQuest from "../assets/images/portfolio/websites/Charger Quest/Thumb/Charger-Quest-cover.webp";
+import techdense from "../assets/images/portfolio/websites/Techdense/Thumb/thumb-img.webp";
+import swiftracks from "../assets/images/portfolio/websites/Swiftracks/Thumb/sr-cover.webp";
+import pourwater from "../assets/images/portfolio/websites/Pourwater/Thumb/Pourwater-Cover-1.webp";
+import versatileDispatch from "../assets/images/portfolio/websites/Versatile Dispatch/Thumb/thumb-img.webp";
+import theLabToronto from "../assets/images/portfolio/websites/The Lab Toronto/Thumb/Cover-7.webp";
+import candidClean from "../assets/images/portfolio/websites/Candid Clean/Thumb/Cover-5.webp";
+import greenDot from "../assets/images/portfolio/websites/Green Dot/Thumb/green-dot-cover.webp";
+import picdin from "../assets/images/portfolio/websites/Picdin/Thumb/picdin-cover.webp";
 import yekrakBook from "../assets/images/portfolio/websites/Yekrak Book/Thumb/Cover-21.webp";
 import wellRun from "../assets/images/portfolio/websites/Well Run/Thumb/Cover-20.webp";
-import alignApp from "../assets/images/portfolio/websites/Align App/Thumb/AlignApp-Cover.jpg";
+import alignApp from "../assets/images/portfolio/websites/Align App/Thumb/AlignApp-Cover.webp";
 
 const projects = [
     { title: "Airway Health", category: "Websites", img: airwayHealth },

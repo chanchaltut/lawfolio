@@ -5,6 +5,7 @@ import chargerQuest from "../assets/images/brand/charger-quest.png";
 import greenDot from "../assets/images/brand/logo.svg";
 import swiftRacks from "../assets/images/brand/swiftracks.svg";
 import versatileDispatch from "../assets/images/brand/versatile-dispatch.svg";
+import jeoGroup from "../assets/images/brand/jeo-group.png";
 
 const clients = [
     { src: candidClean, alt: "Candid Clean" },
@@ -12,6 +13,7 @@ const clients = [
     { src: greenDot, alt: "Green Dot" },
     { src: swiftRacks, alt: "Swift Racks" },
     { src: versatileDispatch, alt: "Versatile Dispatch" },
+    { src: jeoGroup, alt: "Jeo Group" },
 ];
 
 const VISIBLE_COUNT = 4; // Number of logos visible at once (adjust for responsiveness if needed)

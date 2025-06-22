@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import analytics from "../utils/analytics";
-import heroImg1 from "../assets/images/slider/img-one.png";
-import heroImg2 from "../assets/images/slider/img-two.png";
+import heroImg1 from "../assets/images/slider/img-one.webp";
+import heroImg2 from "../assets/images/slider/img-two.webp";
 import { showLetsTalkModal, showQuoteModal } from "../utils/modalUtils";
 
 const textVariants = {
