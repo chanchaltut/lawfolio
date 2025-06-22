@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import analytics from "../utils/analytics";
 import aboutImg from "../assets/images/about/about.png";
 import { FaUsers, FaRocket, FaHandshake, FaChartLine } from "react-icons/fa";
 
@@ -32,8 +33,8 @@ const AboutSection = () => {
                         <div className="relative">
                             <img
                                 src={aboutImg}
-                                alt="About Code Your Idea"
-                                className="w-full max-w-md mx-auto rounded-3xl shadow-2xl object-cover"
+                                alt="About Us"
+                                className="w-full h-auto rounded-2xl shadow-lg"
                             />
                             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-[#3F51B5] rounded-full opacity-20 blur-xl"></div>
                             <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#a5f3fc] rounded-full opacity-30 blur-2xl"></div>

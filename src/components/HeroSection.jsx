@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import OptimizedImage from "./OptimizedImage";
+import analytics from "../utils/analytics";
 import heroImg1 from "../assets/images/slider/img-one.png";
 import heroImg2 from "../assets/images/slider/img-two.png";
 import { showLetsTalkModal, showQuoteModal } from "../utils/modalUtils";
-import analytics from "../utils/analytics";
 
 const textVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -56,13 +55,11 @@ const HeroSection = () => {
                 {/* Right Images */}
                 <motion.div className="flex-1 flex items-center justify-center relative z-10 mr-[-2rem] min-w-0 min-h-[200px] sm:min-h-[260px] md:min-h-[420px] w-full" variants={imageVariants}>
                     <div className="relative w-[360px] h-[360px] md:w-[320px] md:h-[320px] flex items-center justify-center">
-                        <OptimizedImage src={heroImg2} alt="Hero 2" className="absolute left-[-2rem] top-[2rem] w-[360px] h-[360px] md:w-[320px] md:h-[320px] object-cover rounded-xl sm:rounded-2xl md:rounded-3xl z-10 transition-all" width={360} height={360} />
-                        <OptimizedImage
+                        <img src={heroImg2} alt="Hero 2" className="absolute left-[-2rem] top-[2rem] w-[360px] h-[360px] md:w-[320px] md:h-[320px] object-cover rounded-xl sm:rounded-2xl md:rounded-3xl z-10 transition-all" />
+                        <img
                             src={heroImg1}
                             alt="Hero 1"
                             className="absolute left-0 top-0 w-[360px] h-[360px] md:w-[320px] md:h-[320px] object-cover rounded-xl sm:rounded-2xl md:rounded-3xl"
-                            width={360}
-                            height={360}
                         />
                         {/* Soft background effect */}
                         <div className="absolute inset-0 rounded-3xl bg-[#3F51B5]/20 z-0"></div>

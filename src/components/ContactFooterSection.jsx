@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock, FaLinkedin, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 import { handleContactSubmission, showWarningModal } from "../utils/modalUtils";
-import OptimizedImage from "./OptimizedImage";
 import analytics from "../utils/analytics";
 
 const ContactFooterSection = ({ id }) => {
@@ -299,7 +298,7 @@ const ContactFooterSection = ({ id }) => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-3">
                     <div className="text-center md:text-left">
                         <div className="flex items-center gap-2 mb-1">
-                            <OptimizedImage src="/logo.png" alt="CodeYourIdea Logo" className="h-8 w-auto" width={32} height={32} />
+                            <img src="/logo.png" alt="CodeYourIdea Logo" className="h-8 w-auto" />
                         </div>
                         <p className="text-gray-600 font-medium">Turning Ideas into Digital Reality</p>
                     </div>

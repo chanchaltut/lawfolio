@@ -2,6 +2,9 @@ import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
 import { autoFillContactForm } from "../utils/modalUtils";
+import analytics from "../utils/analytics";
+import testimonial1 from "../assets/images/testimonial/testimonial-one.png";
+import testimonial2 from "../assets/images/testimonial/testimonial-two.png";
 
 const TestimonialSection = () => {
     const [currentIndex, setCurrentIndex] = useState(0);

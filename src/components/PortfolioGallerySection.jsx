@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import OptimizedImage from "./OptimizedImage";
 import analytics from "../utils/analytics";
 import airwayHealth from "../assets/images/portfolio/websites/Airway Health/Thumb/AirwayHealth-Cover.jpg";
 import chargerQuest from "../assets/images/portfolio/websites/Charger Quest/Thumb/Charger-Quest-cover.jpg";
@@ -87,7 +86,7 @@ const PortfolioGallerySection = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             onClick={() => analytics.trackPortfolioClick(project.title)}
                         >
-                            <OptimizedImage src={project.img} alt={project.title} className="w-full h-56 object-cover" width={400} height={224} />
+                            <img src={project.img} alt={project.title} className="w-full h-56 object-cover" />
                             <div className="p-4 flex flex-col items-start">
                                 <span className="text-[#3F51B5] text-xs font-semibold uppercase mb-1 text-left">{project.category}</span>
                                 <h3 className="text-xl font-bold text-[#1a0a2d] group-hover:text-[#3F51B5] transition-colors text-left">{project.title}</h3>
