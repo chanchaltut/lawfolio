@@ -8,17 +8,22 @@
   line-height: 1.6;
   font-weight: 400;
 
-  /* Futuristic color scheme */
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #1a1a2e;
-  --color-bg-tertiary: #16213e;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #e2e8f0;
-  --color-accent-blue: #0073e6;
-  --color-accent-cyan: #00e6e6;
-  --color-accent-purple: #7d00e6;
+  /* Exact Marketing Talent Platform Color Scheme */
+  --color-bg-primary: #fcdcb1;
+  --color-bg-secondary: #976ecc;
+  --color-bg-tertiary: #6b43ac;
+  --color-bg-dark: #1f2957;
+  --color-bg-darker: #070a12;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-white: #ffffff;
+  --color-accent-purple: #976ecc;
+  --color-accent-purple-light: #6b43ac;
+  --color-accent-purple-dark: #1f2957;
+  --color-accent-pink: #976ecc;
+  --color-accent-blue: #1f2957;
 
-  color-scheme: dark;
+  color-scheme: light;
   color: var(--color-text-primary);
   background-color: var(--color-bg-primary);
 
@@ -49,7 +54,7 @@ body {
   padding: 0;
   min-height: 100vh;
   min-height: -webkit-fill-available;
-  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
+  background: transparent;
   color: var(--color-text-primary);
   font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
@@ -66,18 +71,18 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--color-accent-blue), var(--color-accent-cyan));
+  background: linear-gradient(180deg, #976ecc, #6b43ac);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--color-accent-cyan), var(--color-accent-purple));
+  background: linear-gradient(180deg, #6b43ac, #1f2957);
 }
 
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-accent-blue) var(--color-bg-primary);
+  scrollbar-color: #976ecc #fcdcb1;
 }
 
 /* Typography */
@@ -97,10 +102,8 @@ h6 {
 h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-accent-blue) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-text-primary);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -122,15 +125,15 @@ p {
 
 /* Links */
 a {
-  color: var(--color-accent-blue);
+  color: #976ecc;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
 
 a:hover {
-  color: var(--color-accent-cyan);
-  text-shadow: 0 0 10px rgba(0, 230, 230, 0.5);
+  color: #1f2957;
+  text-shadow: 0 0 10px rgba(151, 110, 204, 0.3);
 }
 
 /* Buttons */
@@ -145,25 +148,27 @@ button {
 }
 
 button:focus {
-  outline: 2px solid var(--color-accent-blue);
+  outline: 2px solid #976ecc;
   outline-offset: 2px;
 }
 
-/* Futuristic button styles */
+/* Marketing Talent Platform Button Styles */
 .btn-futuristic {
-  background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-cyan));
-  color: white;
-  padding: 12px 24px;
-  border-radius: 12px;
+  background: var(--color-text-primary);
+  color: var(--color-text-white);
+  padding: 14px 28px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 115, 230, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
 }
 
 .btn-futuristic:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 115, 230, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  background: #1a1a1a;
 }
 
 .btn-futuristic:active {
@@ -179,16 +184,16 @@ button:focus {
 }
 
 /* Glow effects */
-.glow-blue {
-  box-shadow: 0 0 20px rgba(0, 115, 230, 0.3);
-}
-
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(0, 230, 230, 0.3);
-}
-
 .glow-purple {
-  box-shadow: 0 0 20px rgba(125, 0, 230, 0.3);
+  box-shadow: 0 0 20px rgba(151, 110, 204, 0.4);
+}
+
+.glow-purple-light {
+  box-shadow: 0 0 20px rgba(107, 67, 172, 0.3);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px rgba(151, 110, 204, 0.3);
 }
 
 /* Animations */
@@ -208,11 +213,11 @@ button:focus {
 
   0%,
   100% {
-    box-shadow: 0 0 5px var(--color-accent-blue), 0 0 10px var(--color-accent-blue), 0 0 15px var(--color-accent-blue);
+    box-shadow: 0 0 5px #976ecc, 0 0 10px #976ecc, 0 0 15px #976ecc;
   }
 
   50% {
-    box-shadow: 0 0 10px var(--color-accent-blue), 0 0 20px var(--color-accent-blue), 0 0 30px var(--color-accent-blue);
+    box-shadow: 0 0 10px #976ecc, 0 0 20px #976ecc, 0 0 30px #976ecc;
   }
 }
 
@@ -230,18 +235,18 @@ button:focus {
 
 /* Utility classes */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-cyan));
+  background: linear-gradient(135deg, #976ecc, #6b43ac);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .bg-gradient-futuristic {
-  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 50%, var(--color-bg-tertiary) 100%);
+  background: transparent;
 }
 
 .bg-gradient-glow {
-  background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 30%, var(--color-bg-tertiary) 70%, var(--color-bg-primary) 100%);
+  background: transparent;
 }
 
 /* Responsive design */
@@ -266,18 +271,18 @@ button:focus {
 
 /* Focus styles for accessibility */
 *:focus-visible {
-  outline: 2px solid var(--color-accent-blue);
+  outline: 2px solid #976ecc;
   outline-offset: 2px;
 }
 
 /* Selection styles */
 ::selection {
-  background: var(--color-accent-blue);
+  background: #976ecc;
   color: white;
 }
 
 ::-moz-selection {
-  background: var(--color-accent-blue);
+  background: #976ecc;
   color: white;
 }
 
@@ -286,13 +291,13 @@ button:focus {
   transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Custom cursor styles */
-body {
+/* Custom cursor styles - temporarily disabled to show default cursor */
+/* body {
   cursor: none !important;
-}
+} */
 
 /* Show default cursor on interactive elements when custom cursor is disabled */
-a,
+/* a,
 button,
 .interactive,
 [role="button"],
@@ -300,7 +305,7 @@ input,
 textarea,
 select {
   cursor: none !important;
-}
+} */
 
 /* Hide cursor on mobile devices */
 @media (max-width: 768px) {
@@ -314,7 +319,7 @@ select {
   }
 }
 
-/* Remove light theme overrides */
+/* Theme consistency */
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--color-text-primary);

@@ -298,7 +298,7 @@ const ContactFooterSection = ({ id }) => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 py-3">
                     <div className="text-center md:text-left">
                         <div className="flex items-center gap-2 mb-1">
-                            <img src="/logo.png" alt="CodeYourIdea Logo" className="h-8 w-auto" />
+                            <img src="/logo-w.png" alt="CodeYourIdea Logo" className="h-8 w-auto" />
                         </div>
                         <p className="text-white/70 font-medium">Turning Ideas into Digital Reality</p>
                     </div>

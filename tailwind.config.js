@@ -69,18 +69,18 @@ export default {
         'glow': 'glow 2s ease-in-out infinite alternate',
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'bounce-slow': 'bounce 3s infinite',
+        'bounce-slow': 'bounce 2s infinite',
         'fade-in': 'fadeIn 0.8s ease-out',
         'slide-up': 'slideUp 0.6s ease-out',
         'scale-in': 'scaleIn 0.5s ease-out',
       },
       keyframes: {
         glow: {
-          '0%': { 
+          '0%': {
             boxShadow: '0 0 5px #0073e6, 0 0 10px #0073e6, 0 0 15px #0073e6',
             textShadow: '0 0 5px #0073e6'
           },
-          '100%': { 
+          '100%': {
             boxShadow: '0 0 10px #0073e6, 0 0 20px #0073e6, 0 0 30px #0073e6',
             textShadow: '0 0 10px #0073e6'
           }

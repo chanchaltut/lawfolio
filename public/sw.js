@@ -2,7 +2,7 @@ const CACHE_NAME = 'cyi-cache-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/logo.png',
+  '/logo-w.png',
   '/favicon.png',
   // Add more assets as needed
 ];

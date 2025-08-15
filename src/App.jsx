@@ -70,7 +70,7 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-futuristic-dark overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Three.js Background */}
       <ThreeBackground />
 
@@ -93,14 +93,14 @@ function App() {
 
       {/* Floating particles overlay */}
       <div className="fixed inset-0 pointer-events-none z-20">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-futuristic-blue-400 rounded-full animate-pulse-slow opacity-60"></div>
-        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-futuristic-cyan-400 rounded-full animate-float opacity-80"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-futuristic-purple-400 rounded-full animate-bounce-slow opacity-70"></div>
-        <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-futuristic-blue-300 rounded-full animate-pulse-slow opacity-50"></div>
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-pulse-slow opacity-60"></div>
+        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-purple-300 rounded-full animate-float opacity-80"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce-slow opacity-70"></div>
+        <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-purple-200 rounded-full animate-pulse-slow opacity-50"></div>
       </div>
 
-      {/* Premium Cursor Mask */}
-      <CursorMask />
+      {/* Premium Cursor Mask - temporarily disabled */}
+      {/* <CursorMask /> */}
     </div>
   );
 }
