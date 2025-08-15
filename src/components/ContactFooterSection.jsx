@@ -123,7 +123,7 @@ const ContactFooterSection = ({ id }) => {
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-semibold text-white text-lg mb-1">Our Location</h4>
-                                    <p className="text-white/80">Kolkata, India</p>
+                                    <p className="text-white/80">Balangir, India</p>
                                     <p className="text-white/60 text-sm">Serving clients worldwide</p>
                                 </div>
                             </div>
