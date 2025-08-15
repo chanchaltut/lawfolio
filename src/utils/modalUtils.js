@@ -14,7 +14,7 @@ const customStyles = {
 export const scrollToSection = (elementId) => {
   const element = document.getElementById(elementId);
   if (element) {
-    element.scrollIntoView({ 
+    element.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     });
@@ -88,11 +88,11 @@ export const showQuoteModal = () => {
           <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #1a0a2d;">Estimated Budget *</label>
           <select id="quote-budget" style="width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 14px; background: white; color: #1a0a2d;">
             <option value="">Select Budget Range</option>
-            <option value="under-50k">Under ₹10,000</option>
-            <option value="50k-1l">₹10,000 - ₹50,000</option>
-            <option value="1l-2l">₹50,000 - ₹1,00,000</option>
-            <option value="2l-5l">₹1,00,000 - ₹2,00,000</option>
-            <option value="above-5l">Above ₹2,00,000</option>
+            <option value="Under $500">Under $500</option>
+            <option value="$500-$1000">$500-$1000</option>
+            <option value="$1000-$2000">$1000-$2000</option>
+            <option value="$2000-$5000">$2000-$5000</option>
+            <option value="$5000-$10000">$5000-$10000</option>
           </select>
         </div>
         
@@ -134,17 +134,17 @@ export const showQuoteModal = () => {
       const timeline = document.getElementById('quote-timeline').value;
       const description = document.getElementById('quote-description').value;
       const email = document.getElementById('quote-email').value;
-      
+
       if (!projectType || !budget || !timeline || !description || !email) {
         Swal.showValidationMessage('Please fill in all required fields!');
         return false;
       }
-      
+
       if (!/\S+@\S+\.\S+/.test(email)) {
         Swal.showValidationMessage('Please enter a valid email address!');
         return false;
       }
-      
+
       return { projectType, budget, timeline, description, email };
     }
   }).then(async (result) => {
@@ -161,7 +161,7 @@ export const showQuoteModal = () => {
 
       // Actually send the email
       const emailResult = await sendQuoteEmail(result.value);
-      
+
       if (emailResult.success) {
         showSuccessModal(
           'Quote Request Sent!',
@@ -172,7 +172,7 @@ export const showQuoteModal = () => {
           'Quote Request Failed',
           emailResult.message + ' You can also contact us directly via WhatsApp or email.'
         );
-        
+
         // Fallback to mailto as backup
         const fallbackBody = `Project Type: ${result.value.projectType}\nBudget: ${result.value.budget}\nTimeline: ${result.value.timeline}\nDescription: ${result.value.description}`;
         setTimeout(() => {
@@ -236,7 +236,7 @@ export const showLetsTalkModal = () => {
 // Auto-fill contact form
 export const autoFillContactForm = (projectType) => {
   scrollToSection('contact');
-  
+
   // Wait for scroll to complete, then auto-fill
   setTimeout(() => {
     const projectSelect = document.querySelector('select[name="project"]');
@@ -244,7 +244,7 @@ export const autoFillContactForm = (projectType) => {
       projectSelect.value = projectType;
       projectSelect.dispatchEvent(new Event('change', { bubbles: true }));
     }
-    
+
     showSuccessModal(
       'Ready to Start!',
       'We\'ve selected your project type. Just fill in your details and we\'ll get started!'
@@ -257,7 +257,7 @@ export const handleContactSubmission = async (formData) => {
   try {
     // Actually send the email using EmailJS
     const emailResult = await sendContactEmail(formData);
-    
+
     if (emailResult.success) {
       showSuccessModal(
         'Message Sent Successfully!',
@@ -269,13 +269,13 @@ export const handleContactSubmission = async (formData) => {
         'Message Failed to Send 😞',
         emailResult.message
       );
-      
+
       // Fallback to mailto as backup
       const fallbackBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\nProject: ${formData.project || 'Not specified'}\nMessage: ${formData.message}`;
       setTimeout(() => {
         sendEmailViaMailto(`Contact from ${formData.name}`, fallbackBody);
       }, 2000);
-      
+
       return false;
     }
   } catch (error) {
@@ -284,13 +284,13 @@ export const handleContactSubmission = async (formData) => {
       'Message Failed to Send 😞',
       'There was a technical issue. Please try contacting us directly via WhatsApp or phone.'
     );
-    
+
     // Fallback to mailto
     const fallbackBody = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'Not provided'}\nProject: ${formData.project || 'Not specified'}\nMessage: ${formData.message}`;
     setTimeout(() => {
       sendEmailViaMailto(`Contact from ${formData.name}`, fallbackBody);
     }, 2000);
-    
+
     return false;
   }
 }; 

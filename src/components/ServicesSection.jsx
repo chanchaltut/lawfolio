@@ -26,15 +26,13 @@ const ServicesSection = ({ id }) => {
     const services = [
         {
             icon: <FaCode className="text-white text-2xl" />,
-            title: "Website Development",
-            subtitle: "Fast, responsive, tailored",
-            description: "Beautiful websites that convert visitors into customers. Every site is built for speed, optimized for search engines, and designed to grow with your business.",
+            title: "Websites",
+            subtitle: "High-Converting Digital Products",
+            description: "We build websites that don't just look good—they convert visitors into paying customers.",
             features: [
-                "Static & Dynamic Sites",
-                "E-commerce Solutions",
-                "Portfolio Websites",
-                "Business Websites",
-                "SEO Optimized"
+                "Landing Pages that Convert",
+                "Full Business Websites",
+                "Ecommerce Stores"
             ],
             tech: [
                 { name: "React", icon: <FaReact /> },
@@ -44,15 +42,13 @@ const ServicesSection = ({ id }) => {
         },
         {
             icon: <FaMobile className="text-white text-2xl" />,
-            title: "App Development",
-            subtitle: "Cross-platform, scalable",
-            description: "Native-feeling mobile apps that work perfectly on both Android and iOS. Built for performance, designed for growth, ready to scale with your success.",
+            title: "Apps",
+            subtitle: "Cross-Platform Solutions",
+            description: "Mobile apps that work seamlessly across all devices and platforms.",
             features: [
-                "Android & iOS Apps",
-                "Cross-platform Development",
-                "Real-time Features",
-                "Scalable Backend",
-                "App Store Ready"
+                "Cross-Platform Mobile Apps",
+                "SaaS Platforms",
+                "Learning Platforms"
             ],
             tech: [
                 { name: "React Native", icon: <FaReact /> },
@@ -72,13 +68,9 @@ const ServicesSection = ({ id }) => {
             <div className="max-w-7xl mx-auto px-4 md:px-12">
                 {/* Header */}
                 <motion.div className="text-center mb-16" variants={fadeInUp}>
-                    <h4 className="text-futuristic-cyan-300 text-lg font-semibold tracking-widest mb-4 uppercase">Our Services</h4>
                     <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-6">
-                        What We Can Do For You
+                        What We Build
                     </h2>
-                    <p className="text-white/70 text-lg max-w-2xl mx-auto">
-                        We've chosen to focus on just two services so we can deliver exceptional results every time.
-                    </p>
                 </motion.div>
 
                 {/* Services Grid */}
@@ -118,7 +110,7 @@ const ServicesSection = ({ id }) => {
                                 </div>
 
                                 {/* Tech Stack */}
-                                <div className="w-full">
+                                <div className="w-full mb-6">
                                     <h4 className="font-semibold text-white mb-4 text-center">Technologies:</h4>
                                     <div className="flex flex-wrap justify-center gap-3">
                                         {service.tech.map((tech, idx) => (
@@ -129,6 +121,11 @@ const ServicesSection = ({ id }) => {
                                         ))}
                                     </div>
                                 </div>
+
+                                {/* CTA Button */}
+                                <button className="text-futuristic-cyan-300 hover:text-white font-semibold transition-colors duration-200">
+                                    Explore Services →
+                                </button>
                             </div>
                         </motion.div>
                     ))}
@@ -140,7 +137,7 @@ const ServicesSection = ({ id }) => {
                     className="text-center mt-16"
                 >
                     <h3 className="text-2xl font-bold text-white mb-4">
-                        Ready to Build Your Next Project?
+                        Ready to Build Something That Pays for Itself?
                     </h3>
                     <p className="text-white/70 mb-8 max-w-xl mx-auto">
                         Let's discuss your idea and see how we can bring it to life with clean code and smart design.
@@ -154,9 +151,9 @@ const ServicesSection = ({ id }) => {
                         </button>
                         <button
                             onClick={() => scrollToSection('portfolio')}
-                            className="border-2 border-futuristic-blue-400 text-white hover:bg-futuristic-blue-500/20 font-semibold px-8 py-4 rounded-full text-lg transition-all hover:scale-105"
+                            className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-full text-lg transition-all hover:scale-105"
                         >
-                            View Our Work
+                            Book a Call
                         </button>
                     </div>
                 </motion.div>

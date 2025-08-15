@@ -13,25 +13,25 @@ const TestimonialSection = () => {
 
     const testimonials = [
         {
-            quote: "Code Your Idea delivered our e-commerce website in just 3 weeks. The design is clean, fast, and our sales have increased by 40% since launch. Their communication throughout the project was excellent.",
-            name: "Priya Sharma",
-            role: "Founder, Fashion Store Online",
+            quote: "Code Your Idea didn't just deliver a product, they delivered growth. Our bookings tripled in 2 months.",
+            name: "Mr. Anik Halder",
+            role: "Founder & CEO, Rent Yaard",
             rating: 5,
-            project: "E-commerce Website"
+            project: "Rental Marketplace"
         },
         {
-            quote: "We needed a mobile app for our food delivery startup. The team built us a beautiful React Native app that works perfectly on both Android and iOS. Launch was smooth and customers love the interface.",
-            name: "Rahul Patel",
-            role: "CEO, QuickBites",
+            quote: "The Galaxy EdTech app transformed how we deliver content. Our user engagement increased by 300%.",
+            name: "Mr. Sachidananda Sahoo",
+            role: "Managing Director, Galaxy EdTech",
             rating: 5,
-            project: "Mobile App Development"
+            project: "Learning Platform"
         },
         {
-            quote: "Professional, fast, and exactly what we needed. Our portfolio website showcases our work beautifully and we're getting more inquiries than ever. The SEO optimization they did is working great.",
-            name: "Sarah Thompson",
-            role: "Creative Director, Design Studio",
+            quote: "From concept to launch in record time. The team's expertise in conversion optimization is unmatched.",
+            name: "Mr. Alok Ranjan Rathi",
+            role: "Founder, Trails of Teak",
             rating: 5,
-            project: "Portfolio Website"
+            project: "Hotel & Resort Website"
         }
     ];
 
@@ -71,9 +71,8 @@ const TestimonialSection = () => {
             <div className="max-w-4xl mx-auto px-4 md:px-12 text-center">
                 {/* Header */}
                 <motion.div variants={itemVariants} className="mb-12">
-                    <h4 className="text-futuristic-cyan-200 text-lg font-semibold tracking-widest mb-4 uppercase">Client Success Stories</h4>
                     <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
-                        What Our Clients Say
+                        Our Clients Say It Best
                     </h2>
                 </motion.div>
 
@@ -154,13 +153,13 @@ const TestimonialSection = () => {
                 {/* CTA */}
                 <motion.div variants={itemVariants} className="mt-12">
                     <p className="text-white/90 text-lg mb-6">
-                        Ready to be our next success story?
+                        Ready to join our success stories?
                     </p>
                     <button
                         onClick={() => autoFillContactForm('undecided')}
                         className="btn-futuristic text-lg px-8 py-4 rounded-full"
                     >
-                        Start Your Project Today
+                        Start Your Project
                     </button>
                 </motion.div>
             </div>

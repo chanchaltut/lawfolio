@@ -7,7 +7,7 @@ class Analytics {
 
   init() {
     if (this.isInitialized) return;
-    
+
     // Only initialize if gtag is available
     if (typeof gtag !== 'undefined') {
       this.isInitialized = true;
@@ -18,7 +18,7 @@ class Analytics {
   // Track page view
   trackPageView(pageTitle = null, pageLocation = null) {
     if (!this.isInitialized) return;
-    
+
     gtag('config', 'G-PH6LQ9ML39', {
       page_title: pageTitle || document.title,
       page_location: pageLocation || window.location.href,
@@ -29,7 +29,7 @@ class Analytics {
   // Track custom events
   trackEvent(eventName, parameters = {}) {
     if (!this.isInitialized) return;
-    
+
     gtag('event', eventName, {
       custom_parameter: parameters
     });
@@ -93,6 +93,14 @@ class Analytics {
     });
   }
 
+  // Track blog article clicks
+  trackBlogClick(articleTitle) {
+    this.trackEvent('blog_click', {
+      article_title: articleTitle,
+      timestamp: new Date().toISOString()
+    });
+  }
+
   // Track service section views
   trackServiceView(serviceName) {
     this.trackEvent('service_view', {
@@ -114,10 +122,10 @@ if (typeof window !== 'undefined') {
     const scrollTop = window.pageYOffset;
     const docHeight = document.body.scrollHeight - window.innerHeight;
     const scrollPercent = Math.round((scrollTop / docHeight) * 100);
-    
+
     if (scrollPercent > maxScrollDepth) {
       maxScrollDepth = scrollPercent;
-      
+
       // Track at 25%, 50%, 75%, 100%
       if ([25, 50, 75, 100].includes(maxScrollDepth)) {
         analytics.trackScrollDepth(maxScrollDepth);

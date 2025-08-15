@@ -48,7 +48,7 @@ const AboutSection = () => {
                             Your Trusted Development Partner
                         </h2>
                         <p className="text-white/70 text-lg mb-6 leading-relaxed text-left">
-                            We're a small, focused team that builds real, functional products for real people. Founded in 2023, based in India, we specialize in turning your ideas into digital reality through clean websites and powerful mobile apps.
+                            We're a small, focused team that builds real, functional products for real people. Founded in 2024, based in India, we specialize in turning your ideas into digital reality through clean websites and powerful mobile apps.
                         </p>
                         <p className="text-white/70 text-lg mb-8 leading-relaxed text-left">
                             Our mission is simple: help startups and small businesses launch faster with technology that works. No fluff, no unnecessary complexity – just solid development that gets results.
