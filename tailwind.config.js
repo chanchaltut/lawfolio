@@ -8,8 +8,17 @@ export default {
     extend: {
       screens: {
         'xs': '475px',
+        '2xs': '375px',
+        '3xs': '320px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
         'tablet': '768px',
         'laptop': '1024px',
+        'desktop': '1280px',
+        'wide': '1400px',
       },
       height: {
         'screen-safe': 'calc(var(--vh, 1vh) * 100)',
@@ -58,6 +67,18 @@ export default {
             700: '#450080',
             800: '#29004d',
             900: '#0d001a',
+          },
+          'red': {
+            50: '#ffe6e6',
+            100: '#ffb3b3',
+            200: '#ff8080',
+            300: '#ff4d4d',
+            400: '#ff1a1a',
+            500: '#e60000',
+            600: '#b30000',
+            700: '#800000',
+            800: '#4d0000',
+            900: '#1a0000',
           }
         }
       },

@@ -1,20 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import BlogPage from './pages/BlogPage';
-import ArticlePage from './pages/ArticlePage';
-import './App.css';
+import React from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import LegalSupport from './components/LegalSupport'
+import Marquee from './components/Marquee'
+import CaseStudies from './components/CaseStudies'
+import ProfessionalLawyer from './components/ProfessionalLawyer'
+import TeamSection from './components/TeamSection'
+import Footer from './components/Footer'
 
-// Main App Component with Routing
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:slug" element={<ArticlePage />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <div className="App">
+            <Navbar />
+            <Hero />
+            <LegalSupport />
+            <Marquee />
+            <CaseStudies />
+            <ProfessionalLawyer />
+            <TeamSection />
+            <Footer />
+        </div>
+    )
 }
 
-export default App;
+export default App
