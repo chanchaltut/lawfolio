@@ -21,15 +21,7 @@ export default defineConfig({
           'framer-motion': ['framer-motion'],
           'react-icons': ['react-icons'],
           'sweetalert': ['sweetalert2'],
-          'emailjs': ['@emailjs/browser'],
-          
-          // Separate utilities
-          'utils': [
-            './src/utils/emailService.js',
-            './src/utils/modalUtils.js',
-            './src/utils/sectionLinks.js',
-            './src/utils/viewportFix.js'
-          ]
+          'emailjs': ['@emailjs/browser']
         },
         
         // Optimize chunk naming
