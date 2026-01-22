@@ -2,16 +2,16 @@ import React from 'react';
 
 const Marquee = () => {
   const marqueeText = [
-    'EFFICIENCY',
-    'EXPERTISE', 
-    'STANDARD',
-    'EFFICIENCY',
+    'JUSTICE',
+    'INTEGRITY', 
+    'EXCELLENCE',
+    'TRUST',
     'EXPERTISE',
-    'STANDARD'
+    'CONFIDENTIAL'
   ];
 
   return (
-    <section className="relative bg-[#1a1a1a] border-y border-[#2a2a2a] overflow-hidden py-6 sm:py-8 md:py-10">
+    <section className="relative bg-[#1a1a1a] border-y border-[#2a2a2a] overflow-hidden py-6 sm:py-8 md:py-10 animate-fadeIn opacity-0 animation-delay-200">
       <div className="marquee-container">
         <div className="marquee-content">
           {/* First set */}
@@ -44,5 +44,6 @@ const Marquee = () => {
 };
 
 export default Marquee;
+
 
 

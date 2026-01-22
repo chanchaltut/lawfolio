@@ -45,7 +45,7 @@ const Navbar = () => {
                   <path d="M12 2C11.45 2 11 2.45 11 3V4H9C8.45 4 8 4.45 8 5C8 5.55 8.45 6 9 6H11V19H7C6.45 19 6 19.45 6 20C6 20.55 6.45 21 7 21H17C17.55 21 18 20.55 18 20C18 19.45 17.55 19 17 19H13V6H15C15.55 6 16 5.55 16 5C16 4.45 15.55 4 15 4H13V3C13 2.45 12.55 2 12 2M6 8L4 13H8L6 8M18 8L16 13H20L18 8Z"/>
                 </svg>
               </div>
-              <span className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-bold tracking-wide">Law Pixel</span>
+              <span className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-bold tracking-wide">Juris Associates</span>
             </div>
 
             {/* Desktop Navigation Items */}
@@ -240,7 +240,7 @@ const Navbar = () => {
         {/* Sidebar Footer */}
         <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-[#2a2a2a] bg-[#1a1a1a]">
           <p className="text-gray-500 text-[12px] text-center">
-            © {new Date().getFullYear()} Law Pixel
+            © {new Date().getFullYear()} Juris Associates
           </p>
         </div>
       </div>

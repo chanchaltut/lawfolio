@@ -1,199 +1,164 @@
 // App configuration
 export const APP_CONFIG = {
-    name: 'Swagat Group of Institutions',
-    description: 'Education • Innovation • Revolution',
+    name: 'Juris Associates',
+    description: 'Legal Consultants • Cyber Crime Specialists',
+    tagline: 'Comprehensive Legal Services with a Core Focus on Cyber Crime Law',
     version: '1.0.0',
-    author: 'Swagat Odisha'
+    author: 'Juris Associates'
 }
 
 // Navigation items
 export const NAV_ITEMS = [
-    { name: 'Home', href: '#hero', icon: 'fa-house-chimney' },
-    { name: 'About Us', href: '#about-us', icon: 'fa-circle-info' },
-    { name: 'Institutions', href: '#', icon: 'fa-building-columns', hasDropdown: true },
-    { name: 'Milestone', href: '#', icon: 'fa-flag', hasDropdown: true },
-    { name: 'Gallery', href: '#', icon: 'fa-folder-open' },
-    { name: 'Contact Us', href: '#', icon: 'fa-phone', hasDropdown: true },
-    { name: 'Login', href: 'https://swagatodisha.com/app/login.php', icon: 'fa-user' }
+    { name: 'Home', href: '#home', icon: 'fa-house' },
+    { name: 'About Us', href: '#about', icon: 'fa-info-circle' },
+    { name: 'Practice Areas', href: '#practice', icon: 'fa-scale-balanced' },
+    { name: 'Why Choose Us', href: '#why-choose-us', icon: 'fa-shield-halved' },
+    { name: 'Contact Us', href: '#contact', icon: 'fa-phone' }
 ]
 
-// Social links
+// Social links and contact
 export const SOCIAL_LINKS = {
-    phone: '+91 6670356176',
-    email: 'contact@swagatodisha.com',
-    facebook: 'https://www.facebook.com/Swagat-Group-of-Institutions-108863395171576',
-    twitter: 'https://twitter.com/SwagatOdisha',
-    instagram: 'https://instagram.com/Swagat_Odisha',
-    youtube: 'https://youtube.com/channel/UCQ5GY_dOSPmyhOeUkq61R1w',
-    linkedin: 'https://Linkedin.com/in/SwagatOdisha'
+    phone: '9211957859',
+    email: 'roshankgupta479@gmail.com',
+    address: 'Kolkata, West Bengal',
+    location: 'Kolkata, West Bengal, India',
+    website: 'https://jurisassociates.com',
+    facebook: 'https://facebook.com/jurisassociates',
+    twitter: 'https://twitter.com/jurisassociates',
+    instagram: 'https://instagram.com/jurisassociates',
+    linkedin: 'https://linkedin.com/company/jurisassociates'
 }
 
-// Institution types
-export const INSTITUTION_TYPES = [
+// Advocate Profile
+export const ADVOCATE_PROFILE = {
+    name: 'Adv. Roshan Kumar',
+    designation: 'Cyber Crime & Corporate Legal Consultant',
+    specialization: 'Bank Account Defreezing & Lien Removal Expert',
+    phone: '9211957859',
+    email: 'roshankgupta479@gmail.com',
+    location: 'Kolkata, West Bengal',
+    image: '/public/roshan_profile.jpeg',
+    description: 'A practicing Cyber Crime and Digital Fraud Lawyer, specializing in bank account defreezing, lien removal, and cyber-related financial disputes.',
+    expertise: [
+        'Bank Account Defreezing & Lien Removal',
+        'Cyber Crime Defense & FIR Analysis',
+        'Investment & Digital Fraud Matters',
+        'Crypto & P2P Trading Disputes'
+    ]
+}
+
+// Practice areas
+export const PRACTICE_AREAS = [
     {
         id: 1,
-        name: 'School',
-        icon: 'fa-school',
-        color: 'rgb(124, 24, 24)',
-        institutions: ['Swagat Public School Sinapali']
+        category: 'Cyber Crime & Digital Law',
+        isCore: true,
+        icon: 'fa-shield-halved',
+        services: [
+            'Bank Account Freeze & Defreeze Matters',
+            'Online Investment & Trading App Fraud',
+            'Crypto Fraud & P2P Trading Disputes',
+            'Identity Theft & Impersonation',
+            'Social Media Crime & Cyber Harassment',
+            'Online Extortion, Blackmail & Defamation',
+            'Wrongful Cyber Allegations & Defense'
+        ]
     },
     {
         id: 2,
-        name: 'Higher Secondary School',
-        icon: 'fa-book',
-        color: 'rgb(76, 13, 91)',
-        institutions: ['BBOSE', 'NIOS', 'Central Sanskrit University']
+        category: 'Criminal Law',
+        icon: 'fa-gavel',
+        services: [
+            'FIR, Bail & Anticipatory Bail',
+            'Criminal Trial & Appeals',
+            'White Collar Crimes',
+            'Economic Offences',
+            'Cheque Bounce Cases'
+        ]
     },
     {
         id: 3,
-        name: 'Degree College',
-        icon: 'fa-graduation-cap',
-        color: 'rgb(49, 86, 155)',
-        institutions: ['Capital University', 'YBN University', 'MATS University', 'J.S. University']
+        category: 'Civil Law',
+        icon: 'fa-house-chimney-user',
+        services: [
+            'Property & Real Estate Disputes',
+            'Recovery Suits',
+            'Injunctions & Declarations',
+            'Family & Matrimonial Matters',
+            'Consumer Protection Cases'
+        ]
     },
     {
         id: 4,
-        name: 'Management School',
-        icon: 'fa-user-tie',
-        color: 'rgb(18, 99, 62)',
-        institutions: ['Capital University', 'YBN University', 'MATS University', 'J.S. University']
+        category: 'Corporate & Commercial Law',
+        icon: 'fa-building',
+        services: [
+            'Company, LLP & Firm Registration',
+            'Corporate Compliance & Advisory',
+            'Contract Drafting & Review',
+            'Regulatory Matters',
+            'Employment & Labour Law'
+        ]
     },
     {
         id: 5,
-        name: 'Engineering College',
-        icon: 'fa-code',
-        color: 'rgb(147, 147, 37)',
-        institutions: ['Capital University', 'YBN University', 'MATS University', 'J.S. University']
-    },
-    {
-        id: 6,
-        name: 'Polytechnic',
-        icon: 'fa-screwdriver-wrench',
-        color: 'rgb(47, 97, 11)',
-        institutions: ['Capital University', 'YBN University', 'MATS University', 'J.S. University']
-    },
-    {
-        id: 7,
-        name: 'B.Ed. College',
-        icon: 'fa-person-chalkboard',
-        color: 'rgb(101, 105, 101)',
-        institutions: ['Acharya Nagarjuna University', 'Andhra University', 'MATS University', 'Rayalaseema University']
-    },
-    {
-        id: 8,
-        name: 'Computer Academy',
-        icon: 'fa-display',
-        color: 'rgb(12, 5, 74)',
-        institutions: ['RCTI', 'NCTI']
+        category: 'Banking & Financial Law',
+        icon: 'fa-landmark',
+        services: [
+            'Lien Removal',
+            'NOC from Police/Cyber Cell',
+            'Disputed Transaction Resolution',
+            'Recovery & Enforcement Proceedings'
+        ]
     }
 ]
 
-// Quick links
-export const QUICK_LINKS = [
+// Why choose us features
+export const WHY_CHOOSE_US = [
+    'Full-Service Legal Consultancy',
+    'Specialized Cyber Crime Practice',
+    'Pan-India Client Representation',
+    'Ethical, Confidential & Transparent',
+    'Quick Response & Professional Handling'
+]
+
+// Legal team
+export const LEGAL_TEAM = [
     {
         id: 1,
-        name: 'Time Tables',
-        icon: '/img/2072763.png',
-        color: 'rgb(253 237 50)',
-        href: '#'
+        name: 'Senior Advocate',
+        position: 'Cyber Crime & Digital Law Specialist',
+        image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&q=80',
+        expertise: 'Cyber Crime, Digital Fraud, Financial Disputes'
     },
     {
         id: 2,
-        name: 'Careers',
-        icon: '/img/scholarship.png',
-        color: 'rgb(255, 202, 79)',
-        href: '#'
+        name: 'Legal Consultant',
+        position: 'Criminal & Civil Law Expert',
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+        expertise: 'Criminal Defense, Civil Litigation'
     },
     {
         id: 3,
-        name: 'News Letters',
-        icon: '/img/information.png',
-        color: 'rgb(109, 197, 74)',
-        href: '#'
-    },
-    {
-        id: 4,
-        name: 'Results',
-        icon: '/img/results.png',
-        color: 'rgb(52 48 146)',
-        href: '#'
+        name: 'Corporate Advisor',
+        position: 'Corporate & Commercial Law',
+        image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+        expertise: 'Corporate Compliance, Commercial Contracts'
     }
 ]
 
-// Management team
-export const MANAGEMENT_TEAM = [
-    {
-        id: 1,
-        name: 'Mr. R.K. Meher',
-        position: 'Chairman',
-        image: '/img/chairman.jpg'
-    },
-    {
-        id: 2,
-        name: 'Mr. Gangadhar Meher',
-        position: 'Trustee',
-        image: '/img/mnt 005.jpg'
-    },
-    {
-        id: 3,
-        name: 'Mr. Sameer Meher',
-        position: 'Trustee',
-        image: '/img/mnt 006.jpg'
-    },
-    {
-        id: 4,
-        name: 'Mrs. Manjula Meher',
-        position: 'Principal',
-        image: '/img/mnt 003.jpg'
-    },
-    {
-        id: 5,
-        name: 'Mr. Sushanta Bhoi',
-        position: 'Managing Director',
-        image: '/img/mnt 002.jpg'
-    },
-    {
-        id: 6,
-        name: 'Mr. Lorem ipsum',
-        position: 'Marketing Director',
-        image: '/img/mnt 004.jpg'
-    }
+// About section
+export const ABOUT_SECTION = {
+    title: 'About Juris Associates',
+    description: `Juris Associates is a client-centric legal consultancy firm offering advisory and litigation services across all major areas of law, including criminal law, civil disputes, corporate advisory, and regulatory compliance, with particular expertise in cyber crime and digital financial fraud matters.`,
+    mission: `Our mission is to protect our clients' legal rights while delivering practical, timely, and ethical legal solutions. With a strong understanding of cyber laws and evolving digital regulations, we are well-equipped to handle both traditional legal matters and modern technology-driven disputes.`,
+    tagline: 'Pan-India Practice | Trusted Legal Advisors | Cyber Law Specialists'
+}
+
+// Statistics
+export const STATS = [
+    { number: '15+', label: 'Years of Experience' },
+    { number: '2.5k+', label: 'Cases Successfully Resolved' },
+    { number: '100+', label: 'Cyber Crime Cases Handled' },
+    { number: '50+', label: 'Corporate Clients Served' }
 ]
-
-// Carousel images
-export const CAROUSEL_IMAGES = [
-    '/img/slider001 SO.jpeg',
-    '/img/slider002 SO.jpeg',
-    '/img/slider003 SO.jpeg',
-    '/img/slider004 SO.jpeg'
-]
-
-// Chairman message
-export const CHAIRMAN_MESSAGE = {
-    name: 'Mr. R.K. Meher',
-    position: 'Chairman',
-    image: '/img/chairman.jpg',
-    message: `"There were various obstacles to make the empire of Swagat group of Institutions stand. However the real challenge was in giving shape to it and maintaining quality services. But with the consistent efforts of our team, now it is possible to bring a revolution. The overwhelming response of students, parents and well-wishers is the only way to judge our progress throughout the years. I would like to thank all for your immense love and support".`
-}
-
-// Video section
-export const VIDEO_SECTION = {
-    title: 'A Glance of Swagat',
-    description: 'This is a virtual tour to the Swagat Group of Institutions. It shows the standard of infrastructure and quality atmosphere that we provide to our students. We aim to bring about a revolution in the field of education by encouraging the youth to frame innovative ideas and to be a part of this revolutionary journey.',
-    locations: ['Bhawanipatna', 'Sinapali'],
-    videoUrl: 'https://videos.pond5.com/aerial-drone-shot-elementary-school-footage-079427446_main_xxl.mp4'
-}
-
-// Milestone
-export const MILESTONE = {
-    year: '2021',
-    title: 'Building from Scratch #1 (Sinapali Public School)',
-    image: '/img/Milestone 001.jpg',
-    description: 'Swagat Group at early phase'
-}
-
-// Location
-export const LOCATION = {
-    address: 'Rrr, Naktiguda, Bhawanipatna, Odisha 766001',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.430049734715!2d83.151755749193!3d19.906274586551355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a24e934ac5f21a3%3A0x163989ed75231f8d!2sswagat%20institute!5e0!3m2!1sen!2sin!4v1653113592392!5m2!1sen!2sin'
-}
