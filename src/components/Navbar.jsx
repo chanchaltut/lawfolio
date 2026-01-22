@@ -99,12 +99,15 @@ const Navbar = () => {
               </ul>
 
               {/* Free Consultation Button - Desktop */}
-              <button className="hidden lg:flex bg-[#c9a870] text-[#1a1a1a] px-5 lg:px-6 xl:px-7 py-2.5 lg:py-3 rounded-full font-bold text-[12px] lg:text-[13px] xl:text-[14px] items-center gap-2 hover:bg-[#b89860] transition-all hover:gap-3 tracking-wide whitespace-nowrap">
+              <a 
+                href="tel:9211957859" 
+                className="hidden lg:flex bg-[#c9a870] text-[#1a1a1a] px-5 lg:px-6 xl:px-7 py-2.5 lg:py-3 rounded-full font-bold text-[12px] lg:text-[13px] xl:text-[14px] items-center gap-2 hover:bg-[#b89860] transition-all hover:gap-3 tracking-wide whitespace-nowrap"
+              >
                 FREE CONSULTATION
                 <svg className="w-3.5 h-3.5 lg:w-4 lg:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -225,7 +228,8 @@ const Navbar = () => {
 
           {/* Free Consultation Button - Mobile */}
           <div className="mt-8 lg:hidden">
-            <button 
+            <a 
+              href="tel:9211957859"
               onClick={closeSidebar}
               className="w-full bg-[#c9a870] text-[#1a1a1a] px-6 py-4 rounded-full font-bold text-[14px] flex items-center justify-center gap-2 hover:bg-[#b89860] transition-all"
             >
@@ -233,7 +237,7 @@ const Navbar = () => {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </button>
+            </a>
           </div>
         </div>
 
