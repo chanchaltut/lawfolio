@@ -1,5 +1,4 @@
 import React from 'react';
-import roshanImage from '../assets/roshan_profile.jpeg';
 
 const Hero = () => {
   return (
@@ -87,8 +86,8 @@ const Hero = () => {
           <div className="relative z-10 flex justify-center lg:justify-end pt-6 sm:pt-8 mt-8 lg:mt-0">
             <div className="w-full max-w-[400px] sm:max-w-[450px] md:max-w-[500px] lg:w-[460px] xl:w-[520px] h-[400px] xs:h-[450px] sm:h-[500px] md:h-[550px] lg:h-[580px] xl:h-[600px] rounded-[20px] sm:rounded-[22px] md:rounded-[25px] overflow-hidden shadow-2xl border-2 sm:border-3 md:border-4 border-[#c9a870] animate-scaleIn opacity-0 animation-delay-300 image-zoom-container">
               <img
-                src={roshanImage}
-                alt="Adv. Roshan Kumar - Cyber Crime Lawyer"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
+                alt="Professional Legal Consultant - Cyber Crime Lawyer"
                 className="w-full h-full object-cover object-top image-zoom"
                 onError={(e) => {
                   e.target.src = "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80";

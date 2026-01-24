@@ -1,6 +1,5 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import roshanImage from '../assets/roshan_profile.jpeg';
 
 const ProfessionalLawyer = () => {
   return (
@@ -19,8 +18,8 @@ const ProfessionalLawyer = () => {
           <div className="relative z-10 order-2 lg:order-1 animate-fadeInLeft opacity-0 animation-delay-300">
             <div className="w-full max-w-[500px] sm:max-w-[550px] md:max-w-[600px] lg:max-w-none h-[450px] xs:h-[500px] sm:h-[550px] md:h-[600px] lg:h-[650px] xl:h-[700px] rounded-[20px] sm:rounded-[25px] md:rounded-[30px] overflow-hidden shadow-2xl mx-auto lg:mx-0 image-zoom-container card-hover">
               <img
-                src={roshanImage}
-                alt="Professional Lawyer"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
+                alt="Professional Legal Consultant"
                 className="w-full h-full object-cover object-top image-zoom"
               />
             </div>

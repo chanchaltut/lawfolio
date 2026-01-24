@@ -37,7 +37,7 @@ export const ADVOCATE_PROFILE = {
     phone: '9211957859',
     email: 'roshankgupta479@gmail.com',
     location: 'Kolkata, West Bengal',
-    image: '/public/roshan_profile.jpeg',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
     description: 'A practicing Cyber Crime and Digital Fraud Lawyer, specializing in bank account defreezing, lien removal, and cyber-related financial disputes.',
     expertise: [
         'Bank Account Defreezing & Lien Removal',
