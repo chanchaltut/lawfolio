@@ -1,152 +1,286 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { FaWhatsapp, FaChevronLeft, FaChevronRight, FaArrowUp } from 'react-icons/fa';
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [scrollToTopOpacity, setScrollToTopOpacity] = useState(0);
+  const intervalRef = useRef(null);
+  const mouseMoveTimeoutRef = useRef(null);
+  const lastMouseMoveTimeRef = useRef(Date.now());
+  const shouldShowButtonRef = useRef(false);
+
+  const slides = [
+    {
+      id: 1,
+      redHeading: "Expert Legal Advisory:",
+      whiteHeading: "Your Rights, Our Priority",
+      description: "Experience the difference with Juris Associates, where every client's story is heard and every legal challenge is met with unwavering dedication. We're here to defend your rights and secure your future.",
+      ctaText: "LEARN MORE ABOUT US",
+      ctaLink: "#about",
+      backgroundImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80"
+    },
+    {
+      id: 2,
+      redHeading: "Explore Our Services:",
+      whiteHeading: "Every Sector, Every Need",
+      description: "Discover the breadth of our legal expertise across various industries and sectors. Juris Associates provides clear, effective legal strategies designed for your unique challenges.",
+      ctaText: "EXPLORE OUR PRACTICE AREAS",
+      ctaLink: "#practice",
+      backgroundImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80"
+    },
+    {
+      id: 3,
+      redHeading: "Connect with Confidence:",
+      whiteHeading: "We're Here to Help",
+      description: "Ready for a legal partner who truly listens? Reach out to Juris Associates today for personalized service and expert advice tailored to your world.",
+      ctaText: "CONTACT US NOW",
+      ctaLink: "#contact",
+      backgroundImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1920&q=80"
+    }
+  ];
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (isAutoPlaying) {
+      intervalRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      }, 6000); // Change slide every 6 seconds
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [isAutoPlaying, slides.length]);
+
+  // Scroll to top button visibility and opacity logic
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY || window.pageYOffset;
+      const viewportHeight = window.innerHeight;
+      const threshold = viewportHeight * 1.8; // 180vh
+
+      if (scrollPosition >= threshold) {
+        shouldShowButtonRef.current = true;
+        setShowScrollToTop(true);
+      } else {
+        shouldShowButtonRef.current = false;
+        setShowScrollToTop(false);
+        setScrollToTopOpacity(0);
+      }
+    };
+
+    const handleMouseMove = () => {
+      lastMouseMoveTimeRef.current = Date.now();
+
+      // Show immediately on mouse movement if button should be visible
+      if (shouldShowButtonRef.current) {
+        setScrollToTopOpacity(1);
+
+        // Clear existing timeout
+        if (mouseMoveTimeoutRef.current) {
+          clearTimeout(mouseMoveTimeoutRef.current);
+        }
+
+        // Set timeout to fade after 3000ms of inactivity
+        mouseMoveTimeoutRef.current = setTimeout(() => {
+          const timeSinceLastMove = Date.now() - lastMouseMoveTimeRef.current;
+          if (timeSinceLastMove >= 3000 && shouldShowButtonRef.current) {
+            setScrollToTopOpacity(0);
+          }
+        }, 3000);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (mouseMoveTimeoutRef.current) {
+        clearTimeout(mouseMoveTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+    // Resume auto-play after 10 seconds
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
+  const nextSlide = () => {
+    goToSlide((currentSlide + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    goToSlide((currentSlide - 1 + slides.length) % slides.length);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <section id="home" className="relative min-h-screen bg-[#121212] overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Large decorative circle pattern */}
-        <div className="absolute top-[15%] left-[-20%] sm:left-[-15%] md:left-[-10%] w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] opacity-[0.03]">
-          <div className="w-full h-full border border-white rounded-full"></div>
-          <div className="absolute top-8 left-8 right-8 bottom-8 sm:top-10 sm:left-10 sm:right-10 sm:bottom-10 md:top-14 md:left-14 md:right-14 md:bottom-14 border border-white rounded-full"></div>
-          <div className="absolute top-16 left-16 right-16 bottom-16 sm:top-20 sm:left-20 sm:right-20 sm:bottom-20 md:top-28 md:left-28 md:right-28 md:bottom-28 border border-white rounded-full"></div>
-          <div className="absolute top-24 left-24 right-24 bottom-24 sm:top-28 sm:left-28 sm:right-28 sm:bottom-28 md:top-40 md:left-40 md:right-40 md:bottom-40 border border-white rounded-full"></div>
-        </div>
-      </div>
+    <>
+      <section id="home" className="relative min-h-screen h-screen overflow-hidden group">
+        {/* Slider Container */}
+        <div className="relative w-full h-full">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+            >
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img
+                  src={slide.backgroundImage}
+                  alt={slide.whiteHeading}
+                  className="w-full h-full object-cover grayscale"
+                  onError={(e) => {
+                    e.target.src = "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80";
+                  }}
+                />
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/60"></div>
+              </div>
 
-      {/* Content Container */}
-      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 sm:pb-14 md:pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center min-h-[calc(100vh-10rem)] sm:min-h-[calc(100vh-9rem)] md:min-h-[calc(100vh-8rem)]">
+              {/* Content */}
+              <div className="relative z-20 h-full flex items-center justify-center">
+                <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 max-w-5xl mx-auto">
+                  {/* Red Heading */}
+                  <h2
+                    className={`text-[#E73F4F] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 transition-all duration-700 ${index === currentSlide
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-4'
+                      }`}
+                    style={{ transitionDelay: '0.2s' }}
+                  >
+                    {slide.redHeading}
+                  </h2>
 
-          {/* Left Content */}
-          <div className="relative z-10 pt-4 sm:pt-8 md:pt-12 text-center lg:text-left">
-            {/* Badge */}
-            <div className="inline-block mb-4 sm:mb-6 animate-fadeInUp opacity-0 animation-delay-100">
-              <span className="bg-[#c9a870] bg-opacity-10 border border-[#c9a870] text-[#c9a870] px-4 py-2 rounded-full text-[11px] sm:text-[12px] font-bold tracking-wider">
-                CYBER CRIME SPECIALIST
-              </span>
-            </div>
+                  {/* White Heading */}
+                  <h1
+                    className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 leading-tight transition-all duration-700 ${index === currentSlide
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-4'
+                      }`}
+                    style={{ transitionDelay: '0.4s' }}
+                  >
+                    {slide.whiteHeading}
+                  </h1>
 
-            <h1 className="text-white text-[36px] xs:text-[42px] sm:text-[52px] md:text-[62px] lg:text-[68px] xl:text-[72px] leading-[1.1] font-bold mb-4 sm:mb-6 tracking-tight px-2 sm:px-0 animate-fadeInUp opacity-0 animation-delay-200">
-              Adv. Roshan Kumar
-            </h1>
+                  {/* Description */}
+                  <p
+                    className={`text-white text-base sm:text-lg md:text-xl mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ${index === currentSlide
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-4'
+                      }`}
+                    style={{ transitionDelay: '0.6s' }}
+                  >
+                    {slide.description}
+                  </p>
 
-            <h2 className="text-[#c9a870] text-[20px] xs:text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] font-bold mb-6 sm:mb-8 px-2 sm:px-0 animate-fadeInUp opacity-0 animation-delay-300">
-              Cyber Crime & Corporate Legal Consultant
-            </h2>
-
-            <p className="text-gray-300 text-[14px] xs:text-[15px] sm:text-[16px] md:text-[17px] leading-relaxed mb-6 sm:mb-8 max-w-[600px] mx-auto lg:mx-0 px-2 sm:px-0 animate-fadeInUp opacity-0 animation-delay-400">
-              Specializing in bank account defreezing, lien removal, and cyber-related financial disputes. Providing PAN-India legal support for investment fraud, crypto and P2P trading issues, and wrongful cyber crime implications.
-            </p>
-
-            {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10 animate-fadeInUp opacity-0 animation-delay-500">
-              <a href="tel:9211957859" className="flex items-center gap-2 text-gray-400 text-[13px] sm:text-[14px] hover:text-[#c9a870] smooth-hover-fast">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                <span className="font-semibold">9211957859</span>
-              </a>
-              <span className="hidden sm:block text-gray-600">•</span>
-              <span className="text-gray-400 text-[13px] sm:text-[14px] flex items-center gap-2">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-                Kolkata, West Bengal
-              </span>
-            </div>
-
-            {/* Trust Badges */}
-            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start mb-8 sm:mb-10 animate-fadeInUp opacity-0 animation-delay-600">
-              <span className="text-gray-400 text-[12px] sm:text-[13px] tracking-wider">📍 PAN-India Practice</span>
-              <span className="hidden sm:block text-gray-600">•</span>
-              <span className="text-gray-400 text-[12px] sm:text-[13px] tracking-wider">⚖️ Bank Account Defreezing Expert</span>
-              <span className="hidden sm:block text-gray-600">•</span>
-              <span className="text-gray-400 text-[12px] sm:text-[13px] tracking-wider">🔐 Cyber Law Specialist</span>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start animate-fadeInUp opacity-0 animation-delay-700">
-              <a href="tel:9211957859" className="btn-hover-effect bg-[#c9a870] text-[#1a1a1a] px-6 sm:px-7 md:px-8 py-[14px] sm:py-[15px] md:py-[16px] rounded-full font-bold text-[13px] sm:text-[14px] flex items-center gap-2 sm:gap-3 hover:bg-[#b89860] smooth-hover group tracking-wider">
-                FREE CONSULTATION
-                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-
-              <a href="mailto:roshankgupta479@gmail.com" className="border-2 border-[#c9a870] text-[#c9a870] px-6 sm:px-7 md:px-8 py-[14px] sm:py-[15px] md:py-[16px] rounded-full font-bold text-[13px] sm:text-[14px] flex items-center gap-2 sm:gap-3 hover:bg-[#c9a870] hover:text-[#1a1a1a] smooth-hover tracking-wider">
-                EMAIL US
-                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Right Content - Lawyer Image */}
-          <div className="relative z-10 flex justify-center lg:justify-end pt-6 sm:pt-8 mt-8 lg:mt-0">
-            <div className="w-full max-w-[400px] sm:max-w-[450px] md:max-w-[500px] lg:w-[460px] xl:w-[520px] h-[400px] xs:h-[450px] sm:h-[500px] md:h-[550px] lg:h-[580px] xl:h-[600px] rounded-[20px] sm:rounded-[22px] md:rounded-[25px] overflow-hidden shadow-2xl border-2 sm:border-3 md:border-4 border-[#c9a870] animate-scaleIn opacity-0 animation-delay-300 image-zoom-container">
-              <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
-                alt="Professional Legal Consultant - Cyber Crime Lawyer"
-                className="w-full h-full object-cover object-top image-zoom"
-                onError={(e) => {
-                  e.target.src = "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80";
-                }}
-              />
-
-              {/* Overlay Badge */}
-              <div className="absolute bottom-6 left-6 right-6 bg-[#1a1a1a] bg-opacity-90 backdrop-blur-sm p-4 rounded-xl border border-[#c9a870]">
-                <p className="text-[#c9a870] font-bold text-[14px] sm:text-[15px] mb-1">Adv. Roshan Kumar</p>
-                <p className="text-gray-300 text-[12px] sm:text-[13px]">Bank Account Defreezing & Lien Removal Expert</p>
+                  {/* CTA Button */}
+                  <div
+                    className={`transition-all duration-700 ${index === currentSlide
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-4'
+                      }`}
+                    style={{ transitionDelay: '0.8s' }}
+                  >
+                    <button
+                      onClick={() => scrollToSection(slide.ctaLink)}
+                      className="bg-[#E73F4F] hover:bg-[#d12e3e] text-white px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-md font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg"
+                    >
+                      {slide.ctaText}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-
+          ))}
         </div>
 
-      </div>
+        {/* Navigation Arrows - Transparent by default, visible on hover with golden color */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-transparent group-hover:bg-[#c9a870]/90 text-white w-10 h-32 sm:w-12 sm:h-36 md:w-14 md:h-40 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100"
+          aria-label="Previous slide"
+        >
+          <FaChevronLeft className="text-lg sm:text-xl md:text-2xl" />
+        </button>
 
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+        <button
+          onClick={nextSlide}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-transparent group-hover:bg-[#c9a870]/90 text-white w-10 h-32 sm:w-12 sm:h-36 md:w-14 md:h-40 flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100"
+          aria-label="Next slide"
+        >
+          <FaChevronRight className="text-lg sm:text-xl md:text-2xl" />
+        </button>
 
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
+        {/* Floating Buttons Container - Bottom Right */}
+        <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3 items-end">
+          {/* WhatsApp Button - Enhanced UI */}
+          <a
+            href="https://wa.me/919211957859"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-gradient-to-br from-[#c9a870] to-[#b89860] hover:from-[#b89860] hover:to-[#a88750] text-[#1a1a1a] px-4 py-3 rounded-lg flex items-center gap-2.5 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl min-w-[140px] border border-[#c9a870]/20"
+          >
+            <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <FaWhatsapp className="text-base flex-shrink-0 relative z-10" />
+            <span className="font-bold text-xs sm:text-sm whitespace-nowrap relative z-10">WhatsApp</span>
+            <div className="absolute -inset-0.5 bg-gradient-to-br from-[#c9a870] to-[#b89860] rounded-lg opacity-0 group-hover:opacity-30 blur transition-opacity duration-300 -z-10"></div>
+          </a>
+        </div>
 
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out forwards;
-        }
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
+                ? 'bg-[#E73F4F] w-8'
+                : 'bg-white/50 w-2 hover:bg-white/70'
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </section>
 
-        .animate-scaleIn {
-          animation: scaleIn 0.6s ease-out forwards;
-        }
-
-        .animation-delay-100 { animation-delay: 0.1s; }
-        .animation-delay-200 { animation-delay: 0.2s; }
-        .animation-delay-300 { animation-delay: 0.3s; }
-        .animation-delay-400 { animation-delay: 0.4s; }
-        .animation-delay-500 { animation-delay: 0.5s; }
-        .animation-delay-600 { animation-delay: 0.6s; }
-        .animation-delay-700 { animation-delay: 0.7s; }
-        .animation-delay-800 { animation-delay: 0.8s; }
-      `}</style>
-    </section>
+      {/* Scroll to Top Button - Bottom Right, above WhatsApp */}
+      {showScrollToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-24 right-6 z-40 bg-gradient-to-br from-[#c9a870] to-[#b89860] hover:from-[#b89860] hover:to-[#a88750] text-[#1a1a1a] w-14 h-14 rounded-lg flex items-center justify-center transition-opacity duration-700 ease-in-out shadow-lg hover:shadow-xl border border-[#c9a870]/20 group"
+          style={{ opacity: scrollToTopOpacity }}
+          aria-label="Scroll to top"
+        >
+          <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <FaArrowUp className="text-lg relative z-10" />
+          <div className="absolute -inset-0.5 bg-gradient-to-br from-[#c9a870] to-[#b89860] rounded-lg opacity-0 group-hover:opacity-30 blur transition-opacity duration-300 -z-10"></div>
+        </button>
+      )}
+    </>
   );
 };
 
