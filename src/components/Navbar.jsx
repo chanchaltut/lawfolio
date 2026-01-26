@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import jurisLogo from '../assets/jurisLogo.png';
-import { FaChevronDown, FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
-  const [isPagesOpen, setIsPagesOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Close sidebar when clicking outside or on a link
@@ -21,12 +20,10 @@ const Navbar = () => {
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
-    setIsPagesOpen(false);
   };
 
   const closeSidebar = () => {
     setIsSidebarOpen(false);
-    setIsPagesOpen(false);
   };
 
   return (
@@ -57,31 +54,6 @@ const Navbar = () => {
                   <a href="#practice" className="text-white hover:text-[#c9a870] transition-colors">
                     PRACTICE AREA
                   </a>
-                </li>
-                <li className="relative">
-                  <button
-                    className="flex items-center gap-2 text-white hover:text-[#c9a870] transition-colors"
-                    onClick={() => setIsPagesOpen(!isPagesOpen)}
-                  >
-                    PAGES
-                    <FaChevronDown className="text-xs" />
-                  </button>
-                  {isPagesOpen && (
-                    <div className="absolute top-full left-0 mt-2 w-48 bg-[#1a1a1a] border border-gray-700 rounded shadow-lg">
-                      <ul className="py-2">
-                        <li>
-                          <a href="#page1" className="block px-4 py-2 text-white hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-colors">
-                            Page 1
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#page2" className="block px-4 py-2 text-white hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-colors">
-                            Page 2
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
                 </li>
                 <li>
                   <a href="#contact" className="text-white hover:text-[#c9a870] transition-colors">
@@ -171,39 +143,6 @@ const Navbar = () => {
               >
                 PRACTICE AREA
               </a>
-            </li>
-            <li>
-              <div>
-                <button
-                  className="flex items-center justify-between w-full text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
-                  onClick={() => setIsPagesOpen(!isPagesOpen)}
-                >
-                  PAGES
-                  <FaChevronDown className={`text-xs transition-transform duration-300 ${isPagesOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {isPagesOpen && (
-                  <ul className="mt-2 ml-4 space-y-1">
-                    <li>
-                      <a
-                        href="#page1"
-                        onClick={closeSidebar}
-                        className="block text-gray-400 text-[14px] py-2 px-4 rounded-lg hover:text-[#c9a870] transition-colors"
-                      >
-                        Page 1
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#page2"
-                        onClick={closeSidebar}
-                        className="block text-gray-400 text-[14px] py-2 px-4 rounded-lg hover:text-[#c9a870] transition-colors"
-                      >
-                        Page 2
-                      </a>
-                    </li>
-                  </ul>
-                )}
-              </div>
             </li>
             <li>
               <a

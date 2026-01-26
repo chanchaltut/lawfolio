@@ -138,7 +138,7 @@ const Hero = () => {
 
   return (
     <>
-      <section id="home" className="relative h-[60vh] sm:h-screen min-h-[60vh] sm:min-h-screen overflow-hidden group">
+      <section id="home" className="relative min-h-screen h-screen overflow-hidden group">
         {/* Slider Container */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
@@ -242,11 +242,11 @@ const Hero = () => {
             href="https://wa.me/919211957859"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative bg-gradient-to-br from-[#c9a870] to-[#b89860] hover:from-[#b89860] hover:to-[#a88750] text-[#1a1a1a] px-4 py-3 rounded-lg flex items-center gap-2.5 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl min-w-[140px] border border-[#c9a870]/20"
+            className="group relative bg-gradient-to-br from-[#c9a870] to-[#b89860] hover:from-[#b89860] hover:to-[#a88750] text-[#1a1a1a] px-3 sm:px-4 py-3 rounded-lg flex items-center justify-center gap-2.5 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl min-w-[50px] sm:min-w-[140px] w-[50px] sm:w-auto border border-[#c9a870]/20"
           >
             <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <FaWhatsapp className="text-base flex-shrink-0 relative z-10" />
-            <span className="font-bold text-xs sm:text-sm whitespace-nowrap relative z-10">WhatsApp</span>
+            <FaWhatsapp className="text-base sm:text-lg flex-shrink-0 relative z-10" />
+            <span className="hidden sm:inline font-bold text-xs sm:text-sm whitespace-nowrap relative z-10">WhatsApp</span>
             <div className="absolute -inset-0.5 bg-gradient-to-br from-[#c9a870] to-[#b89860] rounded-lg opacity-0 group-hover:opacity-30 blur transition-opacity duration-300 -z-10"></div>
           </a>
         </div>
