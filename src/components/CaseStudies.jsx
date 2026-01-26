@@ -113,8 +113,8 @@ const CaseStudies = () => {
   };
 
   return (
-    <section 
-      id="practice" 
+    <section
+      id="practice"
       className="relative bg-[#202020] py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -132,7 +132,7 @@ const CaseStudies = () => {
 
         {/* Practice Area Content with Smooth Carousel */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center mb-12 sm:mb-16 md:mb-20 lg:mb-24">
-          
+
           {/* Left Side - Title, Icon and Navigation */}
           <div className="text-center lg:text-left order-2 lg:order-1 practice-carousel animate-fadeInLeft opacity-0 animation-delay-300">
             <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
@@ -154,8 +154,8 @@ const CaseStudies = () => {
             {/* Services List */}
             <ul className="text-left max-w-[400px] mx-auto lg:mx-0 mb-8 space-y-2">
               {practiceAreas[currentSlide].services.map((service, index) => (
-                <li 
-                  key={index} 
+                <li
+                  key={index}
                   className="text-gray-400 text-[13px] sm:text-[14px] flex items-start gap-2 smooth-hover-fast hover:text-[#c9a870] hover:translate-x-2"
                   style={{
                     animation: `fadeInLeft 0.5s ease-out forwards`,
@@ -171,14 +171,14 @@ const CaseStudies = () => {
 
             {/* Navigation Arrows */}
             <div className="flex items-center gap-4 sm:gap-6 justify-center lg:justify-start">
-              <button 
+              <button
                 onClick={prevSlide}
                 className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-600 flex items-center justify-center text-gray-400 hover:border-[#c9a870] hover:text-[#c9a870] smooth-hover hover:scale-110"
                 aria-label="Previous practice area"
               >
                 <FaArrowLeft className="text-lg sm:text-xl" />
               </button>
-              <button 
+              <button
                 onClick={nextSlide}
                 className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-600 flex items-center justify-center text-gray-400 hover:border-[#c9a870] hover:text-[#c9a870] smooth-hover hover:scale-110"
                 aria-label="Next practice area"
@@ -200,7 +200,7 @@ const CaseStudies = () => {
 
               {/* Image with smooth transition */}
               <div className="w-full max-w-[550px] mx-auto lg:mx-0 h-[400px] xs:h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px] rounded-[20px] sm:rounded-[25px] md:rounded-[30px] overflow-hidden shadow-2xl practice-card image-zoom-container">
-                <img 
+                <img
                   src={practiceAreas[currentSlide].image}
                   alt={practiceAreas[currentSlide].title}
                   className="w-full h-full object-cover practice-carousel image-zoom"
@@ -217,16 +217,15 @@ const CaseStudies = () => {
             <button
               key={area.id}
               onClick={() => goToSlide(index)}
-              className={`relative h-2 rounded-full smooth-hover ${
-                index === currentSlide 
-                  ? 'w-12 bg-[#c9a870]' 
+              className={`relative h-2 rounded-full smooth-hover ${index === currentSlide
+                  ? 'w-12 bg-[#c9a870]'
                   : 'w-2 bg-gray-600 hover:bg-gray-500'
-              }`}
+                }`}
               aria-label={`Go to ${area.title}`}
             >
               {/* Progress bar for active slide */}
               {index === currentSlide && !isPaused && (
-                <div 
+                <div
                   className="absolute top-0 left-0 h-full bg-white rounded-full"
                   style={{
                     animation: 'progressBar 4s linear forwards',

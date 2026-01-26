@@ -37,7 +37,7 @@ const Hero = () => {
       description: "Ready for a legal partner who truly listens? Reach out to Juris Associates today for personalized service and expert advice tailored to your world.",
       ctaText: "CONTACT US NOW",
       ctaLink: "#contact",
-      backgroundImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1920&q=80"
+      backgroundImage: "https://images.unsplash.com/photo-1758518731462-d091b0b4ed0d?w=1920&q=80"
     }
   ];
 
