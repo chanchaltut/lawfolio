@@ -1,4 +1,5 @@
 import React from 'react';
+import jurisLogo from '../assets/jurisLogo.png';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
@@ -33,18 +34,10 @@ const Footer = () => {
 
           {/* Column 1 - Logo & Description */}
           <div className="sm:col-span-2 lg:col-span-1">
+
             {/* Logo */}
-            <div className="flex items-center gap-3 mb-6 animate-fadeInUp opacity-0">
-              <div className="w-[45px] h-[45px] bg-[#c9a870] rounded-full flex items-center justify-center smooth-hover hover:scale-110">
-                <svg
-                  className="w-[24px] h-[24px] text-[#1a1a1a]"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M12 2C11.45 2 11 2.45 11 3V4H9C8.45 4 8 4.45 8 5C8 5.55 8.45 6 9 6H11V19H7C6.45 19 6 19.45 6 20C6 20.55 6.45 21 7 21H17C17.55 21 18 20.55 18 20C18 19.45 17.55 19 17 19H13V6H15C15.55 6 16 5.55 16 5C16 4.45 15.55 4 15 4H13V3C13 2.45 12.55 2 12 2M6 8L4 13H8L6 8M18 8L16 13H20L18 8Z" />
-                </svg>
-              </div>
-              <span className="text-white text-[22px] font-bold tracking-wide">Juris Associates</span>
+            <div className="flex items-center gap-2 sm:gap-3 z-50 mb-6">
+              <img src={jurisLogo} alt="Juris Associates" className="w-60 h-auto" />
             </div>
 
             <p className="text-gray-400 text-[14px] sm:text-[15px] leading-relaxed mb-6 animate-fadeInUp opacity-0 animation-delay-100">
