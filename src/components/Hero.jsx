@@ -138,7 +138,7 @@ const Hero = () => {
 
   return (
     <>
-      <section id="home" className="relative min-h-screen h-screen overflow-hidden group">
+      <section id="home" className="relative h-[60vh] sm:h-screen min-h-[60vh] sm:min-h-screen overflow-hidden group">
         {/* Slider Container */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
@@ -164,9 +164,9 @@ const Hero = () => {
               {/* Content */}
               <div className="relative z-20 h-full flex items-center justify-center">
                 <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 max-w-5xl mx-auto">
-                  {/* Red Heading */}
+                  {/* Golden Heading */}
                   <h2
-                    className={`text-[#E73F4F] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 transition-all duration-700 ${index === currentSlide
+                    className={`text-[#c9a870] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 transition-all duration-700 ${index === currentSlide
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-4'
                       }`}
@@ -207,7 +207,7 @@ const Hero = () => {
                   >
                     <button
                       onClick={() => scrollToSection(slide.ctaLink)}
-                      className="bg-[#E73F4F] hover:bg-[#d12e3e] text-white px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-md font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg"
+                      className="bg-[#c9a870] hover:bg-[#b89860] text-[#1a1a1a] px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-md font-bold text-xs sm:text-sm md:text-base uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg"
                     >
                       {slide.ctaText}
                     </button>
@@ -258,7 +258,7 @@ const Hero = () => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
-                ? 'bg-[#E73F4F] w-8'
+                ? 'bg-[#c9a870] w-8'
                 : 'bg-white/50 w-2 hover:bg-white/70'
                 }`}
               aria-label={`Go to slide ${index + 1}`}

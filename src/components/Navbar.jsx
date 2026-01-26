@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import jurisLogo from '../assets/jurisLogo.png';
 import { FaChevronDown, FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -33,19 +34,10 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#1a1a1a] border-b border-[#2a2a2a]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-4 md:py-5">
           <div className="flex items-center justify-between">
-            
+
             {/* Logo */}
             <div className="flex items-center gap-2 sm:gap-3 z-50">
-              <div className="w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] bg-[#c9a870] rounded-full flex items-center justify-center">
-                <svg 
-                  className="w-[20px] h-[20px] sm:w-[24px] sm:h-[24px] md:w-[26px] md:h-[26px] text-[#1a1a1a]" 
-                  viewBox="0 0 24 24" 
-                  fill="currentColor"
-                >
-                  <path d="M12 2C11.45 2 11 2.45 11 3V4H9C8.45 4 8 4.45 8 5C8 5.55 8.45 6 9 6H11V19H7C6.45 19 6 19.45 6 20C6 20.55 6.45 21 7 21H17C17.55 21 18 20.55 18 20C18 19.45 17.55 19 17 19H13V6H15C15.55 6 16 5.55 16 5C16 4.45 15.55 4 15 4H13V3C13 2.45 12.55 2 12 2M6 8L4 13H8L6 8M18 8L16 13H20L18 8Z"/>
-                </svg>
-              </div>
-              <span className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-bold tracking-wide">Juris Associates</span>
+              <img src={jurisLogo} alt="Juris Associates" className="w-60 h-auto" />
             </div>
 
             {/* Desktop Navigation Items */}
@@ -67,7 +59,7 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="relative">
-                  <button 
+                  <button
                     className="flex items-center gap-2 text-white hover:text-[#c9a870] transition-colors"
                     onClick={() => setIsPagesOpen(!isPagesOpen)}
                   >
@@ -99,8 +91,8 @@ const Navbar = () => {
               </ul>
 
               {/* Free Consultation Button - Desktop */}
-              <a 
-                href="tel:9211957859" 
+              <a
+                href="tel:9211957859"
                 className="hidden lg:flex bg-[#c9a870] text-[#1a1a1a] px-5 lg:px-6 xl:px-7 py-2.5 lg:py-3 rounded-full font-bold text-[12px] lg:text-[13px] xl:text-[14px] items-center gap-2 hover:bg-[#b89860] transition-all hover:gap-3 tracking-wide whitespace-nowrap"
               >
                 FREE CONSULTATION
@@ -111,7 +103,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="xl:hidden text-white text-2xl p-2 z-50 hover:text-[#c9a870] transition-colors"
               onClick={toggleSidebar}
               aria-label="Toggle menu"
@@ -123,29 +115,27 @@ const Navbar = () => {
       </nav>
 
       {/* Backdrop Blur Overlay */}
-      <div 
-        className={`fixed inset-0 bg-black/60 backdrop-blur-md z-40 transition-opacity duration-300 xl:hidden ${
-          isSidebarOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+      <div
+        className={`fixed inset-0 bg-black/60 backdrop-blur-md z-40 transition-opacity duration-300 xl:hidden ${isSidebarOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
         onClick={closeSidebar}
       />
 
       {/* Mobile Sidebar */}
-      <div 
-        className={`fixed top-0 left-0 h-full w-[70%] max-w-[350px] bg-[#1a1a1a] z-40 transform transition-transform duration-300 ease-in-out xl:hidden overflow-y-auto ${
-          isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
+      <div
+        className={`fixed top-0 left-0 h-full w-[70%] max-w-[350px] bg-[#1a1a1a] z-40 transform transition-transform duration-300 ease-in-out xl:hidden overflow-y-auto ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
       >
         {/* Sidebar Header */}
         <div className="p-6 border-b border-[#2a2a2a]">
           <div className="flex items-center gap-3">
             <div className="w-[45px] h-[45px] bg-[#c9a870] rounded-full flex items-center justify-center">
-              <svg 
-                className="w-[24px] h-[24px] text-[#1a1a1a]" 
-                viewBox="0 0 24 24" 
+              <svg
+                className="w-[24px] h-[24px] text-[#1a1a1a]"
+                viewBox="0 0 24 24"
                 fill="currentColor"
               >
-                <path d="M12 2C11.45 2 11 2.45 11 3V4H9C8.45 4 8 4.45 8 5C8 5.55 8.45 6 9 6H11V19H7C6.45 19 6 19.45 6 20C6 20.55 6.45 21 7 21H17C17.55 21 18 20.55 18 20C18 19.45 17.55 19 17 19H13V6H15C15.55 6 16 5.55 16 5C16 4.45 15.55 4 15 4H13V3C13 2.45 12.55 2 12 2M6 8L4 13H8L6 8M18 8L16 13H20L18 8Z"/>
+                <path d="M12 2C11.45 2 11 2.45 11 3V4H9C8.45 4 8 4.45 8 5C8 5.55 8.45 6 9 6H11V19H7C6.45 19 6 19.45 6 20C6 20.55 6.45 21 7 21H17C17.55 21 18 20.55 18 20C18 19.45 17.55 19 17 19H13V6H15C15.55 6 16 5.55 16 5C16 4.45 15.55 4 15 4H13V3C13 2.45 12.55 2 12 2M6 8L4 13H8L6 8M18 8L16 13H20L18 8Z" />
               </svg>
             </div>
             <span className="text-white text-[20px] font-bold tracking-wide">Law Pixel</span>
@@ -156,8 +146,8 @@ const Navbar = () => {
         <div className="p-6">
           <ul className="space-y-2">
             <li>
-              <a 
-                href="#home" 
+              <a
+                href="#home"
                 onClick={closeSidebar}
                 className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
               >
@@ -165,8 +155,8 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a 
-                href="#about" 
+              <a
+                href="#about"
                 onClick={closeSidebar}
                 className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
               >
@@ -174,8 +164,8 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a 
-                href="#practice" 
+              <a
+                href="#practice"
                 onClick={closeSidebar}
                 className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
               >
@@ -184,7 +174,7 @@ const Navbar = () => {
             </li>
             <li>
               <div>
-                <button 
+                <button
                   className="flex items-center justify-between w-full text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
                   onClick={() => setIsPagesOpen(!isPagesOpen)}
                 >
@@ -194,8 +184,8 @@ const Navbar = () => {
                 {isPagesOpen && (
                   <ul className="mt-2 ml-4 space-y-1">
                     <li>
-                      <a 
-                        href="#page1" 
+                      <a
+                        href="#page1"
                         onClick={closeSidebar}
                         className="block text-gray-400 text-[14px] py-2 px-4 rounded-lg hover:text-[#c9a870] transition-colors"
                       >
@@ -203,8 +193,8 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <a 
-                        href="#page2" 
+                      <a
+                        href="#page2"
                         onClick={closeSidebar}
                         className="block text-gray-400 text-[14px] py-2 px-4 rounded-lg hover:text-[#c9a870] transition-colors"
                       >
@@ -216,8 +206,8 @@ const Navbar = () => {
               </div>
             </li>
             <li>
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 onClick={closeSidebar}
                 className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
               >
@@ -228,7 +218,7 @@ const Navbar = () => {
 
           {/* Free Consultation Button - Mobile */}
           <div className="mt-8 lg:hidden">
-            <a 
+            <a
               href="tel:9211957859"
               onClick={closeSidebar}
               className="w-full bg-[#c9a870] text-[#1a1a1a] px-6 py-4 rounded-full font-bold text-[14px] flex items-center justify-center gap-2 hover:bg-[#b89860] transition-all"

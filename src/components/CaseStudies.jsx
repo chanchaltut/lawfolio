@@ -1,89 +1,34 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaArrowLeft, FaArrowRight, FaShieldHalved, FaGavel, FaHouseChimneyUser, FaBuilding, FaLandmark } from 'react-icons/fa6';
+import { FaArrowLeft, FaArrowRight, FaShieldHalved, FaGavel, FaHouseChimneyUser, FaBuilding, FaLandmark, FaScaleBalanced, FaBriefcase, FaHeart } from 'react-icons/fa6';
+import { PRACTICE_AREAS } from '../utils/constants';
 
 const CaseStudies = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const autoScrollRef = useRef(null);
 
-  const practiceAreas = [
-    {
-      id: 1,
-      title: 'Cyber Crime & Digital Law',
-      subtitle: 'Core Focus',
-      icon: <FaShieldHalved className="text-[40px] sm:text-[50px] md:text-[60px]" />,
-      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80',
-      services: [
-        'Bank Account Freeze & Defreeze Matters',
-        'Online Investment & Trading App Fraud',
-        'Crypto Fraud & P2P Trading Disputes',
-        'Identity Theft & Impersonation',
-        'Social Media Crime & Cyber Harassment',
-        'Online Extortion, Blackmail & Defamation',
-        'Wrongful Cyber Allegations & Defense'
-      ],
-      color: '#c9a870'
-    },
-    {
-      id: 2,
-      title: 'Criminal Law',
-      subtitle: 'Expert Defense',
-      icon: <FaGavel className="text-[40px] sm:text-[50px] md:text-[60px]" />,
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80',
-      services: [
-        'FIR, Bail & Anticipatory Bail',
-        'Criminal Trial & Appeals',
-        'White Collar Crimes',
-        'Economic Offences',
-        'Cheque Bounce Cases'
-      ],
-      color: '#b89860'
-    },
-    {
-      id: 3,
-      title: 'Civil Law',
-      subtitle: 'Comprehensive Solutions',
-      icon: <FaHouseChimneyUser className="text-[40px] sm:text-[50px] md:text-[60px]" />,
-      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80',
-      services: [
-        'Property & Real Estate Disputes',
-        'Recovery Suits',
-        'Injunctions & Declarations',
-        'Family & Matrimonial Matters',
-        'Consumer Protection Cases'
-      ],
-      color: '#c9a870'
-    },
-    {
-      id: 4,
-      title: 'Corporate & Commercial Law',
-      subtitle: 'Business Advisory',
-      icon: <FaBuilding className="text-[40px] sm:text-[50px] md:text-[60px]" />,
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
-      services: [
-        'Company, LLP & Firm Registration',
-        'Corporate Compliance & Advisory',
-        'Contract Drafting & Review',
-        'Regulatory Matters',
-        'Employment & Labour Law'
-      ],
-      color: '#b89860'
-    },
-    {
-      id: 5,
-      title: 'Banking & Financial Law',
-      subtitle: 'Financial Disputes',
-      icon: <FaLandmark className="text-[40px] sm:text-[50px] md:text-[60px]" />,
-      image: 'https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=600&q=80',
-      services: [
-        'Lien Removal',
-        'NOC from Police/Cyber Cell',
-        'Disputed Transaction Resolution',
-        'Recovery & Enforcement Proceedings'
-      ],
-      color: '#c9a870'
-    }
-  ];
+  // Icon mapping for practice areas
+  const iconMap = {
+    'fa-shield-halved': FaShieldHalved,
+    'fa-gavel': FaGavel,
+    'fa-house-chimney-user': FaHouseChimneyUser,
+    'fa-building': FaBuilding,
+    'fa-landmark': FaLandmark,
+    'fa-scale-balanced': FaScaleBalanced,
+    'fa-briefcase': FaBriefcase,
+    'fa-heart': FaHeart
+  };
+
+  // Transform practice areas data for component use
+  const practiceAreas = PRACTICE_AREAS.map((area, index) => {
+    const IconComponent = iconMap[area.icon] || FaShieldHalved;
+    return {
+      ...area,
+      title: area.category,
+      icon: <IconComponent className="text-[40px] sm:text-[50px] md:text-[60px]" />,
+      color: index % 2 === 0 ? '#c9a870' : '#b89860'
+    };
+  });
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -134,43 +79,59 @@ const CaseStudies = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center mb-12 sm:mb-16 md:mb-20 lg:mb-24">
 
           {/* Left Side - Title, Icon and Navigation */}
-          <div className="text-center lg:text-left order-2 lg:order-1 practice-carousel animate-fadeInLeft opacity-0 animation-delay-300">
-            <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
-              <div className="text-[#c9a870] smooth-hover">
-                {practiceAreas[currentSlide].icon}
+          <div className="text-center lg:text-left order-2 lg:order-1 practice-carousel animate-fadeInLeft opacity-0 animation-delay-300 h-[400px] xs:h-[450px] sm:h-[500px] md:h-[550px] lg:h-[600px] flex flex-col justify-between">
+            <div className="flex-1 overflow-y-auto pr-2">
+              <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
+                <div className="text-[#c9a870] smooth-hover">
+                  {practiceAreas[currentSlide].icon}
+                </div>
               </div>
+
+              <div className="mb-4">
+                <span className="inline-block bg-[#c9a870] text-[#1a1a1a] px-4 py-2 rounded-full text-[11px] sm:text-[12px] font-bold tracking-wider mb-4 smooth-hover hover:scale-105">
+                  {practiceAreas[currentSlide].subtitle}
+                </span>
+              </div>
+
+              <h3 className="text-white text-[24px] xs:text-[26px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold leading-[1.3] mb-4 sm:mb-6 max-w-[500px] mx-auto lg:mx-0">
+                {practiceAreas[currentSlide].title}
+              </h3>
+
+              {/* Description */}
+              {practiceAreas[currentSlide].description && (
+                <p className="text-[#c9a870] text-[14px] sm:text-[15px] md:text-[16px] font-semibold mb-4 max-w-[500px] mx-auto lg:mx-0">
+                  {practiceAreas[currentSlide].description}
+                </p>
+              )}
+
+              {/* Overview */}
+              {practiceAreas[currentSlide].overview && (
+                <p className="text-gray-300 text-[12px] sm:text-[13px] md:text-[14px] leading-relaxed mb-4 max-w-[500px] mx-auto lg:mx-0">
+                  {practiceAreas[currentSlide].overview}
+                </p>
+              )}
+
+              {/* Services List */}
+              <ul className="text-left max-w-[500px] mx-auto lg:mx-0 mb-6 space-y-2">
+                {practiceAreas[currentSlide].services.slice(0, 5).map((service, index) => (
+                  <li
+                    key={index}
+                    className="text-gray-400 text-[12px] sm:text-[13px] flex items-start gap-2 smooth-hover-fast hover:text-[#c9a870] hover:translate-x-2"
+                    style={{
+                      animation: `fadeInLeft 0.5s ease-out forwards`,
+                      animationDelay: `${index * 0.1}s`,
+                      opacity: 0
+                    }}
+                  >
+                    <span className="text-[#c9a870] mt-1 flex-shrink-0">•</span>
+                    <span>{service}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="mb-4">
-              <span className="inline-block bg-[#c9a870] text-[#1a1a1a] px-4 py-2 rounded-full text-[11px] sm:text-[12px] font-bold tracking-wider mb-4 smooth-hover hover:scale-105">
-                {practiceAreas[currentSlide].subtitle}
-              </span>
-            </div>
-
-            <h3 className="text-white text-[24px] xs:text-[26px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold leading-[1.3] mb-6 sm:mb-8 md:mb-10 max-w-[400px] mx-auto lg:mx-0">
-              {practiceAreas[currentSlide].title}
-            </h3>
-
-            {/* Services List */}
-            <ul className="text-left max-w-[400px] mx-auto lg:mx-0 mb-8 space-y-2">
-              {practiceAreas[currentSlide].services.map((service, index) => (
-                <li
-                  key={index}
-                  className="text-gray-400 text-[13px] sm:text-[14px] flex items-start gap-2 smooth-hover-fast hover:text-[#c9a870] hover:translate-x-2"
-                  style={{
-                    animation: `fadeInLeft 0.5s ease-out forwards`,
-                    animationDelay: `${index * 0.1}s`,
-                    opacity: 0
-                  }}
-                >
-                  <span className="text-[#c9a870] mt-1">•</span>
-                  <span>{service}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Navigation Arrows */}
-            <div className="flex items-center gap-4 sm:gap-6 justify-center lg:justify-start">
+            {/* Navigation Arrows - Fixed at bottom */}
+            <div className="flex items-center gap-4 sm:gap-6 justify-center lg:justify-start mt-4 flex-shrink-0">
               <button
                 onClick={prevSlide}
                 className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-600 flex items-center justify-center text-gray-400 hover:border-[#c9a870] hover:text-[#c9a870] smooth-hover hover:scale-110"
@@ -218,8 +179,8 @@ const CaseStudies = () => {
               key={area.id}
               onClick={() => goToSlide(index)}
               className={`relative h-2 rounded-full smooth-hover ${index === currentSlide
-                  ? 'w-12 bg-[#c9a870]'
-                  : 'w-2 bg-gray-600 hover:bg-gray-500'
+                ? 'w-12 bg-[#c9a870]'
+                : 'w-2 bg-gray-600 hover:bg-gray-500'
                 }`}
               aria-label={`Go to ${area.title}`}
             >
@@ -235,6 +196,53 @@ const CaseStudies = () => {
               )}
             </button>
           ))}
+        </div>
+
+        {/* Detailed Content Section */}
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 max-w-5xl mx-auto animate-fadeInUp opacity-0 animation-delay-700">
+          <div className="bg-[#1a1a1a] rounded-[20px] sm:rounded-[25px] md:rounded-[30px] p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl min-h-[500px] sm:min-h-[550px] md:min-h-[600px] lg:min-h-[650px] max-h-[700px] overflow-y-auto practice-carousel">
+            {/* What We Do Section */}
+            {practiceAreas[currentSlide].whatWeDo && (
+              <div className="mb-8">
+                <h4 className="text-white text-[20px] sm:text-[22px] md:text-[24px] font-bold mb-4 text-[#c9a870]">
+                  What We Do
+                </h4>
+                <p className="text-gray-300 text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed">
+                  {practiceAreas[currentSlide].whatWeDo}
+                </p>
+              </div>
+            )}
+
+            {/* Our Expertise Includes / Services */}
+            <div className="mb-8">
+              <h4 className="text-white text-[20px] sm:text-[22px] md:text-[24px] font-bold mb-4 text-[#c9a870]">
+                Our Expertise Includes
+              </h4>
+              <ul className="space-y-3">
+                {practiceAreas[currentSlide].services.map((service, index) => (
+                  <li
+                    key={index}
+                    className="text-gray-300 text-[13px] sm:text-[14px] md:text-[15px] flex items-start gap-3"
+                  >
+                    <span className="text-[#c9a870] mt-1 flex-shrink-0">•</span>
+                    <span>{service}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* The Juris Associates Difference */}
+            {practiceAreas[currentSlide].difference && (
+              <div>
+                <h4 className="text-white text-[20px] sm:text-[22px] md:text-[24px] font-bold mb-4 text-[#c9a870]">
+                  The Juris Associates Difference
+                </h4>
+                <p className="text-gray-300 text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed">
+                  {practiceAreas[currentSlide].difference}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -257,6 +265,31 @@ const CaseStudies = () => {
             opacity: 1;
             transform: translateX(0);
           }
+        }
+
+        /* Custom scrollbar for practice area sections */
+        .practice-carousel::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        .practice-carousel::-webkit-scrollbar-track {
+          background: #2a2a2a;
+          border-radius: 10px;
+        }
+
+        .practice-carousel::-webkit-scrollbar-thumb {
+          background: #c9a870;
+          border-radius: 10px;
+        }
+
+        .practice-carousel::-webkit-scrollbar-thumb:hover {
+          background: #b89860;
+        }
+
+        /* For Firefox */
+        .practice-carousel {
+          scrollbar-width: thin;
+          scrollbar-color: #c9a870 #2a2a2a;
         }
       `}</style>
     </section>
