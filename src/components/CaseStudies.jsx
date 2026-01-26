@@ -6,6 +6,8 @@ const CaseStudies = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const autoScrollRef = useRef(null);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
 
   // Icon mapping for practice areas
   const iconMap = {
@@ -57,12 +59,42 @@ const CaseStudies = () => {
     setCurrentSlide(index);
   };
 
+  // Swipe detection for mobile
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
   return (
     <section
       id="practice"
       className="relative bg-[#202020] py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       <div className="max-w-[1400px] mx-auto">
         {/* Header */}
@@ -130,8 +162,8 @@ const CaseStudies = () => {
               </ul>
             </div>
 
-            {/* Navigation Arrows - Fixed at bottom */}
-            <div className="flex items-center gap-4 sm:gap-6 justify-center lg:justify-start mt-4 flex-shrink-0">
+            {/* Navigation Arrows - Fixed at bottom (Hidden on mobile, visible on desktop) */}
+            <div className="hidden lg:flex items-center gap-4 sm:gap-6 justify-center lg:justify-start mt-4 flex-shrink-0">
               <button
                 onClick={prevSlide}
                 className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-600 flex items-center justify-center text-gray-400 hover:border-[#c9a870] hover:text-[#c9a870] smooth-hover hover:scale-110"
