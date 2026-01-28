@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import jurisLogo from '../assets/jurisLogo.png';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
+  
+  const isActive = (path) => {
+    if (path === '/' && location.pathname === '/') return true;
+    if (path !== '/' && location.pathname.startsWith(path)) return true;
+    return false;
+  };
 
   // Close sidebar when clicking outside or on a link
   useEffect(() => {
@@ -33,32 +41,42 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
 
             {/* Logo */}
-            <div className="flex items-center gap-2 sm:gap-3 z-50">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 z-50">
               <img src={jurisLogo} alt="Juris Associates" className="w-60 h-auto" />
-            </div>
+            </Link>
 
             {/* Desktop Navigation Items */}
             <div className="hidden xl:flex items-center gap-8 lg:gap-10">
               <ul className="flex items-center gap-6 lg:gap-7 xl:gap-9 text-[13px] lg:text-[14px] font-semibold tracking-wide">
                 <li>
-                  <a href="#home" className="text-white hover:text-[#c9a870] transition-colors">
+                  <Link to="/" className={`transition-colors ${isActive('/') ? 'text-[#c9a870]' : 'text-white hover:text-[#c9a870]'}`}>
                     HOME
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#about" className="text-white hover:text-[#c9a870] transition-colors">
+                  <Link to="/about" className={`transition-colors ${isActive('/about') ? 'text-[#c9a870]' : 'text-white hover:text-[#c9a870]'}`}>
                     ABOUT US
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#practice" className="text-white hover:text-[#c9a870] transition-colors">
+                  <Link to="/#practice" className="text-white hover:text-[#c9a870] transition-colors">
                     PRACTICE AREA
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#contact" className="text-white hover:text-[#c9a870] transition-colors">
+                  <Link to="/insights" className={`transition-colors ${isActive('/insights') ? 'text-[#c9a870]' : 'text-white hover:text-[#c9a870]'}`}>
+                    INSIGHTS
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/team" className={`transition-colors ${isActive('/team') ? 'text-[#c9a870]' : 'text-white hover:text-[#c9a870]'}`}>
+                    TEAM
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className={`transition-colors ${isActive('/contact') ? 'text-[#c9a870]' : 'text-white hover:text-[#c9a870]'}`}>
                     CONTACT US
-                  </a>
+                  </Link>
                 </li>
               </ul>
 
@@ -110,7 +128,7 @@ const Navbar = () => {
                 <path d="M12 2C11.45 2 11 2.45 11 3V4H9C8.45 4 8 4.45 8 5C8 5.55 8.45 6 9 6H11V19H7C6.45 19 6 19.45 6 20C6 20.55 6.45 21 7 21H17C17.55 21 18 20.55 18 20C18 19.45 17.55 19 17 19H13V6H15C15.55 6 16 5.55 16 5C16 4.45 15.55 4 15 4H13V3C13 2.45 12.55 2 12 2M6 8L4 13H8L6 8M18 8L16 13H20L18 8Z" />
               </svg>
             </div>
-            <span className="text-white text-[20px] font-bold tracking-wide">Law Pixel</span>
+            <span className="text-white text-[20px] font-bold tracking-wide">Juris Associates</span>
           </div>
         </div>
 
@@ -118,40 +136,58 @@ const Navbar = () => {
         <div className="p-6">
           <ul className="space-y-2">
             <li>
-              <a
-                href="#home"
+              <Link 
+                to="/" 
                 onClick={closeSidebar}
                 className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
               >
                 HOME
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#about"
+              <Link 
+                to="/about" 
                 onClick={closeSidebar}
                 className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
               >
                 ABOUT US
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#practice"
+              <Link 
+                to="/#practice" 
                 onClick={closeSidebar}
                 className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
               >
                 PRACTICE AREA
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#contact"
+              <Link 
+                to="/insights" 
+                onClick={closeSidebar}
+                className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
+              >
+                INSIGHTS
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/team" 
+                onClick={closeSidebar}
+                className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
+              >
+                TEAM
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/contact" 
                 onClick={closeSidebar}
                 className="block text-white text-[15px] font-semibold py-3 px-4 rounded-lg hover:bg-[#c9a870] hover:text-[#1a1a1a] transition-all duration-300"
               >
                 CONTACT US
-              </a>
+              </Link>
             </li>
           </ul>
 

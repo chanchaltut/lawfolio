@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaWhatsapp, FaChevronLeft, FaChevronRight, FaArrowUp } from 'react-icons/fa';
 
 const Hero = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -18,7 +20,7 @@ const Hero = () => {
       whiteHeading: "Your Rights, Our Priority",
       description: "Experience the difference with Juris Associates, where every client's story is heard and every legal challenge is met with unwavering dedication. We're here to defend your rights and secure your future.",
       ctaText: "LEARN MORE ABOUT US",
-      ctaLink: "#about",
+      ctaLink: "/about",
       backgroundImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1920&q=80"
     },
     {
@@ -27,7 +29,7 @@ const Hero = () => {
       whiteHeading: "Every Sector, Every Need",
       description: "Discover the breadth of our legal expertise across various industries and sectors. Juris Associates provides clear, effective legal strategies designed for your unique challenges.",
       ctaText: "EXPLORE OUR PRACTICE AREAS",
-      ctaLink: "#practice",
+      ctaLink: "/#practice",
       backgroundImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80"
     },
     {
@@ -36,7 +38,7 @@ const Hero = () => {
       whiteHeading: "We're Here to Help",
       description: "Ready for a legal partner who truly listens? Reach out to Juris Associates today for personalized service and expert advice tailored to your world.",
       ctaText: "CONTACT US NOW",
-      ctaLink: "#contact",
+      ctaLink: "/contact",
       backgroundImage: "https://images.unsplash.com/photo-1758518731462-d091b0b4ed0d?w=1920&q=80"
     }
   ];
@@ -126,9 +128,30 @@ const Hero = () => {
   };
 
   const scrollToSection = (sectionId) => {
-    const element = document.querySelector(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (sectionId.startsWith('#')) {
+      // If we're not on home page, navigate first
+      if (window.location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+          setTimeout(() => {
+            const element = document.querySelector(sectionId);
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 100);
+        }, 100);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        setTimeout(() => {
+          const element = document.querySelector(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    } else {
+      navigate(sectionId);
     }
   };
 

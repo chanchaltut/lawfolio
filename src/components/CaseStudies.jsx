@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaArrowRight, FaShieldHalved, FaGavel, FaHouseChimneyUser, FaBuilding, FaLandmark, FaScaleBalanced, FaBriefcase, FaHeart } from 'react-icons/fa6';
 import { PRACTICE_AREAS } from '../utils/constants';
+import { PRACTICE_AREA_ROUTES } from '../utils/practiceAreaRoutes';
 
 const CaseStudies = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -125,9 +127,14 @@ const CaseStudies = () => {
                 </span>
               </div>
 
-              <h3 className="text-white text-[24px] xs:text-[26px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold leading-[1.3] mb-4 sm:mb-6 max-w-[500px] mx-auto lg:mx-0">
-                {practiceAreas[currentSlide].title}
-              </h3>
+              <Link 
+                to={PRACTICE_AREA_ROUTES[practiceAreas[currentSlide].category] || '#'}
+                className="block"
+              >
+                <h3 className="text-white text-[24px] xs:text-[26px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] font-bold leading-[1.3] mb-4 sm:mb-6 max-w-[500px] mx-auto lg:mx-0 hover:text-[#c9a870] transition-colors">
+                  {practiceAreas[currentSlide].title}
+                </h3>
+              </Link>
 
               {/* Description */}
               {practiceAreas[currentSlide].description && (

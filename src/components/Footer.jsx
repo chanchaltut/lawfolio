@@ -1,22 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import jurisLogo from '../assets/jurisLogo.png';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    alert('Thank you for subscribing to our newsletter!');
+    setEmail('');
+  };
+
   const quickLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Practice Areas', href: '#practice' },
-    { name: 'Why Choose Us', href: '#why-choose-us' },
-    { name: 'Contact Us', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Practice Areas', href: '/#practice' },
+    { name: 'Insights', href: '/insights' },
+    { name: 'Team', href: '/team' },
+    { name: 'Contact Us', href: '/contact' }
   ];
 
   const practiceAreas = [
     'Cyber Crime & Digital Law',
+    'Banking & Finance',
     'Criminal Law',
-    'Civil Law',
-    'Corporate & Commercial Law',
-    'Banking & Financial Law'
+    'Civil Law & Corporate',
+    'Corporate & Commercial',
+    'Dispute Resolution',
+    'Employment & Labour Law',
+    'Family Estates & Trust Planning'
   ];
 
   const socialLinks = [
@@ -36,9 +49,9 @@ const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-1">
 
             {/* Logo */}
-            <div className="flex items-center gap-2 sm:gap-3 z-50 mb-6">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 z-50 mb-6">
               <img src={jurisLogo} alt="Juris Associates" className="w-60 h-auto" />
-            </div>
+            </Link>
 
             <p className="text-gray-400 text-[14px] sm:text-[15px] leading-relaxed mb-6 animate-fadeInUp opacity-0 animation-delay-100">
               Full-service legal consultancy led by <span className="text-[#c9a870] font-semibold">Adv. Roshan Kumar</span>, specializing in cyber crime, digital fraud, and financial cyber disputes. Pan-India legal services with expertise you can trust.
@@ -69,12 +82,12 @@ const Footer = () => {
             <ul className="space-y-3 sm:space-y-4">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="footer-link text-gray-400 text-[14px] sm:text-[15px] inline-block"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -86,16 +99,28 @@ const Footer = () => {
               Practice Areas
             </h3>
             <ul className="space-y-3 sm:space-y-4">
-              {practiceAreas.map((area, index) => (
-                <li key={index}>
-                  <a
-                    href="#practice"
-                    className="footer-link text-gray-400 text-[14px] sm:text-[15px] inline-block"
-                  >
-                    {area}
-                  </a>
-                </li>
-              ))}
+              {practiceAreas.map((area, index) => {
+                const routeMap = {
+                  'Cyber Crime & Digital Law': '/practice-areas/cyber-crime',
+                  'Banking & Finance': '/practice-areas/banking-finance',
+                  'Criminal Law': '/practice-areas/criminal-law',
+                  'Civil Law & Corporate': '/practice-areas/civil-law-corporate',
+                  'Corporate & Commercial': '/practice-areas/corporate-commercial',
+                  'Dispute Resolution': '/practice-areas/dispute-resolution',
+                  'Employment & Labour Law': '/practice-areas/employment-labour',
+                  'Family Estates & Trust Planning': '/practice-areas/family-estates'
+                };
+                return (
+                  <li key={index}>
+                    <Link
+                      to={routeMap[area] || '/#practice'}
+                      className="footer-link text-gray-400 text-[14px] sm:text-[15px] inline-block"
+                    >
+                      {area}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -132,6 +157,30 @@ const Footer = () => {
               </li>
             </ul>
 
+            {/* Newsletter Subscription */}
+            <div className="mt-6">
+              <h4 className="text-white text-[16px] sm:text-[18px] font-bold mb-4">
+                Newsletter
+              </h4>
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  required
+                  className="bg-[#0f0f0f] border border-[#2a2a2a] rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-[#c9a870] transition-colors"
+                />
+                <button
+                  type="submit"
+                  className="btn-hover-effect inline-flex items-center justify-center gap-2 bg-[#c9a870] text-[#1a1a1a] px-6 py-2.5 rounded-lg font-bold text-[13px] hover:bg-[#b89860] smooth-hover"
+                >
+                  <FaPaperPlane className="text-sm" />
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
             {/* CTA Button */}
             <div className="mt-6">
               <a
@@ -152,15 +201,23 @@ const Footer = () => {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <p className="text-gray-500 text-[13px] sm:text-[14px] animate-fadeIn opacity-0 animation-delay-600">
-              © {new Date().getFullYear()} Juris Associates. All Rights Reserved. | Adv. Roshan Kumar - Cyber Crime Specialist
+              © {new Date().getFullYear()} Juris Associates. All Rights Reserved. | Adv. Roshan Kumar - Cyber Crime Specialist | Developed by{' '}
+              <a
+                href="https://www.codeyouridea.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c9a870] hover:text-[#b89860] transition-colors font-semibold"
+              >
+                Code Your Idea
+              </a>
             </p>
             <div className="flex items-center gap-6 sm:gap-8 animate-fadeIn opacity-0 animation-delay-700">
-              <a href="#privacy" className="footer-link text-gray-500 text-[13px] sm:text-[14px]">
+              <Link to="/privacy-policy" className="footer-link text-gray-500 text-[13px] sm:text-[14px]">
                 Privacy Policy
-              </a>
-              <a href="#terms" className="footer-link text-gray-500 text-[13px] sm:text-[14px]">
+              </Link>
+              <Link to="/terms-conditions" className="footer-link text-gray-500 text-[13px] sm:text-[14px]">
                 Terms & Conditions
-              </a>
+              </Link>
             </div>
           </div>
         </div>
