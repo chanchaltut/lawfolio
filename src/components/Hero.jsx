@@ -189,7 +189,7 @@ const Hero = () => {
                 <div className="text-center px-4 sm:px-6 md:px-8 lg:px-12 max-w-5xl mx-auto">
                   {/* Golden Heading */}
                   <h2
-                    className={`text-[#c9a870] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 transition-all duration-700 ${index === currentSlide
+                    className={`text-[#c9a870] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mt-20 mb-4 sm:mb-6 transition-all duration-700 ${index === currentSlide
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-4'
                       }`}
@@ -200,7 +200,7 @@ const Hero = () => {
 
                   {/* White Heading */}
                   <h1
-                    className={`text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 sm:mb-8 leading-tight transition-all duration-700 ${index === currentSlide
+                    className={`text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight transition-all duration-700 ${index === currentSlide
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-4'
                       }`}
