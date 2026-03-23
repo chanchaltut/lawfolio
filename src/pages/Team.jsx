@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaLinkedinIn, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import roshanProfile from '../assets/roshan_profile.jpeg';
+import { SOCIAL_LINKS } from '../utils/constants';
 
 const Team = () => {
   const teamMembers = [
@@ -18,10 +19,9 @@ const Team = () => {
         'Crypto & P2P Trading Disputes',
         'Online Financial Disputes'
       ],
-      email: 'roshankgupta479@gmail.com',
+      email: SOCIAL_LINKS.email,
       phone: '+91 9211957859',
-      experience: '15+ Years',
-      cases: '1000+ Cases Handled'
+      cases: 'PAN India Cases Handled'
     }
   ];
 
@@ -78,9 +78,6 @@ const Team = () => {
                           className="w-full h-full object-cover"
                         />
                       </div>
-                      <div className="absolute -bottom-4 -right-4 bg-[#c9a870] text-[#1a1a1a] px-4 py-2 rounded-lg font-bold text-sm">
-                        {member.experience}
-                      </div>
                     </div>
                   </div>
 
@@ -99,9 +96,6 @@ const Team = () => {
                       <div className="flex flex-wrap gap-4 mb-6">
                         <div className="bg-[#0f0f0f] px-4 py-2 rounded-lg">
                           <span className="text-[#c9a870] font-bold">{member.cases}</span>
-                        </div>
-                        <div className="bg-[#0f0f0f] px-4 py-2 rounded-lg">
-                          <span className="text-[#c9a870] font-bold">{member.experience}</span>
                         </div>
                       </div>
                     </div>

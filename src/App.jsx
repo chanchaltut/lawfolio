@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import DisclaimerModal from './components/DisclaimerModal'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
@@ -22,6 +23,7 @@ import FamilyEstates from './pages/practice-areas/FamilyEstates'
 function App() {
     return (
         <div className="App">
+            <DisclaimerModal />
             <ScrollToTop />
             <Navbar />
             <Routes>

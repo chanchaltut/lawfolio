@@ -2,7 +2,6 @@ import React from 'react';
 
 const LegalSupport = () => {
   const stats = [
-    { number: '15+', label: 'Years of Experience' },
     { number: '2.5k+', label: 'Cases Successfully Resolved' },
     { number: '100+', label: 'Cyber Crime Cases Handled' },
     { number: '50+', label: 'Corporate Clients Served' }
@@ -49,14 +48,11 @@ const LegalSupport = () => {
               <div className="absolute bottom-8 right-12 w-12 h-12 border-2 border-[#b89860] rounded-full opacity-30 hidden md:block"></div>
 
               {/* Stats Grid */}
-              <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 lg:gap-12 px-6 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-10 md:py-12 lg:py-14">
+              <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 md:gap-8 lg:gap-12 px-6 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-10 md:py-12 lg:py-14 sm:divide-x sm:divide-[#1a1a1a]/20">
                 {stats.map((stat, index) => (
                   <div
                     key={index}
-                    className={`text-center ${index < 2 ? 'border-b-2 lg:border-b-0 pb-4 lg:pb-0' : ''
-                      } ${index === 0 || index === 2 ? 'lg:border-r-2 pr-4 lg:pr-0' : ''
-                      } ${index === 1 ? 'lg:border-r-2 lg:pr-0' : ''
-                      } border-[#1a1a1a] border-opacity-20`}
+                    className="text-center px-2 sm:px-4"
                   >
                     <div className="text-[#1a1a1a] text-[36px] xs:text-[42px] sm:text-[48px] md:text-[52px] lg:text-[56px] xl:text-[60px] font-bold mb-1 sm:mb-2 leading-none">
                       {stat.number}

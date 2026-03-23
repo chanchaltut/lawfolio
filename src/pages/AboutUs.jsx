@@ -1,11 +1,10 @@
 import React from 'react';
-import { FaGavel, FaUsers, FaAward, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaGavel, FaUsers } from 'react-icons/fa';
 import { FaShieldHalved } from 'react-icons/fa6';
 import { FaCheckCircle } from 'react-icons/fa';
 
 const AboutUs = () => {
   const stats = [
-    { number: '15+', label: 'Years of Experience', icon: <FaAward className="text-3xl" /> },
     { number: '2.5k+', label: 'Cases Successfully Resolved', icon: <FaGavel className="text-3xl" /> },
     { number: '100+', label: 'Cyber Crime Cases Handled', icon: <FaShieldHalved className="text-3xl" /> },
     { number: '50+', label: 'Corporate Clients Served', icon: <FaUsers className="text-3xl" /> }
@@ -86,7 +85,7 @@ const AboutUs = () => {
             <h2 className="text-white text-[28px] sm:text-[32px] md:text-[36px] font-bold mb-8 sm:mb-12 text-center">
               Our Track Record
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {stats.map((stat, index) => (
                 <div
                   key={index}

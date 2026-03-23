@@ -1,4 +1,5 @@
 import React from 'react';
+import { SOCIAL_LINKS } from '../utils/constants';
 
 const TermsConditions = () => {
   return (
@@ -155,7 +156,7 @@ const TermsConditions = () => {
               <div className="bg-[#0f0f0f] rounded-lg p-6 space-y-2">
                 <p className="text-gray-300"><strong className="text-white">Juris Associates</strong></p>
                 <p className="text-gray-300">Kolkata, West Bengal, India</p>
-                <p className="text-gray-300">Email: <a href="mailto:roshankgupta479@gmail.com" className="text-[#c9a870] hover:underline">roshankgupta479@gmail.com</a></p>
+                <p className="text-gray-300">Email: <a href={`mailto:${SOCIAL_LINKS.email}`} className="text-[#c9a870] hover:underline">{SOCIAL_LINKS.email}</a></p>
                 <p className="text-gray-300">Phone: <a href="tel:9211957859" className="text-[#c9a870] hover:underline">+91 9211957859</a></p>
               </div>
             </div>

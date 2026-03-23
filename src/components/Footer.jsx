@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import jurisLogo from '../assets/jurisLogo.png';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { SOCIAL_LINKS } from '../utils/constants';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -149,10 +150,10 @@ const Footer = () => {
               <li className="flex items-center gap-3 group">
                 <FaEnvelope className="text-[#c9a870] text-lg flex-shrink-0 smooth-hover group-hover:scale-110" />
                 <a
-                  href="mailto:roshankgupta479@gmail.com"
+                  href={`mailto:${SOCIAL_LINKS.email}`}
                   className="footer-link text-gray-400 text-[14px] sm:text-[15px] break-all"
                 >
-                  roshankgupta479@gmail.com
+                  {SOCIAL_LINKS.email}
                 </a>
               </li>
             </ul>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
+import { SOCIAL_LINKS } from '../utils/constants';
 
 const TeamSection = () => {
   const teamMembers = [
@@ -10,7 +11,7 @@ const TeamSection = () => {
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
       expertise: 'Bank Account Defreezing, Lien Removal & Cyber Crime Defense',
       phone: '9211957859',
-      email: 'roshankgupta479@gmail.com',
+      email: SOCIAL_LINKS.email,
       featured: true
     },
     {

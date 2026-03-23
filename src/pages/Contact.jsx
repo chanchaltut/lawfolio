@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaClock } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa6';
+import { SOCIAL_LINKS } from '../utils/constants';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -56,8 +57,8 @@ const Contact = () => {
     {
       icon: <FaEnvelope className="text-2xl" />,
       title: 'Email Address',
-      details: ['roshankgupta479@gmail.com'],
-      link: 'mailto:roshankgupta479@gmail.com'
+      details: [SOCIAL_LINKS.email],
+      link: `mailto:${SOCIAL_LINKS.email}`
     },
     {
       icon: <FaWhatsapp className="text-2xl" />,
@@ -199,7 +200,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         className="w-full bg-[#0f0f0f] border border-[#2a2a2a] rounded-lg px-4 py-3 text-white focus:outline-none focus:border-[#c9a870] transition-colors"
-                        placeholder="your.email@example.com"
+                        placeholder="Enter your email"
                       />
                     </div>
                     <div>

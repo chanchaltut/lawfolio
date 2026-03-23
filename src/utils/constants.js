@@ -19,7 +19,7 @@ export const NAV_ITEMS = [
 // Social links and contact
 export const SOCIAL_LINKS = {
     phone: '9211957859',
-    email: 'roshankgupta479@gmail.com',
+    email: 'infothejurisassociates@gmail.com',
     address: 'Kolkata, West Bengal',
     location: 'Kolkata, West Bengal, India',
     website: 'https://jurisassociates.com',
@@ -35,7 +35,7 @@ export const ADVOCATE_PROFILE = {
     designation: 'Cyber Crime & Corporate Legal Consultant',
     specialization: 'Bank Account Defreezing & Lien Removal Expert',
     phone: '9211957859',
-    email: 'roshankgupta479@gmail.com',
+    email: 'infothejurisassociates@gmail.com',
     location: 'Kolkata, West Bengal',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
     description: 'A practicing Cyber Crime and Digital Fraud Lawyer, specializing in bank account defreezing, lien removal, and cyber-related financial disputes.',
@@ -242,7 +242,6 @@ export const ABOUT_SECTION = {
 
 // Statistics
 export const STATS = [
-    { number: '15+', label: 'Years of Experience' },
     { number: '2.5k+', label: 'Cases Successfully Resolved' },
     { number: '100+', label: 'Cyber Crime Cases Handled' },
     { number: '50+', label: 'Corporate Clients Served' }
