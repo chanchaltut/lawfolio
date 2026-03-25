@@ -1,3 +1,6 @@
+import roshanProfile from '../assets/roshan_profile.jpeg';
+import samratProfile from '../assets/samrat_profile.jpeg';
+
 // App configuration
 export const APP_CONFIG = {
     name: 'Juris Associates',
@@ -37,7 +40,7 @@ export const ADVOCATE_PROFILE = {
     phone: '9211957859',
     email: 'infothejurisassociates@gmail.com',
     location: 'Kolkata, West Bengal',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
+    image: roshanProfile,
     description: 'A practicing Cyber Crime and Digital Fraud Lawyer, specializing in bank account defreezing, lien removal, and cyber-related financial disputes.',
     expertise: [
         'Bank Account Defreezing & Lien Removal',
@@ -213,21 +216,21 @@ export const LEGAL_TEAM = [
         id: 1,
         name: 'Senior Advocate',
         position: 'Cyber Crime & Digital Law Specialist',
-        image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=400&q=80',
+        image: roshanProfile,
         expertise: 'Cyber Crime, Digital Fraud, Financial Disputes'
     },
     {
         id: 2,
         name: 'Legal Consultant',
         position: 'Criminal & Civil Law Expert',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+        image: samratProfile,
         expertise: 'Criminal Defense, Civil Litigation'
     },
     {
         id: 3,
         name: 'Corporate Advisor',
         position: 'Corporate & Commercial Law',
-        image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
+        image: roshanProfile,
         expertise: 'Corporate Compliance, Commercial Contracts'
     }
 ]

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import roshanProfile from '../assets/roshan_profile.jpeg';
+import samratProfile from '../assets/samrat_profile.jpeg';
 import { SOCIAL_LINKS } from '../utils/constants';
 
 const Team = () => {
@@ -18,6 +19,42 @@ const Team = () => {
         'Investment & Digital Fraud Matters',
         'Crypto & P2P Trading Disputes',
         'Online Financial Disputes'
+      ],
+      email: SOCIAL_LINKS.email,
+      phone: '+91 9211957859',
+      cases: 'PAN India Cases Handled'
+    },
+    {
+      id: 2,
+      name: 'Advocate Samrat Chandra Mandal',
+      designation: 'Senior Legal Associate',
+      specialization: 'Criminal and Civil Law Expert',
+      image: samratProfile,
+      bio: 'A dedicated Criminal and Civil law professional focused on practical strategy and strong drafting. Advocate Samrat Chandra Mandal supports clients through investigations, hearings, and litigation with a focus on clear communication and outcome-oriented guidance.',
+      expertise: [
+        'Criminal Defense & FIR Strategy',
+        'Bail / Interim Relief Guidance',
+        'Civil Litigation & Recovery',
+        'Evidence Review & Procedural Support',
+        'Legal Drafting & Case Preparation'
+      ],
+      email: SOCIAL_LINKS.email,
+      phone: '+91 9211957859',
+      cases: 'PAN India Cases Handled'
+    },
+    {
+      id: 3,
+      name: 'Corporate Legal Advisor',
+      designation: 'Associate Counsel',
+      specialization: 'Corporate & Commercial Law Expert',
+      image: roshanProfile,
+      bio: 'Corporate-focused legal support for businesses across compliance, documentation, and commercial disputes. The Corporate Legal Advisor team assists clients with drafting, review, and advisory to help operations run smoothly and minimize legal risk.',
+      expertise: [
+        'Corporate Compliance & Advisory',
+        'Contract Drafting & Review',
+        'Commercial Dispute Support',
+        'Regulatory Documentation',
+        'Business-Focused Legal Strategy'
       ],
       email: SOCIAL_LINKS.email,
       phone: '+91 9211957859',
@@ -60,14 +97,15 @@ const Team = () => {
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8">
         <div className="max-w-[1400px] mx-auto">
           
-          {/* Principal Team Member */}
+          {/* Team Cards */}
           <div className="mb-16 sm:mb-20">
-            {teamMembers.map((member) => (
-              <div
-                key={member.id}
-                className="bg-[#1a1a1a] rounded-[20px] p-8 sm:p-10 md:p-12 overflow-hidden"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
+              {teamMembers.map((member) => (
+                <div
+                  key={member.id}
+                  className="bg-[#1a1a1a] rounded-[20px] p-8 sm:p-10 md:p-8 overflow-hidden"
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
                   {/* Image */}
                   <div className="lg:col-span-1">
                     <div className="relative w-full max-w-sm mx-auto lg:mx-0">
@@ -138,8 +176,9 @@ const Team = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Support Team */}

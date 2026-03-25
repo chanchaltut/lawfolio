@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '../utils/constants';
+import roshanProfile from '../assets/roshan_profile.jpeg';
+import samratProfile from '../assets/samrat_profile.jpeg';
 
 const TeamSection = () => {
   const teamMembers = [
@@ -8,7 +10,8 @@ const TeamSection = () => {
       id: 1,
       name: 'Adv. Roshan Kumar',
       role: 'Cyber Crime & Digital Law Specialist',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
+      image: roshanProfile,
+      fallbackImage: roshanProfile,
       expertise: 'Bank Account Defreezing, Lien Removal & Cyber Crime Defense',
       phone: '9211957859',
       email: SOCIAL_LINKS.email,
@@ -16,19 +19,25 @@ const TeamSection = () => {
     },
     {
       id: 2,
-      name: 'Senior Legal Associate',
-      role: 'Criminal & Civil Law Expert',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
-      expertise: 'Expert in criminal defense and civil litigation matters',
-      featured: false
+      name: 'Adv. Samrat Chandra Mandal',
+      role: 'Criminal and Civil Law Expert',
+      image: samratProfile,
+      fallbackImage: samratProfile,
+      expertise: 'Criminal defense, civil litigation, and bail/interim relief guidance for complex matters.',
+      phone: '9211957859',
+      email: SOCIAL_LINKS.email,
+      featured: true
     },
     {
       id: 3,
       name: 'Corporate Legal Advisor',
-      role: 'Corporate & Commercial Law',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80',
-      expertise: 'Providing corporate compliance and commercial contract solutions',
-      featured: false
+      role: 'Corporate & Commercial Law Expert',
+      image: roshanProfile,
+      fallbackImage: roshanProfile,
+      expertise: 'Corporate compliance, contract drafting/review, and regulatory advisory for businesses.',
+      phone: '9211957859',
+      email: SOCIAL_LINKS.email,
+      featured: true
     }
   ];
 
@@ -48,8 +57,7 @@ const TeamSection = () => {
           {/* Header */}
           <div className="text-center mb-12 sm:mb-14 md:mb-16 lg:mb-20">
             <h2 className="text-white text-[32px] xs:text-[36px] sm:text-[42px] md:text-[48px] lg:text-[54px] xl:text-[60px] font-bold mb-4 sm:mb-6 leading-[1.2] px-2 animate-fadeInUp opacity-0">
-              Meet Our Legal Expert<br className="hidden sm:block" />
-              <span className="block sm:inline"> Adv. Roshan Kumar</span>
+              Meet Our Legal Associates
             </h2>
             <p className="text-gray-400 text-[13px] xs:text-[14px] sm:text-[15px] md:text-[16px] max-w-[700px] mx-auto px-4 leading-relaxed animate-fadeInUp opacity-0 animation-delay-200">
               Our team of experienced legal professionals is dedicated to protecting your rights and delivering result-oriented solutions across all practice areas.
@@ -61,7 +69,7 @@ const TeamSection = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={member.id}
-                className="group bg-[#2a2a2a] rounded-[15px] sm:rounded-[20px] overflow-hidden hover:bg-[#323232] card-hover animate-fadeInUp opacity-0"
+                className="group flex flex-col bg-[#2a2a2a] rounded-[15px] sm:rounded-[20px] overflow-hidden hover:bg-[#323232] card-hover animate-fadeInUp opacity-0"
                 style={{
                   animationDelay: `${index * 0.2 + 0.3}s`
                 }}
@@ -73,28 +81,26 @@ const TeamSection = () => {
                     alt={member.name}
                     className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 image-zoom"
                     onError={(e) => {
-                      if (member.featured) {
-                        e.target.src = "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80";
-                      }
+                      if (member.fallbackImage) e.target.src = member.fallbackImage
                     }}
                   />
                 </div>
 
                 {/* Info */}
-                <div className="p-6 sm:p-7 md:p-8 text-center border-t-4 border-[#c9a870]">
+                <div className="flex flex-1 flex-col p-6 sm:p-7 md:p-8 text-center border-t-4 border-[#c9a870]">
                   <h3 className="text-white text-[20px] xs:text-[22px] sm:text-[24px] md:text-[26px] font-bold mb-2">
                     {member.name}
                   </h3>
                   <p className="text-[#c9a870] text-[13px] xs:text-[14px] sm:text-[15px] tracking-wide mb-2 font-semibold">
                     {member.role}
                   </p>
-                  <p className="text-gray-400 text-[12px] xs:text-[13px] leading-relaxed mb-4">
+                  <p className="flex-1 text-gray-400 text-[12px] xs:text-[13px] leading-relaxed mb-4">
                     {member.expertise}
                   </p>
 
                   {/* Featured Contact Info */}
                   {member.featured && (
-                    <>
+                    <div className="mt-auto">
                       <div className="space-y-3 mb-6">
                         <a
                           href={`tel:${member.phone}`}
@@ -125,7 +131,7 @@ const TeamSection = () => {
                         Call Now
                         <FaArrowRight className="text-sm" />
                       </a>
-                    </>
+                    </div>
                   )}
                 </div>
               </div>
