@@ -3,6 +3,7 @@ import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '../utils/constants';
 import roshanProfile from '../assets/roshan_profile.jpeg';
 import samratProfile from '../assets/samrat_profile.jpeg';
+import corporateProfile from '../assets/corporate_profile.jpeg';
 
 const TeamSection = () => {
   const teamMembers = [
@@ -32,8 +33,8 @@ const TeamSection = () => {
       id: 3,
       name: 'Corporate Legal Advisor',
       role: 'Corporate & Commercial Law Expert',
-      image: roshanProfile,
-      fallbackImage: roshanProfile,
+      image: corporateProfile,
+      fallbackImage: corporateProfile,
       expertise: 'Corporate compliance, contract drafting/review, and regulatory advisory for businesses.',
       phone: '9211957859',
       email: SOCIAL_LINKS.email,

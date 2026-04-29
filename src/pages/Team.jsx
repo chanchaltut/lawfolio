@@ -2,6 +2,7 @@ import React from 'react';
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import roshanProfile from '../assets/roshan_profile.jpeg';
 import samratProfile from '../assets/samrat_profile.jpeg';
+import corporateProfile from '../assets/corporate_profile.jpeg';
 import { SOCIAL_LINKS } from '../utils/constants';
 
 const Team = () => {
@@ -47,7 +48,7 @@ const Team = () => {
       name: 'Corporate Legal Advisor',
       designation: 'Associate Counsel',
       specialization: 'Corporate & Commercial Law Expert',
-      image: roshanProfile,
+      image: corporateProfile,
       bio: 'Corporate-focused legal support for businesses across compliance, documentation, and commercial disputes. The Corporate Legal Advisor team assists clients with drafting, review, and advisory to help operations run smoothly and minimize legal risk.',
       expertise: [
         'Corporate Compliance & Advisory',
@@ -105,22 +106,22 @@ const Team = () => {
                   key={member.id}
                   className="bg-[#1a1a1a] rounded-[20px] p-8 sm:p-10 md:p-8 overflow-hidden"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
+                  <div className="flex flex-col gap-8 sm:gap-10">
                   {/* Image */}
-                  <div className="lg:col-span-1">
-                    <div className="relative w-full max-w-sm mx-auto lg:mx-0">
+                  <div>
+                    <div className="relative w-full max-w-sm mx-auto">
                       <div className="aspect-square rounded-[20px] overflow-hidden border-4 border-[#c9a870]">
                         <img
                           src={member.image}
                           alt={member.name}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-top object-cover"
                         />
                       </div>
                     </div>
                   </div>
 
                   {/* Details */}
-                  <div className="lg:col-span-2">
+                  <div>
                     <div className="mb-6">
                       <h2 className="text-white text-[32px] sm:text-[36px] md:text-[40px] font-bold mb-2">
                         {member.name}
