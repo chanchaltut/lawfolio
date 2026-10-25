@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCalendarAlt, FaUser, FaArrowRight, FaSearch } from 'react-icons/fa';
+import { FaCalendarAlt, FaUser, FaSearch } from 'react-icons/fa';
 
 const Insights = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -168,10 +168,6 @@ const Insights = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-gray-500 text-xs">{article.readTime}</span>
-                    <button className="text-[#c9a870] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                      Read More
-                      <FaArrowRight />
-                    </button>
                   </div>
                 </div>
               </article>
