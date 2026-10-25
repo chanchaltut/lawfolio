@@ -162,7 +162,7 @@ const Hero = () => {
   return (
     <>
       <section id="home" className="relative min-h-screen h-screen overflow-hidden group">
-        <h1 className="sr-only">The Juris Associates - Cyber Crime Lawyer and Bank Account Defreeze Advocate in Kolkata, serving clients across India</h1>
+        <h1 className="sr-only">The Juris Associates - Legal Consultants and Cyber Crime Law Specialists, Kolkata</h1>
         {/* Slider Container */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (

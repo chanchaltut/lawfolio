@@ -10,12 +10,11 @@
 
 ## Core practice
 
-- [Bank Account Freeze, Defreeze & Lien Removal](https://www.thejurisassociates.com/practice-areas/bank-account-defreeze): accounts frozen or liens marked by banks at the request of cyber crime police (NCRP / 1930 complaints), including crypto P2P and UPI cases, anywhere in India.
-- [Cyber Crime & Digital Law](https://www.thejurisassociates.com/practice-areas/cyber-crime): online investment and trading app fraud, crypto and P2P disputes, identity theft, cyber harassment, sextortion and online defamation, and defence against wrongful cyber allegations.
+- [Cyber Crime & Digital Law](https://www.thejurisassociates.com/practice-areas/cyber-crime): bank account freeze and defreeze matters, online investment and trading app fraud, crypto and P2P disputes, identity theft, social media crime and cyber harassment, online extortion and defamation, and defence against wrongful cyber allegations.
 
 ## Other practice areas
 
-- [Criminal Law](https://www.thejurisassociates.com/practice-areas/criminal-law): bail and anticipatory bail, FIR matters, trials and appeals under the BNS, BNSS and BSA.
+- [Criminal Law](https://www.thejurisassociates.com/practice-areas/criminal-law): rights of arrested persons, bail proceedings, law of evidence and criminal defence.
 - [Civil Law & Corporate](https://www.thejurisassociates.com/practice-areas/civil-law-corporate): property disputes, recovery suits, injunctions, contract drafting.
 - [Corporate & Commercial](https://www.thejurisassociates.com/practice-areas/corporate-commercial): company/LLP registration, M&A, fundraising, commercial contracts, compliance.
 - [Banking & Finance](https://www.thejurisassociates.com/practice-areas/banking-finance): debt restructuring, recovery and enforcement, securitisation, loan documentation.

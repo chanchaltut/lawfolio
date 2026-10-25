@@ -2,8 +2,6 @@ import React from 'react';
 import { FaCheckCircle, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { FaShieldHalved } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
-import FAQSection from '../../components/FAQSection';
-import { CYBER_CRIME_FAQS } from '../../seo/faqs';
 
 const CyberCrime = () => {
   const services = [
@@ -116,10 +114,7 @@ const CyberCrime = () => {
                 <div>
                   <h3 className="text-white text-xl font-bold mb-3">Bank Account Matters</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Quick resolution of frozen bank accounts due to cyber fraud investigations. We work with banks and cyber cells to expedite the defreezing process.{' '}
-                    <Link to="/practice-areas/bank-account-defreeze" className="text-[#c9a870] hover:underline">
-                      Learn about bank account defreezing and lien removal
-                    </Link>
+                    Quick resolution of frozen bank accounts due to cyber fraud investigations. We work with banks and cyber cells to expedite the defreezing process.
                   </p>
                 </div>
                 <div>
@@ -165,8 +160,6 @@ const CyberCrime = () => {
               ))}
             </div>
           </div>
-
-          <FAQSection faqs={CYBER_CRIME_FAQS} title="Cyber Crime: Frequently Asked Questions" className="mb-16 sm:mb-20" />
 
           {/* CTA Section */}
           <div className="bg-gradient-to-br from-[#c9a870] to-[#b89860] rounded-[20px] p-8 sm:p-10 md:p-12 text-center">

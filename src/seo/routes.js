@@ -1,5 +1,4 @@
 import { SITE, FOUNDER, ASSOCIATES } from './site'
-import { HOME_FAQS, BANK_DEFREEZE_FAQS, CYBER_CRIME_FAQS, CRIMINAL_LAW_FAQS } from './faqs'
 
 const BRAND = SITE.name
 const ORG_ID = `${SITE.url}/#organization`
@@ -20,25 +19,16 @@ export const ROUTES = [
         path: '/',
         title: 'Cyber Crime Lawyer in Kolkata & Pan-India | The Juris Associates',
         description: 'The Juris Associates, led by Adv. Roshan Kumar, is a Kolkata law firm for cyber crime, bank account freeze & lien removal, online fraud, criminal, civil and corporate matters across India.',
-        faqs: HOME_FAQS,
         priority: 1.0
     },
-    practice('/practice-areas/bank-account-defreeze', 'Bank account defreezing and lien removal', 'Bank Account Defreeze & Lien Removal', {
-        title: 'Bank Account Frozen by Cyber Cell? Defreeze & Lien Removal Lawyer',
-        description: 'Bank account frozen by cyber police or a lien marked on your balance? Adv. Roshan Kumar handles bank account defreezing and lien removal across India - representations, Magistrate applications and High Court writs.',
-        faqs: BANK_DEFREEZE_FAQS,
-        priority: 0.9
-    }),
     practice('/practice-areas/cyber-crime', 'Cyber crime and digital law', 'Cyber Crime & Digital Law', {
         title: 'Cyber Crime Lawyer - Online Fraud, Crypto & Harassment | The Juris Associates',
-        description: 'Cyber crime lawyers for online investment and trading app fraud, crypto and P2P disputes, identity theft, sextortion, cyber harassment and wrongful cyber allegations. Kolkata-based, Pan-India.',
-        faqs: CYBER_CRIME_FAQS,
+        description: 'Cyber crime and digital law services: bank account freeze and defreeze matters, online investment and trading app fraud, crypto and P2P disputes, identity theft, cyber harassment and wrongful cyber allegations.',
         priority: 0.9
     }),
     practice('/practice-areas/criminal-law', 'Criminal defence and bail', 'Criminal Law', {
-        title: 'Criminal Lawyer for Bail, FIR & Defence in Kolkata | The Juris Associates',
-        description: 'Criminal defence lawyers in Kolkata for bail and anticipatory bail, FIR matters, trials and appeals under the BNS, BNSS and BSA. Clear advice from the first police notice to final judgment.',
-        faqs: CRIMINAL_LAW_FAQS
+        title: 'Criminal Lawyer for Bail & Defence in Kolkata | The Juris Associates',
+        description: 'Criminal law services from The Juris Associates, Kolkata: rights of arrested persons, bail proceedings, law of evidence and criminal defence.'
     }),
     practice('/practice-areas/banking-finance', 'Banking and finance law', 'Banking & Finance', {
         title: 'Banking & Finance Lawyers - Recovery, Restructuring | The Juris Associates',
@@ -172,7 +162,7 @@ const organizationSchema = () => ({
     founder: { '@id': FOUNDER_ID },
     employee: [{ '@id': FOUNDER_ID }, ...ASSOCIATES.map(a => ({ '@type': 'Person', name: a.name, jobTitle: a.jobTitle, knowsAbout: a.knowsAbout }))],
     knowsAbout: [
-        'Cyber crime law', 'Bank account defreezing', 'Lien removal', 'Online investment fraud',
+        'Cyber crime law', 'Bank account freeze and defreeze matters', 'Online investment fraud',
         'Crypto and P2P trading disputes', 'Criminal defence', 'Bail and anticipatory bail',
         'Civil litigation', 'Corporate law', 'Banking and finance law', 'Arbitration',
         'Employment and labour law', 'Wills and succession'

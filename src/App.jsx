@@ -14,7 +14,6 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
 import NotFound from './pages/NotFound'
 import CyberCrime from './pages/practice-areas/CyberCrime'
-import BankAccountDefreeze from './pages/practice-areas/BankAccountDefreeze'
 import BankingFinance from './pages/practice-areas/BankingFinance'
 import CriminalLaw from './pages/practice-areas/CriminalLaw'
 import CivilLawCorporate from './pages/practice-areas/CivilLawCorporate'
@@ -39,7 +38,6 @@ function App() {
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-conditions" element={<TermsConditions />} />
                 <Route path="/practice-areas/cyber-crime" element={<CyberCrime />} />
-                <Route path="/practice-areas/bank-account-defreeze" element={<BankAccountDefreeze />} />
                 <Route path="/practice-areas/banking-finance" element={<BankingFinance />} />
                 <Route path="/practice-areas/criminal-law" element={<CriminalLaw />} />
                 <Route path="/practice-areas/civil-law-corporate" element={<CivilLawCorporate />} />

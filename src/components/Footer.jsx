@@ -24,7 +24,6 @@ const Footer = () => {
 
   const practiceAreas = [
     'Cyber Crime & Digital Law',
-    'Bank Account Defreeze & Lien Removal',
     'Banking & Finance',
     'Criminal Law',
     'Civil Law & Corporate',
@@ -104,7 +103,6 @@ const Footer = () => {
               {practiceAreas.map((area, index) => {
                 const routeMap = {
                   'Cyber Crime & Digital Law': '/practice-areas/cyber-crime',
-                  'Bank Account Defreeze & Lien Removal': '/practice-areas/bank-account-defreeze',
                   'Banking & Finance': '/practice-areas/banking-finance',
                   'Criminal Law': '/practice-areas/criminal-law',
                   'Civil Law & Corporate': '/practice-areas/civil-law-corporate',
