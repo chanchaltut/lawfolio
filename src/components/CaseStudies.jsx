@@ -285,7 +285,7 @@ const CaseStudies = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes progressBar {
           from {
             width: 0%;
@@ -330,7 +330,7 @@ const CaseStudies = () => {
           scrollbar-width: thin;
           scrollbar-color: #c9a870 #2a2a2a;
         }
-      `}</style>
+      ` }} />
     </section>
   );
 };

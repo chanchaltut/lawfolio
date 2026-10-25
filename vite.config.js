@@ -2,12 +2,25 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 
+// Shared by the client and SSR builds so prerendered HTML references the same asset URLs
+const assetFileNames = (assetInfo) => {
+  const info = assetInfo.name.split('.');
+  const ext = info[info.length - 1];
+  if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+    return `images/[name]-[hash][extname]`;
+  }
+  if (/css/i.test(ext)) {
+    return `css/[name]-[hash][extname]`;
+  }
+  return `assets/[name]-[hash][extname]`;
+}
+
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react()],
   
-  // Build optimization
-  build: {
+  // Build optimization (the SSR build only feeds scripts/prerender.js, so it skips client chunking)
+  build: isSsrBuild ? { outDir: 'dist-ssr', emptyOutDir: true, copyPublicDir: false, rollupOptions: { output: { assetFileNames } } } : {
     // Enable source maps for debugging (disable in production for smaller bundle)
     sourcemap: false,
     
@@ -30,17 +43,7 @@ export default defineConfig({
           return `js/${facadeModuleId}-[hash].js`;
         },
         entryFileNames: 'js/[name]-[hash].js',
-        assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
-            return `images/[name]-[hash][extname]`;
-          }
-          if (/css/i.test(ext)) {
-            return `css/[name]-[hash][extname]`;
-          }
-          return `assets/[name]-[hash][extname]`;
-        }
+        assetFileNames
       }
     },
     
@@ -102,4 +105,4 @@ export default defineConfig({
     __DEV__: JSON.stringify(process.env.NODE_ENV === 'development'),
     __PROD__: JSON.stringify(process.env.NODE_ENV === 'production')
   }
-})
+}))

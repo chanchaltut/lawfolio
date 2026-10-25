@@ -24,6 +24,7 @@ const Footer = () => {
 
   const practiceAreas = [
     'Cyber Crime & Digital Law',
+    'Bank Account Defreeze & Lien Removal',
     'Banking & Finance',
     'Criminal Law',
     'Civil Law & Corporate',
@@ -51,7 +52,7 @@ const Footer = () => {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 sm:gap-3 z-50 mb-6">
-              <img src={jurisLogo} alt="Juris Associates" className="w-60 h-auto" />
+              <img src={jurisLogo} alt="The Juris Associates - Cyber Crime Lawyers, Kolkata" className="w-60 h-auto" />
             </Link>
 
             <p className="text-gray-400 text-[14px] sm:text-[15px] leading-relaxed mb-6 animate-fadeInUp opacity-0 animation-delay-100">
@@ -103,6 +104,7 @@ const Footer = () => {
               {practiceAreas.map((area, index) => {
                 const routeMap = {
                   'Cyber Crime & Digital Law': '/practice-areas/cyber-crime',
+                  'Bank Account Defreeze & Lien Removal': '/practice-areas/bank-account-defreeze',
                   'Banking & Finance': '/practice-areas/banking-finance',
                   'Criminal Law': '/practice-areas/criminal-law',
                   'Civil Law & Corporate': '/practice-areas/civil-law-corporate',
@@ -204,12 +206,12 @@ const Footer = () => {
             <p className="text-gray-500 text-[13px] sm:text-[14px] animate-fadeIn opacity-0 animation-delay-600">
               © {new Date().getFullYear()} Juris Associates. All Rights Reserved. | Adv. Roshan Kumar - Cyber Crime Specialist | Developed by{' '}
               <a
-                href="https://www.codeyouridea.com/"
+                href="https://www.codehyphen.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#c9a870] hover:text-[#b89860] transition-colors font-semibold"
               >
-                Code Your Idea
+                Code Hyphen
               </a>
             </p>
             <div className="flex items-center gap-6 sm:gap-8 animate-fadeIn opacity-0 animation-delay-700">
@@ -224,7 +226,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         /* Smooth Footer Link Hover */
         .footer-link {
           position: relative;
@@ -266,7 +268,7 @@ const Footer = () => {
         .smooth-hover {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-      `}</style>
+      ` }} />
     </footer>
   );
 };

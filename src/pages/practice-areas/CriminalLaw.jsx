@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaGavel, FaCheckCircle, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import FAQSection from '../../components/FAQSection';
+import { CRIMINAL_LAW_FAQS } from '../../seo/faqs';
 
 const CriminalLaw = () => {
   const services = [
@@ -41,10 +43,10 @@ const CriminalLaw = () => {
                 Overview
               </h2>
               <p className="text-gray-300 text-[15px] sm:text-[16px] md:text-[17px] leading-relaxed mb-4">
-                Criminal legal services regulate violations, including felonies and wrongdoings. Wrongdoings are referred to as offenses against the state. The standard of confirmation for wrongdoings is "past a sensible instability." This field of law is managed by Indian Penal Code, CrPC, Evidence Act etc.
+                Criminal law deals with offences against the State, where the prosecution must prove guilt beyond reasonable doubt. Since 1 July 2024, criminal cases in India are governed by the Bharatiya Nyaya Sanhita, 2023 (BNS), the Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS) and the Bharatiya Sakshya Adhiniyam, 2023 (BSA), which replaced the Indian Penal Code, the CrPC and the Indian Evidence Act.
               </p>
               <p className="text-gray-300 text-[15px] sm:text-[16px] md:text-[17px] leading-relaxed">
-                An arrangement of guidelines and statutes that portrays conduct blocked by the organization in light of the way that it cripples and damages open wellbeing and welfare, and that develops control to be constrained for the commission of such acts.
+                At The Juris Associates, we represent accused persons and complainants from the first police notice or FIR through bail, investigation, trial and appeal. We protect the rights of the arrested person, scrutinise the admissibility of evidence, and build a defence on the facts and the law.
               </p>
             </div>
           </div>
@@ -67,6 +69,8 @@ const CriminalLaw = () => {
               ))}
             </div>
           </div>
+
+          <FAQSection faqs={CRIMINAL_LAW_FAQS} title="Criminal Law: Frequently Asked Questions" className="mb-16 sm:mb-20" />
 
           <div className="bg-gradient-to-br from-[#c9a870] to-[#b89860] rounded-[20px] p-8 sm:p-10 md:p-12 text-center">
             <h2 className="text-[#1a1a1a] text-[28px] sm:text-[32px] md:text-[36px] font-bold mb-4">

@@ -25,7 +25,7 @@ export const SOCIAL_LINKS = {
     email: 'infothejurisassociates@gmail.com',
     address: 'Kolkata, West Bengal',
     location: 'Kolkata, West Bengal, India',
-    website: 'https://jurisassociates.com',
+    website: 'https://www.thejurisassociates.com',
     facebook: 'https://facebook.com/jurisassociates',
     twitter: 'https://twitter.com/jurisassociates',
     instagram: 'https://instagram.com/jurisassociates',
@@ -104,9 +104,9 @@ export const PRACTICE_AREAS = [
             'Bail Proceedings: Advice on bail conditions and procedures'
         ],
         description: 'Understanding the Concept of Criminal Legal Services',
-        overview: 'Criminal legal services regulate violations, including felonies and wrongdoings. Wrongdoings are referred to as offenses against the state. The standard of confirmation for wrongdoings is "past a sensible instability." This field of law is managed by Indian Penal Code, CrPC, Evidence Act etc.',
-        whatWeDo: 'An arrangement of guidelines and statutes that portrays conduct blocked by the organization in light of the way that it cripples and damages open wellbeing and welfare, and that develops control to be constrained for the commission of such acts.',
-        difference: 'The term criminal laws imply wrongdoings that may build up disciplines. Criminal Procedure depicts the procedure through which the criminal laws are implemented. Violations are normally ordered as crimes or wrongdoings in light of their inclination and the greatest discipline that can be forced.',
+        overview: 'Criminal law deals with offences against the State, where the prosecution must prove guilt beyond reasonable doubt. Since 1 July 2024, criminal cases in India are governed by the Bharatiya Nyaya Sanhita (BNS), the Bharatiya Nagarik Suraksha Sanhita (BNSS) and the Bharatiya Sakshya Adhiniyam (BSA), which replaced the IPC, CrPC and Evidence Act.',
+        whatWeDo: 'We represent accused persons and complainants from the first police notice or FIR through bail, investigation, trial and appeal, protecting the rights of the arrested person and scrutinising the admissibility of evidence.',
+        difference: 'Our criminal practice works closely with our cyber crime team, so matters involving digital evidence, online fraud allegations or frozen accounts are handled by lawyers who understand both the technology and the criminal procedure.',
         image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80'
     },
     {

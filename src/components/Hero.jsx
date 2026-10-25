@@ -162,6 +162,7 @@ const Hero = () => {
   return (
     <>
       <section id="home" className="relative min-h-screen h-screen overflow-hidden group">
+        <h1 className="sr-only">The Juris Associates - Cyber Crime Lawyer and Bank Account Defreeze Advocate in Kolkata, serving clients across India</h1>
         {/* Slider Container */}
         <div className="relative w-full h-full">
           {slides.map((slide, index) => (
@@ -199,7 +200,7 @@ const Hero = () => {
                   </h2>
 
                   {/* White Heading */}
-                  <h1
+                  <p
                     className={`text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight transition-all duration-700 ${index === currentSlide
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-4'
@@ -207,7 +208,7 @@ const Hero = () => {
                     style={{ transitionDelay: '0.4s' }}
                   >
                     {slide.whiteHeading}
-                  </h1>
+                  </p>
 
                   {/* Description */}
                   <p

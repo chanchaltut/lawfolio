@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import DisclaimerModal from './components/DisclaimerModal'
+import Seo from './components/Seo'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
@@ -11,7 +12,9 @@ import Insights from './pages/Insights'
 import Team from './pages/Team'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
+import NotFound from './pages/NotFound'
 import CyberCrime from './pages/practice-areas/CyberCrime'
+import BankAccountDefreeze from './pages/practice-areas/BankAccountDefreeze'
 import BankingFinance from './pages/practice-areas/BankingFinance'
 import CriminalLaw from './pages/practice-areas/CriminalLaw'
 import CivilLawCorporate from './pages/practice-areas/CivilLawCorporate'
@@ -23,6 +26,7 @@ import FamilyEstates from './pages/practice-areas/FamilyEstates'
 function App() {
     return (
         <div className="App">
+            <Seo />
             <DisclaimerModal />
             <ScrollToTop />
             <Navbar />
@@ -35,6 +39,7 @@ function App() {
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-conditions" element={<TermsConditions />} />
                 <Route path="/practice-areas/cyber-crime" element={<CyberCrime />} />
+                <Route path="/practice-areas/bank-account-defreeze" element={<BankAccountDefreeze />} />
                 <Route path="/practice-areas/banking-finance" element={<BankingFinance />} />
                 <Route path="/practice-areas/criminal-law" element={<CriminalLaw />} />
                 <Route path="/practice-areas/civil-law-corporate" element={<CivilLawCorporate />} />
@@ -42,6 +47,7 @@ function App() {
                 <Route path="/practice-areas/dispute-resolution" element={<DisputeResolution />} />
                 <Route path="/practice-areas/employment-labour" element={<EmploymentLabour />} />
                 <Route path="/practice-areas/family-estates" element={<FamilyEstates />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
         </div>

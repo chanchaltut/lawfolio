@@ -10,7 +10,7 @@ function websiteDisplayHost() {
         const host = u.hostname
         return host.startsWith('www.') ? host : `www.${host.replace(/^www\./, '')}`
     } catch {
-        return 'www.jurisassociates.com'
+        return 'www.thejurisassociates.com'
     }
 }
 
