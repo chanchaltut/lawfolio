@@ -33,12 +33,13 @@ const Footer = () => {
     'Family Estates & Trust Planning'
   ];
 
+  // Icons only show for profiles that have a URL set in SOCIAL_LINKS
   const socialLinks = [
-    { icon: FaFacebookF, href: 'https://facebook.com/jurisassociates', label: 'Facebook' },
-    { icon: FaTwitter, href: 'https://twitter.com/jurisassociates', label: 'Twitter' },
-    { icon: FaLinkedinIn, href: 'https://linkedin.com/company/jurisassociates', label: 'LinkedIn' },
-    { icon: FaInstagram, href: 'https://instagram.com/jurisassociates', label: 'Instagram' }
-  ];
+    { icon: FaFacebookF, href: SOCIAL_LINKS.facebook, label: 'Facebook' },
+    { icon: FaTwitter, href: SOCIAL_LINKS.twitter, label: 'Twitter' },
+    { icon: FaLinkedinIn, href: SOCIAL_LINKS.linkedin, label: 'LinkedIn' },
+    { icon: FaInstagram, href: SOCIAL_LINKS.instagram, label: 'Instagram' }
+  ].filter(social => social.href);
 
   return (
     <footer id="contact" className="relative bg-[#0f0f0f] border-t border-[#2a2a2a]">
@@ -59,6 +60,7 @@ const Footer = () => {
             </p>
 
             {/* Social Links */}
+            {socialLinks.length > 0 && (
             <div className="flex items-center gap-3 animate-fadeInUp opacity-0 animation-delay-200">
               {socialLinks.map((social, index) => (
                 <a
@@ -73,6 +75,7 @@ const Footer = () => {
                 </a>
               ))}
             </div>
+            )}
           </div>
 
           {/* Column 2 - Quick Links */}

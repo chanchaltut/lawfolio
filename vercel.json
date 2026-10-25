@@ -1,6 +1,73 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/blog",
+      "destination": "/insights",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug*",
+      "destination": "/insights",
+      "permanent": true
+    },
+    {
+      "source": "/practice-areas/bank-account-defreeze",
+      "destination": "/practice-areas/cyber-crime",
+      "permanent": true
+    },
+    {
+      "source": "/practice-areas",
+      "destination": "/#practice",
+      "permanent": true
+    },
+    {
+      "source": "/practice-area",
+      "destination": "/#practice",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/our-team",
+      "destination": "/team",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms-conditions",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(js|css|images|assets)/(.*)",

@@ -26,10 +26,11 @@ export const SOCIAL_LINKS = {
     address: 'Kolkata, West Bengal',
     location: 'Kolkata, West Bengal, India',
     website: 'https://www.thejurisassociates.com',
-    facebook: 'https://facebook.com/jurisassociates',
-    twitter: 'https://twitter.com/jurisassociates',
-    instagram: 'https://instagram.com/jurisassociates',
-    linkedin: 'https://linkedin.com/company/jurisassociates'
+    // Add the firm's verified profile URLs; empty ones are hidden in the footer
+    facebook: '',
+    twitter: '',
+    instagram: '',
+    linkedin: ''
 }
 
 // Advocate Profile
